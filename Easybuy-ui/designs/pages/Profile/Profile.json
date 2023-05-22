@@ -1,0 +1,367 @@
+[
+    {
+        "id": "sd_hLsSiBwL5l8nKVYk",
+        "type": "tab",
+        "createdDate": "2023-04-28T10:29:35.154Z",
+        "label": "Profile",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "ProfileComponent"
+    },
+    {
+        "id": "sd_jZ3OpMvU6kiDwiVE",
+        "type": "OnInit",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_jZ3OpMvU6kiDwiVE",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_6rNqYDFFjlNuAhG3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProfileComponent"
+    },
+    {
+        "id": "sd_3BHkjd7D1OEblJl1",
+        "type": "PageVariables",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_3BHkjd7D1OEblJl1",
+        "category": "Function",
+        "x": 245,
+        "y": 40,
+        "wires": [
+            [
+                "sd_uQwjFC6hVJHOPmkv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_uQwjFC6hVJHOPmkv",
+        "type": "Script",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "profile items",
+        "script": "bh.local.profile=['Personal Details','Settings','Contact','Help &FAQs','Sign out']",
+        "functionName": "profileItems",
+        "category": "Function",
+        "x": 425,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6rNqYDFFjlNuAhG3",
+        "type": "PageServiceVariables",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "userData",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "userData"
+                }
+            }
+        ],
+        "functionName": "sd_6rNqYDFFjlNuAhG3",
+        "service": {
+            "type": "tab",
+            "id": "sd_cmZCN81jlvs8Ep2o",
+            "disabled": false,
+            "info": "",
+            "label": "getuserData",
+            "createdDate": "2023-05-03T15:42:17.080Z",
+            "functionSeq": 0,
+            "tabType": "client",
+            "_def": {
+                "defaults": {
+                    "label": {
+                        "value": ""
+                    },
+                    "disabled": {
+                        "value": false
+                    },
+                    "info": {
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "serviceImportPath": "app/sd-services/getuserData",
+        "category": "Function",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "sd_3BHkjd7D1OEblJl1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ywsg8F2p8YSdfrjJ",
+        "type": "PageStart",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "logout",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "logout",
+        "category": "General",
+        "x": 105,
+        "y": 240,
+        "wires": [
+            [
+                "sd_pRMPzfjO5NcWqqIG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProfileComponent"
+    },
+    {
+        "id": "sd_VDbXXUV3Pnf3xamq",
+        "type": "HttpRequest",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_VDbXXUV3Pnf3xamq",
+        "category": "HTTP",
+        "x": 425,
+        "y": 240,
+        "wires": [
+            [
+                "sd_9rpWp5qIfluyeX8x"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_I36PRPeuFtNglPsm",
+        "type": "Navigation",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/login",
+        "functionName": "sd_I36PRPeuFtNglPsm",
+        "category": "Navigation",
+        "x": 645,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ykpeHW8VfJfmCM3r",
+        "type": "Catch",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_VDbXXUV3Pnf3xamq"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_ykpeHW8VfJfmCM3r",
+        "category": "General",
+        "x": 240,
+        "y": 380,
+        "wires": [
+            [
+                "sd_PUTU5FN77oTPMcXq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProfileComponent"
+    },
+    {
+        "id": "sd_PUTU5FN77oTPMcXq",
+        "type": "Script",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.error)",
+        "functionName": "sd_PUTU5FN77oTPMcXq",
+        "category": "Function",
+        "x": 400,
+        "y": 380,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lQ4xqcE9PiRAGJew",
+        "type": "Script",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.url = `${bh.local.backendUrl}/employee/logout`",
+        "functionName": "sd_lQ4xqcE9PiRAGJew",
+        "category": "Function",
+        "x": 325,
+        "y": 240,
+        "wires": [
+            [
+                "sd_VDbXXUV3Pnf3xamq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_pRMPzfjO5NcWqqIG",
+        "type": "Environment",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "backendUrl"
+                },
+                "envProperty": "backendUrl"
+            }
+        ],
+        "functionName": "sd_pRMPzfjO5NcWqqIG",
+        "category": "General",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "sd_lQ4xqcE9PiRAGJew"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_9rpWp5qIfluyeX8x",
+        "type": "Storage",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "removeItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "employeeData"
+        },
+        "value": {},
+        "resultMapping": {},
+        "functionName": "sd_9rpWp5qIfluyeX8x",
+        "category": "Storage",
+        "x": 525,
+        "y": 240,
+        "wires": [
+            [
+                "sd_I36PRPeuFtNglPsm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    }
+]

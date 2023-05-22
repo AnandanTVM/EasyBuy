@@ -1,0 +1,456 @@
+[
+    {
+        "id": "sd_yHq7n4h5khv1JbdZ",
+        "type": "tab",
+        "createdDate": "2023-04-28T10:30:03.160Z",
+        "label": "CustomerList",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "CustomerListComponent"
+    },
+    {
+        "id": "sd_39NrMEvzsFL0i3EB",
+        "type": "OnInit",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_39NrMEvzsFL0i3EB",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_RhgNBPEPRAOgxrtV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CustomerListComponent"
+    },
+    {
+        "id": "sd_8NOXt2BLdzfCzBKj",
+        "type": "PageVariables",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_8NOXt2BLdzfCzBKj",
+        "category": "Function",
+        "x": 585,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Vbo8JBBxy3ap2Jea",
+        "type": "HttpRequest",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_Vbo8JBBxy3ap2Jea",
+        "category": "HTTP",
+        "x": 425,
+        "y": 40,
+        "wires": [
+            [
+                "sd_xqwYQv97OZxgX007"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_RhgNBPEPRAOgxrtV",
+        "type": "Environment",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "backendUrl"
+                },
+                "envProperty": "backendUrl"
+            }
+        ],
+        "functionName": "sd_RhgNBPEPRAOgxrtV",
+        "category": "General",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "sd_sgwAlQZPEyN6fcrv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hbQdxVpROxWFNQ1u",
+        "type": "Script",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.employeeData.employeeid)\nbh.local.url=`${bh.local?.backendUrl}/customer-list/${bh.local.employeeData.employeeid}`\n",
+        "functionName": "sd_hbQdxVpROxWFNQ1u",
+        "category": "Function",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            [
+                "sd_Vbo8JBBxy3ap2Jea"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_sgwAlQZPEyN6fcrv",
+        "type": "Storage",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "employeeData"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh.local",
+            "value": "employeeData"
+        },
+        "functionName": "sd_sgwAlQZPEyN6fcrv",
+        "category": "Storage",
+        "x": 225,
+        "y": 40,
+        "wires": [
+            [
+                "sd_hbQdxVpROxWFNQ1u"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_xqwYQv97OZxgX007",
+        "type": "Script",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.result,\"result\")\n\n// data:image/jpeg;base64,${bh.local.response.result.image.data}`\n\n\n\npage.users=bh.local?.result?.map(user=>{\n  // console.log(user.payment?.payments[0]?.status,\"status\")\n    user.productDetails.image=`data:image/jpeg;base64,${user?.productDetails?.image[0]?.buffer}`\n    user.totalAmount=user?.totalAmount?.toFixed(2)\n if(user.payment?.payments[0]?.status==\"captured\"){\n   user.color='green'\n }\n else if(user.payment?.payments[0]?.status==\"failure\"){\n   user.color='red'\n }\n else{\n   user.color='orange'\n }\nconst timestamp = new Date(parseInt(user._id.substring(0, 8), 16) * 1000);\nconst hours = timestamp.getHours();\nconst minutes = timestamp.getMinutes();\nlet formattedHours = hours % 12;\nif (formattedHours === 0) {\n  formattedHours = 12;\n}\nconst ampm = hours >= 12 ? 'PM' : 'AM';\nconst timeString = `${formattedHours}:${minutes < 10 ? '0' : ''}${minutes} ${ampm}`;\n// console.log(timeString);\n    user.time = timeString\n    return user;\n}).reverse();\nconsole.log(page.users)\n",
+        "functionName": "sd_xqwYQv97OZxgX007",
+        "category": "Function",
+        "x": 505,
+        "y": 40,
+        "wires": [
+            [
+                "sd_8NOXt2BLdzfCzBKj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_UQjh7TWH8eOh40Lg",
+        "type": "Catch",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_Vbo8JBBxy3ap2Jea"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_UQjh7TWH8eOh40Lg",
+        "category": "General",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "sd_sabQEuuHPmj9gLfw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CustomerListComponent"
+    },
+    {
+        "id": "sd_sabQEuuHPmj9gLfw",
+        "type": "Script",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.error,\"error\")",
+        "functionName": "sd_sabQEuuHPmj9gLfw",
+        "category": "Function",
+        "x": 380,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6m24YOPttcGRENOb",
+        "type": "PageStart",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "gotoInvoice",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "Id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "gotoInvoice",
+        "category": "General",
+        "x": 205,
+        "y": 460,
+        "wires": [
+            [
+                "sd_nXtjso9Hj9EQqCin"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CustomerListComponent"
+    },
+    {
+        "id": "sd_FCJhsqv5Xu6DTOLD",
+        "type": "Navigation",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/ui/invoice",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_FCJhsqv5Xu6DTOLD",
+        "category": "Navigation",
+        "x": 845,
+        "y": 340,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_oOdRrfUJa3HlMZtE",
+        "type": "Storage",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "purchaseId"
+        },
+        "value": {
+            "type": "bh.input",
+            "value": "Id"
+        },
+        "resultMapping": {},
+        "functionName": "sd_oOdRrfUJa3HlMZtE",
+        "category": "Storage",
+        "x": 625,
+        "y": 340,
+        "wires": [
+            [
+                "sd_FCJhsqv5Xu6DTOLD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_nXtjso9Hj9EQqCin",
+        "type": "Script",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.local.isInvoice=false;\npage.users.some((product)=>{\n    if(product._id==bh.input.Id){\n        if(product.color=='green'){\n           return bh.local.isInvoice=true;\n        }\n    }\n    // console.log(product.color,product._id,\"prdouct\")\n})",
+        "functionName": "sd_nXtjso9Hj9EQqCin",
+        "category": "Function",
+        "x": 305,
+        "y": 460,
+        "wires": [
+            [
+                "sd_B7okmLyBeZ7vP4f8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_B7okmLyBeZ7vP4f8",
+        "type": "PageSwitch",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "isInvoice",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.isInvoice",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_B7okmLyBeZ7vP4f8",
+        "category": "Function",
+        "x": 485,
+        "y": 460,
+        "wires": [
+            [
+                "sd_oOdRrfUJa3HlMZtE"
+            ],
+            [
+                "sd_7kZaeO75AIhl8Wpm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_7kZaeO75AIhl8Wpm",
+        "type": "SnackBar",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "No invoice available"
+        },
+        "action": {
+            "type": "str",
+            "value": ""
+        },
+        "duration": {
+            "type": "num",
+            "value": ""
+        },
+        "horizontalPosition": "center",
+        "verticalPosition": "bottom",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_7kZaeO75AIhl8Wpm",
+        "category": "General",
+        "x": 700,
+        "y": 520,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    }
+]

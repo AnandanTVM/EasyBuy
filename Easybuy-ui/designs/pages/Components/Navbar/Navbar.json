@@ -1,0 +1,13 @@
+[
+    {
+        "id": "sd_3P2cK0EohtqlB3gG",
+        "type": "tab",
+        "createdDate": "2023-04-28T10:13:13.467Z",
+        "label": "Navbar",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "NavbarComponent"
+    }
+]

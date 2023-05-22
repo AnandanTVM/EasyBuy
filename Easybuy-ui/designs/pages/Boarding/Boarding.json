@@ -1,0 +1,100 @@
+[
+    {
+        "id": "sd_DMrNu6GH7tsA8TDg",
+        "type": "tab",
+        "createdDate": "2023-04-28T10:27:48.389Z",
+        "label": "Boarding",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "BoardingComponent"
+    },
+    {
+        "id": "sd_8ZcIT7lH9aG55vvF",
+        "type": "OnInit",
+        "z": "sd_DMrNu6GH7tsA8TDg",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_8ZcIT7lH9aG55vvF",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_uI6zQmxtCl5h1YW5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "BoardingComponent"
+    },
+    {
+        "id": "sd_uI6zQmxtCl5h1YW5",
+        "type": "PageVariables",
+        "z": "sd_DMrNu6GH7tsA8TDg",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_uI6zQmxtCl5h1YW5",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "BoardingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_A68ZVgO4VkIcVDVe",
+        "type": "PageStart",
+        "z": "sd_DMrNu6GH7tsA8TDg",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "gotoLogin",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "gotoLogin",
+        "category": "General",
+        "x": 45,
+        "y": 140,
+        "wires": [
+            [
+                "sd_ZxwBA3l0IbiNjR71"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "BoardingComponent"
+    },
+    {
+        "id": "sd_ZxwBA3l0IbiNjR71",
+        "type": "Navigation",
+        "z": "sd_DMrNu6GH7tsA8TDg",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/login",
+        "functionName": "sd_ZxwBA3l0IbiNjR71",
+        "category": "Navigation",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "BoardingComponent",
+        "generated": true
+    }
+]

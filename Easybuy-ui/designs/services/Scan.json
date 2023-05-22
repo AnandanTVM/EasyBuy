@@ -1,0 +1,259 @@
+[
+    {
+        "id": "sd_la6KIUXsIGgMIJgr",
+        "type": "tab",
+        "createdDate": "2023-05-01T17:52:38.714Z",
+        "label": "Scan",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "Scan",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_FjImFQsv1VcX66QF",
+        "type": "Start",
+        "z": "sd_la6KIUXsIGgMIJgr",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "scan",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "scan",
+        "category": "General",
+        "x": 85,
+        "y": 80,
+        "wires": [
+            [
+                "sd_DYZpjbScaIqQQbO3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Scan"
+    },
+    {
+        "id": "sd_CcjNHJSfItAkFCDe",
+        "type": "UseDependency",
+        "z": "sd_la6KIUXsIGgMIJgr",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "BarcodeReader",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "BarcodeReader"
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "BarcodeScanner",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "BarcodeScanner"
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "dynamsoft-javascript-barcode",
+        "serviceDesignerType": "client",
+        "functionName": "sd_CcjNHJSfItAkFCDe",
+        "category": "Function",
+        "x": 425,
+        "y": 80,
+        "wires": [
+            [
+                "sd_1w7xoStxvH4AAQzC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Scan",
+        "generated": true
+    },
+    {
+        "id": "sd_1w7xoStxvH4AAQzC",
+        "type": "Environment",
+        "z": "sd_la6KIUXsIGgMIJgr",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "BARCODE_READER"
+                },
+                "envProperty": "BARCODE_READER"
+            }
+        ],
+        "functionName": "sd_1w7xoStxvH4AAQzC",
+        "category": "General",
+        "x": 525,
+        "y": 80,
+        "wires": [
+            [
+                "sd_LziYPpVhliX5kTWA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Scan",
+        "generated": true
+    },
+    {
+        "id": "sd_LziYPpVhliX5kTWA",
+        "type": "Script",
+        "z": "sd_la6KIUXsIGgMIJgr",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// console.log(bh.local.BARCODE_READER,\"BARCODE_READER\")\n// console.log(bh.local.BarcodeReader,\"BarcodeReader\")\n// console.log(bh.local.BarcodeScanner,\"BarcodeScanner\")\nBarcodeReader.license = bh.local.BARCODE_READER;\nBarcodeReader.engineResourcePath = \"https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode/dist/\";\n\nbh.local.scanner = await bh.local.BarcodeScanner.createInstance();\n\nlet scanSettings = await bh.local.scanner.getScanSettings();\nscanSettings.whenToPlaySoundforSuccessfulRead = \"unique\";\nawait bh.local.scanner.updateScanSettings(scanSettings);\n\nbh.local.scanner.setVideoFit('cover');\n// let settings = await bh.local.scanner.getRuntimeSettings()\n//                 settings.region = {\n//                     regionLeft: 20,\n//                     regionTop: 20,\n//                     regionRight: 80,\n//                     regionBottom: 40,\n//                     regionMeasuredByPercentage: 1\n//                 };\n// await bh.local.scanner.updateRuntimeSettings(settings);\n",
+        "functionName": "sd_LziYPpVhliX5kTWA",
+        "category": "Function",
+        "x": 625,
+        "y": 80,
+        "wires": [
+            [
+                "sd_dM2ee0yvoqs9rbKm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Scan",
+        "generated": true
+    },
+    {
+        "id": "sd_dM2ee0yvoqs9rbKm",
+        "type": "ServiceVariables",
+        "z": "sd_la6KIUXsIGgMIJgr",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "scanner",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "scanner"
+                }
+            }
+        ],
+        "functionName": "sd_dM2ee0yvoqs9rbKm",
+        "category": "Function",
+        "x": 725,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Scan",
+        "generated": true
+    },
+    {
+        "id": "sd_DYZpjbScaIqQQbO3",
+        "type": "ServiceVariables",
+        "z": "sd_la6KIUXsIGgMIJgr",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "scanner",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "scanner"
+                }
+            }
+        ],
+        "functionName": "sd_DYZpjbScaIqQQbO3",
+        "category": "Function",
+        "x": 185,
+        "y": 80,
+        "wires": [
+            [
+                "sd_7XMH1JphxvFbnce4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Scan",
+        "generated": true
+    },
+    {
+        "id": "sd_dWMrONOj1ewa62lg",
+        "type": "Script",
+        "z": "sd_la6KIUXsIGgMIJgr",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"is service variable scanner \",bh.local.scanner)\nbh.local.isContextDestroyed = await bh.local.scanner?.isContextDestroyed()\n\nconsole.log(bh.local.isContextDestroyed,\"bh.local.isContextDestroyed\")",
+        "functionName": "sd_dWMrONOj1ewa62lg",
+        "category": "Function",
+        "x": 145,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Scan"
+    },
+    {
+        "id": "sd_7XMH1JphxvFbnce4",
+        "type": "Switch",
+        "z": "sd_la6KIUXsIGgMIJgr",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "scanner",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.scanner",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_7XMH1JphxvFbnce4",
+        "category": "Function",
+        "x": 300,
+        "y": 80,
+        "wires": [
+            [],
+            [
+                "sd_CcjNHJSfItAkFCDe"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Scan",
+        "generated": true
+    }
+]

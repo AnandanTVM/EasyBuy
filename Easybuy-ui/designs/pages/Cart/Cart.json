@@ -1,0 +1,1067 @@
+[
+    {
+        "id": "sd_9ZjPtBKfbO30PeGO",
+        "type": "tab",
+        "createdDate": "2023-04-28T10:30:23.658Z",
+        "label": "Cart",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "CartComponent"
+    },
+    {
+        "id": "sd_fMJI52IasnqLbnVf",
+        "type": "OnInit",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [
+            {
+                "key": "coupon",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "total",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "discount",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "grandTotal",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "couponValue",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "verify",
+                "defaultValue": {
+                    "type": "str",
+                    "value": "none"
+                }
+            }
+        ],
+        "functionName": "sd_fMJI52IasnqLbnVf",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_tGcfL9mhDSEccqFZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CartComponent"
+    },
+    {
+        "id": "sd_Pcqv1qnHv5S2I53g",
+        "type": "PageStart",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "changeCount",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "event",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "changeCount",
+        "category": "General",
+        "x": 65,
+        "y": 240,
+        "wires": [
+            [
+                "sd_yJ3nbOf87MBsmlcg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CartComponent"
+    },
+    {
+        "id": "sd_SL9A5DFrickjDU60",
+        "type": "Script",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.remove=false;\nif(bh.local.carts){\n   bh.local.carts = bh.local.carts.map(product=>{\n        if(product.productId == bh.input.event.productId){\n           if(bh.input.event.operation==\"+\"){\n               product.count = product.count + 1;\n           }else{\n               if(product.count-1){\n               product.count = product.count - 1;\n               }\n               else{\n                   bh.local.remove=true;\n               }\n           }\n        }\n        return product;\n   })\n}\n\nconsole.log(bh.input.event)",
+        "functionName": "sd_SL9A5DFrickjDU60",
+        "category": "Function",
+        "x": 505,
+        "y": 260,
+        "wires": [
+            [
+                "sd_PQCHkN0EMhytq4pj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_tGcfL9mhDSEccqFZ",
+        "type": "Storage",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "cartItems"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "carts"
+        },
+        "functionName": "sd_tGcfL9mhDSEccqFZ",
+        "category": "Storage",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            [
+                "sd_sKnaNVIT8cCEUWkC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yJ3nbOf87MBsmlcg",
+        "type": "Storage",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "cartItems"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh.local",
+            "value": "carts"
+        },
+        "functionName": "sd_yJ3nbOf87MBsmlcg",
+        "category": "Storage",
+        "x": 245,
+        "y": 220,
+        "wires": [
+            [
+                "sd_SL9A5DFrickjDU60"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_oliIWNNl7IxMw8GJ",
+        "type": "Storage",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "cartItems"
+        },
+        "value": {
+            "type": "bh.local",
+            "value": "carts"
+        },
+        "resultMapping": {},
+        "functionName": "sd_oliIWNNl7IxMw8GJ",
+        "category": "Storage",
+        "x": 825,
+        "y": 260,
+        "wires": [
+            [
+                "sd_tGcfL9mhDSEccqFZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_PQCHkN0EMhytq4pj",
+        "type": "PageSwitch",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "remove",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.remove",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_PQCHkN0EMhytq4pj",
+        "category": "Function",
+        "x": 645,
+        "y": 260,
+        "wires": [
+            [
+                "sd_uQblh2eJjXujapgN"
+            ],
+            [
+                "sd_oliIWNNl7IxMw8GJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_uQblh2eJjXujapgN",
+        "type": "Script",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n\n  bh.local.carts =bh.local.carts.filter(product=>{\n        if(product.productId !=bh.input.event.productId){\n            return true\n        }\n   })\n",
+        "functionName": "sd_uQblh2eJjXujapgN",
+        "category": "Function",
+        "x": 780,
+        "y": 120,
+        "wires": [
+            [
+                "sd_oliIWNNl7IxMw8GJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ZcOXUOIqFXBT8atb",
+        "type": "PageStart",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "sendLink",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sendLink",
+        "category": "General",
+        "x": 45,
+        "y": 920,
+        "wires": [
+            [
+                "sd_yYE5w35IzD6ZwHMq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CartComponent"
+    },
+    {
+        "id": "sd_yYE5w35IzD6ZwHMq",
+        "type": "Storage",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "cartItems"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh.local",
+            "value": "carts"
+        },
+        "functionName": "sd_yYE5w35IzD6ZwHMq",
+        "category": "Storage",
+        "x": 233.88888549804688,
+        "y": 930.8888854980469,
+        "wires": [
+            [
+                "sd_5bIx0cZ5DVZGBPLj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_B55fi9rCcStvBlym",
+        "type": "Script",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nconsole.log(bh.local.carts)\nbh.local.carts=bh.local.carts.map(cartItem=>{\n    return {\n       \"productid\": cartItem.productId,\n        \"count\":cartItem.count\n    }\n})\nconsole.log(bh.local.carts)\nconsole.log(bh.local.employeeData)\n\nbh.local.body={\n    employeeId:bh.local.employeeData.employeeid,\n    userPhoneNumber:bh.local.userPhoneNumber,\n    product:bh.local.carts,\n    couponcode:bh.local.coupon?.couponcode,\n    \n}\n\nbh.local.url = `${bh.local.backendUrl}/place-order`\nconsole.log(bh.local.body)\n\ndocument.getElementById('cart-container').style.display='none'\ndocument.getElementById('loading').style.display='flex'\n\n",
+        "functionName": "sd_B55fi9rCcStvBlym",
+        "category": "Function",
+        "x": 845,
+        "y": 920,
+        "wires": [
+            [
+                "sd_F6VH95gcjVloGbOm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_5bIx0cZ5DVZGBPLj",
+        "type": "Storage",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "employeeData"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh.local",
+            "value": "employeeData"
+        },
+        "functionName": "sd_5bIx0cZ5DVZGBPLj",
+        "category": "Storage",
+        "x": 350,
+        "y": 920,
+        "wires": [
+            [
+                "sd_fwrNotQk7SCyirGF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_fwrNotQk7SCyirGF",
+        "type": "Storage",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "userPhoneNumber"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh.local",
+            "value": "userPhoneNumber"
+        },
+        "functionName": "sd_fwrNotQk7SCyirGF",
+        "category": "Storage",
+        "x": 450,
+        "y": 920,
+        "wires": [
+            [
+                "sd_gqmfN2eLGzlVnj3C"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_DQG5Rg7srYLlHe6G",
+        "type": "PageStart",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "applyCoupon",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "applyCoupon",
+        "category": "General",
+        "x": 65,
+        "y": 540,
+        "wires": [
+            [
+                "sd_NY5Tt0S9dYll09dn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CartComponent"
+    },
+    {
+        "id": "sd_drTz7IzQuJ03elOD",
+        "type": "Script",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n\nbh.local.url=`${bh.local.backendUrl}/get-coupon/${page.couponValue}`\n\nconsole.log(bh.local.url,\"url\")\n\n",
+        "functionName": "sd_drTz7IzQuJ03elOD",
+        "category": "Function",
+        "x": 605,
+        "y": 600,
+        "wires": [
+            [
+                "sd_8wTdG82wHqwthKFW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_I3TJSnz1iMiHzGjG",
+        "type": "Environment",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "backendUrl"
+                },
+                "envProperty": "backendUrl"
+            }
+        ],
+        "functionName": "sd_I3TJSnz1iMiHzGjG",
+        "category": "General",
+        "x": 425,
+        "y": 580,
+        "wires": [
+            [
+                "sd_drTz7IzQuJ03elOD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8wTdG82wHqwthKFW",
+        "type": "HttpRequest",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_8wTdG82wHqwthKFW",
+        "category": "HTTP",
+        "x": 725,
+        "y": 600,
+        "wires": [
+            [
+                "sd_3uU4UeAGKnhBzj89"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3uU4UeAGKnhBzj89",
+        "type": "Script",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.result,\"result\")\n\npage.verify=\"block\"",
+        "functionName": "sd_3uU4UeAGKnhBzj89",
+        "category": "Function",
+        "x": 865,
+        "y": 600,
+        "wires": [
+            [
+                "sd_GRjYUxtyjm0gaywq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_PpdEotEDavykbNoS",
+        "type": "Catch",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_8wTdG82wHqwthKFW"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_PpdEotEDavykbNoS",
+        "category": "General",
+        "x": 700,
+        "y": 780,
+        "wires": [
+            [
+                "sd_muS3dsU0dZmv2Crt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CartComponent"
+    },
+    {
+        "id": "sd_muS3dsU0dZmv2Crt",
+        "type": "SnackBar",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "bh.error.error.response"
+        },
+        "action": {
+            "type": "str",
+            "value": "ok"
+        },
+        "duration": {
+            "type": "num",
+            "value": ""
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_muS3dsU0dZmv2Crt",
+        "category": "General",
+        "x": 905,
+        "y": 780,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_GRjYUxtyjm0gaywq",
+        "type": "Storage",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "coupon"
+        },
+        "value": {
+            "type": "bh.local",
+            "value": "result.response"
+        },
+        "resultMapping": {},
+        "functionName": "sd_GRjYUxtyjm0gaywq",
+        "category": "Storage",
+        "x": 1025,
+        "y": 600,
+        "wires": [
+            [
+                "sd_tGcfL9mhDSEccqFZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8rWlThcTPSk7AezS",
+        "type": "Script",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.total=page?.carts?.reduce((acc,cartItem)=>{\n    acc=acc+(cartItem.count*cartItem.rate)\n    return acc;\n},0)\n\npage.total=page.total?.toFixed(2)\n\n\nif(page.coupon){\n    page.grandTotal= page?.total-(page.total*(page.coupon?.percentage/100))\n}else\n\n{\n    page.coupon={\n        percentage:0\n    }\n    page.grandTotal= page?.total;\n}\n\n\n\n\n// page.grandTotal=page.grandTotal.toFixed(2)\n",
+        "functionName": "sd_8rWlThcTPSk7AezS",
+        "category": "Function",
+        "x": 945,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_sKnaNVIT8cCEUWkC",
+        "type": "Storage",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "coupon"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "coupon"
+        },
+        "functionName": "sd_sKnaNVIT8cCEUWkC",
+        "category": "Storage",
+        "x": 525,
+        "y": 40,
+        "wires": [
+            [
+                "sd_8rWlThcTPSk7AezS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_gqmfN2eLGzlVnj3C",
+        "type": "Storage",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "coupon"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh.local",
+            "value": "coupon"
+        },
+        "functionName": "sd_gqmfN2eLGzlVnj3C",
+        "category": "Storage",
+        "x": 590,
+        "y": 920,
+        "wires": [
+            [
+                "sd_Wio5wsYGWvmXEUpB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_NY5Tt0S9dYll09dn",
+        "type": "PageSwitch",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "couponValue",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.couponValue",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "\"undefined\"",
+                "vt": "\"undefined\"",
+                "gv": "\"undefined\""
+            },
+            {
+                "t": "else"
+            },
+            {
+                "t": "empty"
+            },
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "functionName": "sd_NY5Tt0S9dYll09dn",
+        "category": "Function",
+        "x": 240,
+        "y": 580,
+        "wires": [
+            [],
+            [
+                "sd_I3TJSnz1iMiHzGjG"
+            ],
+            [],
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_F6VH95gcjVloGbOm",
+        "type": "HttpRequest",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "placeOrderReq",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.local.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "placeOrderReq",
+        "category": "HTTP",
+        "x": 965,
+        "y": 920,
+        "wires": [
+            [
+                "sd_lzLoT21CqrPmNnDa"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Wio5wsYGWvmXEUpB",
+        "type": "Environment",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "backendUrl"
+                },
+                "envProperty": "backendUrl"
+            }
+        ],
+        "functionName": "sd_Wio5wsYGWvmXEUpB",
+        "category": "General",
+        "x": 685,
+        "y": 920,
+        "wires": [
+            [
+                "sd_B55fi9rCcStvBlym"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_1v4343ZRV3LVMejg",
+        "type": "Catch",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_F6VH95gcjVloGbOm"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_1v4343ZRV3LVMejg",
+        "category": "General",
+        "x": 520,
+        "y": 1080,
+        "wires": [
+            [
+                "sd_OE6sFWz9PGLCVMet"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CartComponent"
+    },
+    {
+        "id": "sd_OE6sFWz9PGLCVMet",
+        "type": "Script",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.error)\n\ndocument.getElementById('cart-container').style.display='block'\ndocument.getElementById('loading').style.display='none'\n",
+        "functionName": "sd_OE6sFWz9PGLCVMet",
+        "category": "Function",
+        "x": 720,
+        "y": 1080,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lzLoT21CqrPmNnDa",
+        "type": "Storage",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "removeItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "cartItems"
+        },
+        "value": {},
+        "resultMapping": {},
+        "functionName": "sd_lzLoT21CqrPmNnDa",
+        "category": "Storage",
+        "x": 1065,
+        "y": 920,
+        "wires": [
+            [
+                "sd_lHmAuz5oVpjPEUN0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_QT776AQa48jorxmO",
+        "type": "Storage",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "removeItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "coupon"
+        },
+        "value": {},
+        "resultMapping": {},
+        "functionName": "sd_QT776AQa48jorxmO",
+        "category": "Storage",
+        "x": 1290,
+        "y": 920,
+        "wires": [
+            [
+                "sd_LFzuFR9StdsciGnH"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lHmAuz5oVpjPEUN0",
+        "type": "Storage",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "removeItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "userPhoneNumber"
+        },
+        "value": {},
+        "resultMapping": {},
+        "functionName": "sd_lHmAuz5oVpjPEUN0",
+        "category": "Storage",
+        "x": 1170,
+        "y": 920,
+        "wires": [
+            [
+                "sd_QT776AQa48jorxmO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_LFzuFR9StdsciGnH",
+        "type": "Script",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "document.getElementById('loading').style.display='none'\ndocument.getElementById('success').style.display='flex'\n\n",
+        "functionName": "sd_LFzuFR9StdsciGnH",
+        "category": "Function",
+        "x": 1385,
+        "y": 920,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    }
+]

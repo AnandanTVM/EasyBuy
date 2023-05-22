@@ -1,0 +1,74 @@
+{
+    "routes": [
+        {
+            "path": "ui",
+            "component": "PageLayoutComponent",
+            "children": [
+                {
+                    "path": "home",
+                    "component": "HomeComponent",
+                    "canActivate": {
+                        "edited": true,
+                        "value": ""
+                    }
+                },
+                {
+                    "path": "scan",
+                    "component": "ScanComponent",
+                    "canActivate": {
+                        "edited": false,
+                        "name": "phoneNumberExist"
+                    }
+                },
+                {
+                    "path": "cart",
+                    "component": "CartComponent"
+                },
+                {
+                    "path": "profile",
+                    "component": "ProfileComponent"
+                },
+                {
+                    "path": "customer-list",
+                    "component": "CustomerListComponent"
+                },
+                {
+                    "path": "invoice",
+                    "component": "invoiceComponent"
+                }
+            ],
+            "pathMatch": "",
+            "canActivate": {
+                "edited": false,
+                "name": "isEmployeeLoggedIn"
+            }
+        },
+        {
+            "path": "login",
+            "component": "LoginComponent",
+            "canActivate": {
+                "edited": false,
+                "name": "isEmployeeLoggedIn"
+            },
+            "redirectTo": "",
+            "canDeactivate": {
+                "edited": true,
+                "value": ""
+            }
+        },
+        {
+            "path": "boarding",
+            "component": "BoardingComponent"
+        },
+        {
+            "path": "''",
+            "redirectTo": "/boarding",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

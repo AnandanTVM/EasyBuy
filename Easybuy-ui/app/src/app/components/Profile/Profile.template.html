@@ -1,0 +1,22 @@
+<div class="profile-container">
+  <span class="profile-text">
+                Profile</span>
+  <section class="profile-section">
+    <div class="image-container">
+    </div><span class="profile-text">
+    {{page.userData?.name||&quot;N/A&quot;}}<span class="city">
+                Banglore</span></span>
+  </section>
+</div>
+<div class="profile-contaier">
+  <div fxLayout="row wrap" class="profile-options" fxLayoutAlign="none stretch" [fxShow]="true"><img imgSrc="/Web/Icons/details.svg"><span>
+                Personal details</span></div>
+  <div fxLayout="row wrap" class="profile-options" fxLayoutAlign="none stretch" [fxShow]="true"><img imgSrc="/Web/Icons/contact.svg"><span>
+                Contact</span></div>
+  <div fxLayout="row wrap" class="profile-options" fxLayoutAlign="none stretch" [fxShow]="true"><img imgSrc="/Web/Icons/info.svg"><span>
+                Help &amp; FAQs</span></div>
+  <div fxLayout="row wrap" class="profile-options" fxLayoutAlign="none stretch" [fxShow]="true"><img imgSrc="/Web/Icons/settings.svg"><span>
+                Settings</span></div>
+  <div fxLayout="row wrap" class="profile-options" fxLayoutAlign="none stretch" [fxShow]="true" (click)="logout()"><img imgSrc="/Web/Icons/logout.svg"><span>
+                Sign Out</span></div>
+</div>

@@ -1,0 +1,160 @@
+[
+    {
+        "id": "sd_Etn2u6aYfSl09Iue",
+        "type": "tab",
+        "createdDate": "2023-05-07T06:50:08.425Z",
+        "label": "phoneNumberExist",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "canActivate",
+        "generateNext": true,
+        "serviceName": "phoneNumberExist",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_izJdyUvskOcmZwdW",
+        "type": "CanActivate",
+        "z": "sd_Etn2u6aYfSl09Iue",
+        "viewType": "client",
+        "nodeType": "start",
+        "name": "guard in-routing",
+        "outputs": 1,
+        "localVariables": [
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "false"
+                },
+                "output": true
+            }
+        ],
+        "functionName": "canActivate",
+        "category": "Navigation",
+        "x": 125,
+        "y": 180,
+        "wires": [
+            [
+                "sd_hwlqHM0McwnoIPsF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "phoneNumberExist"
+    },
+    {
+        "id": "sd_hwlqHM0McwnoIPsF",
+        "type": "Storage",
+        "z": "sd_Etn2u6aYfSl09Iue",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "userPhoneNumber"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh.local",
+            "value": "userPhoneNumber"
+        },
+        "functionName": "sd_hwlqHM0McwnoIPsF",
+        "category": "Storage",
+        "x": 240,
+        "y": 180,
+        "wires": [
+            [
+                "sd_k7vFNOd1Lp23LgJn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "phoneNumberExist",
+        "generated": true
+    },
+    {
+        "id": "sd_k7vFNOd1Lp23LgJn",
+        "type": "Switch",
+        "z": "sd_Etn2u6aYfSl09Iue",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "userPhoneNumber",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.userPhoneNumber",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "\"number\"",
+                "vt": "\"number\"",
+                "gv": "\"number\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_k7vFNOd1Lp23LgJn",
+        "category": "Function",
+        "x": 345,
+        "y": 180,
+        "wires": [
+            [
+                "sd_xI0L1SFg0tyB9GDB"
+            ],
+            [
+                "sd_TQsoBNEfvwnPAwQX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "phoneNumberExist",
+        "generated": true
+    },
+    {
+        "id": "sd_xI0L1SFg0tyB9GDB",
+        "type": "Script",
+        "z": "sd_Etn2u6aYfSl09Iue",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.status = true",
+        "functionName": "sd_xI0L1SFg0tyB9GDB",
+        "category": "Function",
+        "x": 465,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "phoneNumberExist",
+        "generated": true
+    },
+    {
+        "id": "sd_TQsoBNEfvwnPAwQX",
+        "type": "Navigation",
+        "z": "sd_Etn2u6aYfSl09Iue",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/ui/home",
+        "functionName": "sd_TQsoBNEfvwnPAwQX",
+        "category": "Navigation",
+        "x": 465,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "phoneNumberExist",
+        "generated": true
+    }
+]

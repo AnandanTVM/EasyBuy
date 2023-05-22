@@ -1,0 +1,301 @@
+[
+    {
+        "id": "sd_jWzl2CWnPJ2JCXm6",
+        "type": "tab",
+        "createdDate": "2023-05-07T06:11:30.032Z",
+        "label": "isEmployeeLoggedIn",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "canActivate",
+        "generateNext": true,
+        "serviceName": "isEmployeeLoggedIn",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_xHaDbYW23nUtHFu3",
+        "type": "CanActivate",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "client",
+        "nodeType": "start",
+        "name": "guard in-routing",
+        "outputs": 1,
+        "localVariables": [
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "false"
+                },
+                "output": true
+            }
+        ],
+        "functionName": "canActivate",
+        "category": "Navigation",
+        "x": 45,
+        "y": 140,
+        "wires": [
+            [
+                "sd_1EIDCEWqqHGrORja"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "isEmployeeLoggedIn"
+    },
+    {
+        "id": "sd_1EIDCEWqqHGrORja",
+        "type": "Storage",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "employeeData"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh.local",
+            "value": "employeeData"
+        },
+        "functionName": "sd_1EIDCEWqqHGrORja",
+        "category": "Storage",
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "sd_enyDGI9iKrbpFJ2s"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_fODMtVlBN5Mr4ry2",
+        "type": "Switch",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "employeeData",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.employeeData",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_fODMtVlBN5Mr4ry2",
+        "category": "Function",
+        "x": 365,
+        "y": 140,
+        "wires": [
+            [
+                "sd_CelaTOm1mifB7Z0Q"
+            ],
+            [
+                "sd_ZanpjHFzqa0ObUXO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_ODm9JZC5je8aqp3J",
+        "type": "Script",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.status = true",
+        "functionName": "sd_ODm9JZC5je8aqp3J",
+        "category": "Function",
+        "x": 525,
+        "y": 340,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_qmXTsB4gk4UPpV5y",
+        "type": "Navigation",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/login",
+        "functionName": "sd_qmXTsB4gk4UPpV5y",
+        "category": "Navigation",
+        "x": 525,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_ZanpjHFzqa0ObUXO",
+        "type": "Switch",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "navigationRouteState.url",
+        "propertyType": "bh",
+        "propertyGv": "bh.navigationRouteState.url",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/login",
+                "vt": "str",
+                "gv": "\"/login\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_ZanpjHFzqa0ObUXO",
+        "category": "Function",
+        "x": 420,
+        "y": 280,
+        "wires": [
+            [
+                "sd_6XP5wJO5wn4Pb6L3"
+            ],
+            [
+                "sd_ODm9JZC5je8aqp3J"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_6XP5wJO5wn4Pb6L3",
+        "type": "Navigation",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/ui/home",
+        "functionName": "sd_6XP5wJO5wn4Pb6L3",
+        "category": "Navigation",
+        "x": 540,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_enyDGI9iKrbpFJ2s",
+        "type": "Script",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.employeeData,\"employeeData\")",
+        "functionName": "sd_enyDGI9iKrbpFJ2s",
+        "category": "Function",
+        "x": 245,
+        "y": 140,
+        "wires": [
+            [
+                "sd_fODMtVlBN5Mr4ry2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_OZ3NY49obBYLmF85",
+        "type": "Script",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.status = true",
+        "functionName": "sd_OZ3NY49obBYLmF85",
+        "category": "Function",
+        "x": 545,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_CelaTOm1mifB7Z0Q",
+        "type": "Switch",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "navigationRouteState.url",
+        "propertyType": "bh",
+        "propertyGv": "bh.navigationRouteState.url",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/login",
+                "vt": "str",
+                "gv": "\"/login\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_CelaTOm1mifB7Z0Q",
+        "category": "Function",
+        "x": 445,
+        "y": 100,
+        "wires": [
+            [
+                "sd_OZ3NY49obBYLmF85"
+            ],
+            [
+                "sd_qmXTsB4gk4UPpV5y"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    }
+]

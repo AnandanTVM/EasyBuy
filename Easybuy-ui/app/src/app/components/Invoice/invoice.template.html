@@ -1,0 +1,59 @@
+<div style="padding-bottom:50px;" class="invoice-container">
+  <div>
+
+
+    <div style="width: 100%; max-width: 600px; margin: 0 auto; padding: 20px;">
+      <h1 style="text-align: center;">Gold Purchase Invoice</h1>
+      <hr style="border: none; border-top: 1px solid #000; margin: 20px 0;">
+
+      <div>
+        <h2>Invoice Details</h2>
+        <p><strong>Invoice Number:</strong> {{page.invoiceNumber}}</p>
+        <p><strong>Date:</strong> {{page.date}}</p>
+      </div>
+
+      <div>
+        <h2>Customer Details</h2>
+        <p><strong>Name:</strong> {{page.name}}</p>
+        <p><strong>Email:</strong> {{page.email}}</p>
+        <p><strong>Phone:</strong> {{page.data?.customerNumber}}</p>
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #000; padding: 8px;">Item</th>
+            <th style="border: 1px solid #000; padding: 8px;">Weight</th>
+            <th style="border: 1px solid #000; padding: 8px;">Quantity</th>
+            <th style="border: 1px solid #000; padding: 8px;">Unit Price</th>
+            <th style="border: 1px solid #000; padding: 8px;">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of page.data?.products">
+            <td style="border: 1px solid #000; padding: 8px;">{{product.productDetails?.name}}</td>
+            <td style="border: 1px solid #000; padding: 8px;">{{product.productDetails?.gram}}</td>
+            <td style="border: 1px solid #000; padding: 8px;">{{product.count}}</td>
+            <td style="border: 1px solid #000; padding: 8px;">{{product.price}}</td>
+            <td style="border: 1px solid #000; padding: 8px;">{{product.totalPrice}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" style="border: 1px solid #000; padding: 8px; text-align: right;"><strong>Total:</strong></td>
+            <td style="border: 1px solid #000; padding: 8px;"><strong>{{page.data?.totalAmount}}</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div style="margin-top: 20px; text-align: center;">
+        <p style="font-weight: bold;">Thank you for your purchase!</p>
+      </div>
+    </div>
+
+  </div>
+  <div fxLayout="column wrap" style="width:100%" fxLayoutAlign="start stretch" [fxShow]="true" id="invoiceOperations"><input placeholder="Name" [(ngModel)]="page.name" class="styled-input">
+    <input placeholder="Email" type="email" [(ngModel)]="page.email" class="styled-input">
+    <button mat-button style="margin:20px 0px;" class="styled-button" (click)="sendInvoice()">Send Invoice</button><button mat-button style="margin:0px 0px 20px 0px;background-color:&apos;green&apos;" class="styled-button" (click)="printInvoice()">Print Invoice</button>
+  </div>
+</div>

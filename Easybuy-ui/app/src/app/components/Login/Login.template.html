@@ -1,0 +1,22 @@
+<div fxLayout="column wrap" class="login-container" fxLayoutAlign="space-around center" [fxShow]="true">
+  <h1 class="app-title">
+    Jewellery</h1>
+  <div class="shadow-box login-form-container">
+    <form #loginForm="ngForm" (ngSubmit)="login($event)">
+      <div fxLayout="column wrap" style="height:100%" fxLayoutAlign="space-around center" [fxShow]="true">
+        <h2>
+          LOGIN</h2>
+        <p id="loginError" style="color:red;">
+        </p>
+        <mat-form-field style="display: block !important; margin:10px 0px !important;width: auto !important;" class="styled-input" [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.credentials.EmployeeId" name="EmployeeId" type="text" placeholder="Employee ID" [required]="true" #EmployeeID="ngModel">
+          <mat-error align="start" *ngIf="EmployeeID.errors?.required &amp;&amp; EmployeeID.touched &amp;&amp; EmployeeID.dirty">Employee id is required</mat-error>
+        </mat-form-field>
+        <mat-form-field style="display: block !important; margin:10px 0px !important;width: auto !important;" class="styled-input" [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.credentials.Password" name="Password" type="password" placeholder="Password" [required]="true" minlength="8" #Password="ngModel">
+          <mat-error align="end" *ngIf="Password.errors?.minlength &amp;&amp; Password.touched &amp;&amp; Password.dirty">password must be at least 8 character</mat-error><mat-error align="start" *ngIf="Password.errors?.required &amp;&amp; Password.touched &amp;&amp; Password.dirty">Password must be required</mat-error>
+        </mat-form-field><button mat-button class="forgotton-btn">Forgot Password?</button><button mat-button class="styled-button" [disabled]="loginForm.invalid" type="submit">NEXT</button>
+      </div>
+    </form>
+  </div>
+</div>

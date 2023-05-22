@@ -1,0 +1,586 @@
+[
+    {
+        "id": "sd_hILypVC9c1BrngGD",
+        "type": "tab",
+        "createdDate": "2023-04-30T15:38:58.366Z",
+        "label": "Product",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "ProductComponent"
+    },
+    {
+        "id": "sd_DZVhFFFTdM2Fw40e",
+        "type": "OnInit",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [
+            {
+                "key": "product",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            }
+        ],
+        "localVariables": [],
+        "outputVariables": [
+            {
+                "key": "cancelProduct",
+                "defaultValue": {
+                    "type": "any",
+                    "value": null
+                }
+            },
+            {
+                "key": "changeCount",
+                "defaultValue": {
+                    "type": "any",
+                    "value": null
+                }
+            }
+        ],
+        "pageVariables": [],
+        "functionName": "sd_DZVhFFFTdM2Fw40e",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 80,
+        "wires": [
+            [
+                "sd_mqjGan12odfyv6VY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProductComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_mqjGan12odfyv6VY",
+        "type": "PageVariables",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_mqjGan12odfyv6VY",
+        "category": "Function",
+        "x": 185,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ImRDb7yLMnf49hBE",
+        "type": "PageStart",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "removeProduct",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "productId",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "removeProduct",
+        "category": "General",
+        "x": 65,
+        "y": 180,
+        "wires": [
+            [
+                "sd_qd3hGLzszT4bPJZK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProductComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_qd3hGLzszT4bPJZK",
+        "type": "Output",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "eventName": "bh.pageOutput.cancelProduct",
+        "data": "bh.input.productId",
+        "functionName": "sd_qd3hGLzszT4bPJZK",
+        "category": "Function",
+        "x": 185,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "eventName": {
+                "type": "bh.pageOutput",
+                "value": "cancelProduct",
+                "constant": false
+            },
+            "data": {
+                "type": "bh.input",
+                "value": "productId",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_FeSgbjcogz1NPICz",
+        "type": "PageStart",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "changeProductCount",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "operation",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "productId",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "changeProductCount",
+        "category": "General",
+        "x": 65,
+        "y": 280,
+        "wires": [
+            [
+                "sd_zayazj7lYbejt51W"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProductComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_CaKMW7spAdQW572V",
+        "type": "Output",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "eventName": "bh.pageOutput.changeCount",
+        "data": "bh.local.operation",
+        "functionName": "sd_CaKMW7spAdQW572V",
+        "category": "Function",
+        "x": 305,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "eventName": {
+                "type": "bh.pageOutput",
+                "value": "changeCount",
+                "constant": false
+            },
+            "data": {
+                "type": "bh.local",
+                "value": "operation",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_zayazj7lYbejt51W",
+        "type": "Script",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.operation = {\n    \"operation\":bh.input.operation,\n    \"productId\":bh.input.productId\n}",
+        "functionName": "sd_zayazj7lYbejt51W",
+        "category": "Function",
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "sd_CaKMW7spAdQW572V"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_KxAG0YltYEsGROT2",
+        "type": "PageStart",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "addToCart",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "addToCart",
+        "category": "General",
+        "x": 65,
+        "y": 400,
+        "wires": [
+            [
+                "sd_87DM7vH3ufaL2oLl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProductComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_87DM7vH3ufaL2oLl",
+        "type": "Script",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.pageInput.product)\nconsole.log(bh)\n\nbh.local.product=bh.pageInput.product\n",
+        "functionName": "sd_87DM7vH3ufaL2oLl",
+        "category": "Function",
+        "x": 180,
+        "y": 400,
+        "wires": [
+            [
+                "sd_oegt35CunD4syGvm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_oegt35CunD4syGvm",
+        "type": "Storage",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "cartItems"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh.local",
+            "value": "cartItems"
+        },
+        "functionName": "sd_oegt35CunD4syGvm",
+        "category": "Storage",
+        "x": 345,
+        "y": 400,
+        "wires": [
+            [
+                "sd_iBNXHphdO23SKxKT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_iBNXHphdO23SKxKT",
+        "type": "PageSwitch",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "cartItems",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.cartItems",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_iBNXHphdO23SKxKT",
+        "category": "Function",
+        "x": 525,
+        "y": 400,
+        "wires": [
+            [
+                "sd_4pjTA4cDeNvqokwC"
+            ],
+            [
+                "sd_DCFtGgvTCYjGlvDM"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_VrW5k87vqbaVjWdL",
+        "type": "Storage",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "cartItems"
+        },
+        "value": {
+            "type": "bh.local",
+            "value": "product"
+        },
+        "resultMapping": {},
+        "functionName": "sd_VrW5k87vqbaVjWdL",
+        "category": "Storage",
+        "x": 705,
+        "y": 280,
+        "wires": [
+            [
+                "sd_Fp51eoQc7WG1aYhz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_4pjTA4cDeNvqokwC",
+        "type": "Script",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.product=[bh.local.product]",
+        "functionName": "sd_4pjTA4cDeNvqokwC",
+        "category": "Function",
+        "x": 620,
+        "y": 340,
+        "wires": [
+            [
+                "sd_VrW5k87vqbaVjWdL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WUjr35uDnFEUac0n",
+        "type": "Storage",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "cartItems"
+        },
+        "value": {
+            "type": "bh.local",
+            "value": "cartItems"
+        },
+        "resultMapping": {},
+        "functionName": "sd_WUjr35uDnFEUac0n",
+        "category": "Storage",
+        "x": 1065,
+        "y": 640,
+        "wires": [
+            [
+                "sd_Fp51eoQc7WG1aYhz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_cvdLjA11i7Gvdo4G",
+        "type": "Script",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.cartItems)\nbh.local.cartItems.push(bh.local.product)",
+        "functionName": "sd_cvdLjA11i7Gvdo4G",
+        "category": "Function",
+        "x": 980,
+        "y": 620,
+        "wires": [
+            [
+                "sd_WUjr35uDnFEUac0n"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Fp51eoQc7WG1aYhz",
+        "type": "PageCallService",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_hILypVC9c1BrngGD",
+            "type": "tab",
+            "createdDate": "2023-04-30T15:38:58.366Z",
+            "label": "Product",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_ImRDb7yLMnf49hBE",
+            "flowName": "removeProduct"
+        },
+        "inputVariables": [
+            {
+                "key": "productId",
+                "map": true,
+                "valueType": "bh",
+                "value": "pageInput.product.productId"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "removeProduct",
+        "inputParams": [
+            "bh.pageInput.product.productId"
+        ],
+        "accept_csd": false,
+        "functionName": "sd_Fp51eoQc7WG1aYhz",
+        "category": "General",
+        "x": 1240,
+        "y": 540,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generated": true,
+        "generateNext": false,
+        "serviceName": "ProductComponent"
+    },
+    {
+        "id": "sd_DCFtGgvTCYjGlvDM",
+        "type": "Script",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.cartItems\nbh.pageInput.product\n\nbh.local.exist=false;\nbh.local.cartItems.map(product=>{\n    if(product.productId==bh.pageInput.product.productId){\n        bh.local.exist=true;\n    }\n})",
+        "functionName": "sd_DCFtGgvTCYjGlvDM",
+        "category": "Function",
+        "x": 680,
+        "y": 480,
+        "wires": [
+            [
+                "sd_4O2LLLyPevHEfrAr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_4O2LLLyPevHEfrAr",
+        "type": "PageSwitch",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "exist",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.exist",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_4O2LLLyPevHEfrAr",
+        "category": "Function",
+        "x": 820,
+        "y": 540,
+        "wires": [
+            [
+                "sd_Fp51eoQc7WG1aYhz"
+            ],
+            [
+                "sd_cvdLjA11i7Gvdo4G"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    }
+]

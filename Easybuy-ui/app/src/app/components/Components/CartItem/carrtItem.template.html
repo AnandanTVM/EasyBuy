@@ -1,0 +1,24 @@
+<div fxLayout="row " style="padding:15px; background-color: white;" class="shadow-box cart-container-item" fxFlex="100" fxLayoutAlign="center center" [fxShow]="true"><img [src]="product?.imageUrl" style="height: 100%;object-fit: cover;margin-right: 10px;border-radius: 15px;width:100px;">
+  <div fxLayout="column wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true">
+    <h3>
+      {{product.productName}}
+    </h3>
+    <p style="line-height: 1.5;    font-size: 10px;     font-weight: 400;">
+      {{product.description}}
+    </p>
+    <div fxLayout="row wrap" style="margin-top:5px;" fxLayoutAlign="space-between stretch" [fxShow]="true"><span style="color:var(--main-color);font-size:17px;font-weight:700px;">
+                &#x20B9;{{product.rate}}</span><button mat-button class="product-add-button" *ngIf="page.show" (click)="addToCart()">+ Add </button></div>
+  </div>
+  <div fxLayout="column wrap" fxLayoutAlign="none none" [fxShow]="true" *ngIf="!page.show">
+    <div fxLayout="row " class="product-count-container" fxLayoutAlign="center center" [fxShow]="true"><button mat-button (click)="changeCartCount(&apos;-&apos;,product.productId)"><svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.808594 1H10.705" stroke="#979491" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+      <div>
+        {{product.count}}
+      </div><button mat-button (click)="changeCartCount(&apos;+&apos;,product.productId)"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.2802 1V11" stroke="#979491" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M1.33203 6.00003H11.2284" stroke="#979491" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+    </div>
+  </div><button mat-button style="margin-top: -5em;" class="close-button" *ngIf="page.show" (click)="removeProduct(product.productId)">X</button>
+</div>

@@ -1,0 +1,20 @@
+<div style="padding-bottom:120px;" class="list-container">
+  <span class="list-text">
+                Customer List</span>
+  <div *ngFor="let user of page.users" style="width:100;padding:10px;">
+    <div fxLayout="row wrap" style="height:100px;width:100%;padding:10px;" class="shadow-box" fxFlex="100" fxLayoutAlign="space-between center" [fxShow]="true" (click)="gotoInvoice(user._id)"><img [src]="user.productDetails.image" style="height:100%;border-radius:10px;">
+      <div>
+        <div style="font-weight: 600; font-size: 16px;">
+          {{user.customerNumber}}
+        </div>
+        <div style="font-weight: 400; font-size: 10px;">
+          Mode of paymetn: Phonepay</div>
+        <div style="font-weight: 400; font-size: 10px;">
+          Time: {{user.time}}</div>
+      </div>
+      <div style="color:{{user.color}}">
+        {{user.totalAmount}}
+      </div>
+    </div>
+  </div>
+</div>

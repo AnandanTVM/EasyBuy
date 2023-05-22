@@ -1,0 +1,33 @@
+<div class="home-container">
+  <div fxLayout="column wrap" style="padding:10px;" class="dashboard" fxLayoutAlign="start stretch" [fxShow]="true"><span routerLink="/ui/cart">
+                <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 3L1 7.4V22.8C1 24.015 2.04467 25 3.33333 25H19.6667C20.9553 25 22 24.015 22 22.8V7.4L18.5 3H4.5Z" stroke="#DD9B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 7.39998H22" stroke="#DD9B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.1668 11.8C16.1668 14.23 14.0775 16.2 11.5002 16.2C8.92283 16.2 6.8335 14.23 6.8335 11.8" stroke="#DD9B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="21" cy="4" r="4" fill="#DF1616"/>
+</svg>
+</span>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><span style="color:var(--main-color);">
+                Welcome,</span><span style="font-size:24px;font-weight:600;">
+      {{page.userData?.name || &quot;N/A&quot;}}</span></div>
+    <div fxLayout="row wrap" fxLayoutGap="2" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div fxLayout="row wrap" class="statistic shadow-box" fxFlex="{{statistic.fxFlex}}" fxLayoutAlign="space-around center" [fxShow]="true" *ngFor="let statistic of page.statistics"><img imgSrc="{{statistic.imageUrl}}">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let detail of statistic.details"><span class="statistic-title">
+          {{detail.tittle}}</span><span class="statistic-value">
+          {{detail.value}}</span></div>
+      </div>
+    </div>
+  </div><mat-card class="card">
+    <img mat-card-image imgSrc="/Web/Resource/home1.jfif">
+
+    <mat-card-content class="card-content">
+      <h1 class="app-title">
+        Jewellery</h1>
+    </mat-card-content>
+
+    <mat-card-actions style="margin:10px;"><input placeholder="Customer Number" type="number" [(ngModel)]="page.phoneNumber" style="margin:10px 0px  10px 0px !important;" class="styled-input">
+      <p id="phoneNumberError" style="margin-bottom:10px;" class="error-text">
+      </p><button mat-button style="margin:0px;" class="styled-button" (click)="gotoScan()">NEXT</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

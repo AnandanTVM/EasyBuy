@@ -1,0 +1,140 @@
+[
+    {
+        "id": "sd_eY4JBxBmMQGPRTvM",
+        "type": "tab",
+        "createdDate": "2023-04-30T11:39:04.357Z",
+        "label": "SubNavbar",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "SubNavbarComponent"
+    },
+    {
+        "id": "sd_8sAuVMWz8jl2QT13",
+        "type": "OnInit",
+        "z": "sd_eY4JBxBmMQGPRTvM",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [
+            {
+                "key": "subNavTitle",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "IconUrl",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "textColor",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "goto",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "backgroundColor",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            }
+        ],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_8sAuVMWz8jl2QT13",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 40,
+        "wires": [
+            [
+                "sd_RzS97LYGg8cM2Usj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "SubNavbarComponent"
+    },
+    {
+        "id": "sd_RzS97LYGg8cM2Usj",
+        "type": "PageVariables",
+        "z": "sd_eY4JBxBmMQGPRTvM",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_RzS97LYGg8cM2Usj",
+        "category": "Function",
+        "x": 165,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "SubNavbarComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_uBO7tmHli7rIhExE",
+        "type": "PageStart",
+        "z": "sd_eY4JBxBmMQGPRTvM",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "goBack",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "goBack",
+        "category": "General",
+        "x": 80,
+        "y": 180,
+        "wires": [
+            [
+                "sd_RP0f37fpoDtDDrXt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "SubNavbarComponent"
+    },
+    {
+        "id": "sd_RP0f37fpoDtDDrXt",
+        "type": "Script",
+        "z": "sd_eY4JBxBmMQGPRTvM",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// bh.local.location.back()\n\nwindow.history.back()",
+        "functionName": "sd_RP0f37fpoDtDDrXt",
+        "category": "Function",
+        "x": 225,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "SubNavbarComponent",
+        "generated": true
+    }
+]

@@ -1,0 +1,13 @@
+{
+    "displayName": "Easybuy-ui",
+    "appName": "easybuy-ui",
+    "description": "sample smart buy product",
+    "lastModified": "2023-04-27T06:41:16.461Z",
+    "imgSourcePath": "appIcon-1682577676015.webp",
+    "version": "1.0.0",
+    "appType": "uiOnly",
+    "templateName": "blank",
+    "createDate": "2023-04-27T06:41:16.011Z",
+    "analyticsId": "6395d9a1-c2d4-0ef2-9abd-ca0bc1fda09b",
+    "createdStudioVersion": "9.1.2"
+}

@@ -1,0 +1,228 @@
+[
+    {
+        "id": "sd_cmZCN81jlvs8Ep2o",
+        "type": "tab",
+        "createdDate": "2023-05-03T15:42:17.080Z",
+        "label": "getuserData",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "getuserData",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_7RJyLkLl7kzx7EEv",
+        "type": "Start",
+        "z": "sd_cmZCN81jlvs8Ep2o",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getUserData",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "userData",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "getUserData",
+        "category": "General",
+        "x": 45,
+        "y": 200,
+        "wires": [
+            [
+                "sd_1txvHLIVu9I1otj1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getuserData"
+    },
+    {
+        "id": "sd_5qWCHwctdgSwP0u8",
+        "type": "Storage",
+        "z": "sd_cmZCN81jlvs8Ep2o",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "employeeData"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh.local",
+            "value": "userData"
+        },
+        "functionName": "sd_5qWCHwctdgSwP0u8",
+        "category": "Storage",
+        "x": 485,
+        "y": 240,
+        "wires": [
+            [
+                "sd_pgNihVNOEG0eP3yO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getuserData",
+        "generated": true
+    },
+    {
+        "id": "sd_PcBLTzwDkTWptPzw",
+        "type": "ServiceVariables",
+        "z": "sd_cmZCN81jlvs8Ep2o",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "userData",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "userData"
+                }
+            }
+        ],
+        "functionName": "sd_PcBLTzwDkTWptPzw",
+        "category": "Function",
+        "x": 805,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getuserData",
+        "generated": true
+    },
+    {
+        "id": "sd_pgNihVNOEG0eP3yO",
+        "type": "Script",
+        "z": "sd_cmZCN81jlvs8Ep2o",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.userData,\"service userdata\")",
+        "functionName": "sd_pgNihVNOEG0eP3yO",
+        "category": "Function",
+        "x": 625,
+        "y": 240,
+        "wires": [
+            [
+                "sd_PcBLTzwDkTWptPzw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getuserData",
+        "generated": true
+    },
+    {
+        "id": "sd_1txvHLIVu9I1otj1",
+        "type": "ServiceVariables",
+        "z": "sd_cmZCN81jlvs8Ep2o",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "userData",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "userData"
+                }
+            }
+        ],
+        "functionName": "sd_1txvHLIVu9I1otj1",
+        "category": "Function",
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "sd_3EU68qFJd41I9m1L"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getuserData",
+        "generated": true
+    },
+    {
+        "id": "sd_WU4HEXsVsSfkXXn9",
+        "type": "Switch",
+        "z": "sd_cmZCN81jlvs8Ep2o",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "userData",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.userData",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "\"undefined\"",
+                "vt": "\"undefined\"",
+                "gv": "\"undefined\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_WU4HEXsVsSfkXXn9",
+        "category": "Function",
+        "x": 345,
+        "y": 200,
+        "wires": [
+            [
+                "sd_5qWCHwctdgSwP0u8"
+            ],
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getuserData",
+        "generated": true
+    },
+    {
+        "id": "sd_3EU68qFJd41I9m1L",
+        "type": "Script",
+        "z": "sd_cmZCN81jlvs8Ep2o",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.userData,\"service userData2\")",
+        "functionName": "sd_3EU68qFJd41I9m1L",
+        "category": "Function",
+        "x": 260,
+        "y": 220,
+        "wires": [
+            [
+                "sd_WU4HEXsVsSfkXXn9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getuserData",
+        "generated": true
+    }
+]
