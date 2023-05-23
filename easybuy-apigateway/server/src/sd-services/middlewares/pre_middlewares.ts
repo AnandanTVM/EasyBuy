@@ -104,7 +104,7 @@ export class pre_middlewares {
     );
     try {
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_PEFvjynSc1DbtTIz(bh, parentSpanInst);
+      bh = await this.sd_MCGyoDgnWxM0Ej5F(bh, parentSpanInst);
       //appendnew_next_api_Request_start
       return bh;
     } catch (e) {
@@ -120,12 +120,107 @@ export class pre_middlewares {
 
   //appendnew_flow_pre_middlewares_start
 
+  async sd_MCGyoDgnWxM0Ej5F(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_MCGyoDgnWxM0Ej5F',
+      parentSpanInst
+    );
+    try {
+      if (
+        this.sdService.operators['se'](
+          bh.local.request.method,
+          'get',
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_9I38adVDSGlacXfF(bh, parentSpanInst);
+      } else if (
+        this.sdService.operators['se'](
+          bh.local.request.method,
+          'post',
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_PEFvjynSc1DbtTIz(bh, parentSpanInst);
+      }
+      this.tracerService.sendData(spanInst, bh);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_MCGyoDgnWxM0Ej5F',
+        spanInst,
+        'sd_MCGyoDgnWxM0Ej5F'
+      );
+    }
+  }
+
+  async sd_9I38adVDSGlacXfF(bh, parentSpanInst) {
+    try {
+      let requestOptions = {
+        url: bh.local.request.URL,
+        timeout: 30000,
+        method: 'get',
+        headers: {},
+        followRedirects: true,
+        cookies: undefined,
+        authType: undefined,
+        body: undefined,
+        paytoqs: false,
+        proxyConfig: undefined,
+        tlsConfig: undefined,
+        ret: 'json',
+        params: {},
+        username: undefined,
+        password: undefined,
+        token: undefined,
+        rejectUnauthorized: undefined,
+        useQuerystring: false,
+      };
+      if (!false) {
+        requestOptions.rejectUnauthorized = false;
+      }
+      requestOptions.tlsConfig = undefined;
+      requestOptions.proxyConfig = undefined;
+      let responseMsg: any = await this.sdService.httpRequest(
+        requestOptions.url,
+        requestOptions.timeout,
+        requestOptions.method,
+        requestOptions.headers,
+        requestOptions.followRedirects,
+        requestOptions.cookies,
+        requestOptions.authType,
+        requestOptions.body,
+        requestOptions.paytoqs,
+        requestOptions.proxyConfig,
+        requestOptions.tlsConfig,
+        requestOptions.ret,
+        requestOptions.params,
+        requestOptions.rejectUnauthorized,
+        requestOptions.username,
+        requestOptions.password,
+        requestOptions.token
+      );
+
+      bh.local.response = responseMsg;
+
+      //appendnew_next_sd_9I38adVDSGlacXfF
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_9I38adVDSGlacXfF');
+    }
+  }
+
   async sd_PEFvjynSc1DbtTIz(bh, parentSpanInst) {
     try {
       let requestOptions = {
         url: bh.local.request.URL,
         timeout: 30000,
-        method: bh.local.request.method,
+        method: 'post',
         headers: {},
         followRedirects: true,
         cookies: undefined,

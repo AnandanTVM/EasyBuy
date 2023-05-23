@@ -1,0 +1,14 @@
+[
+    {
+        "type": "tab",
+        "id": "SSD_SERVICE_ID_sd_EqHpYAuFS2ZISuSK",
+        "disabled": false,
+        "info": "",
+        "label": "Invoice",
+        "createdDate": "2023-05-23T07:49:08.904Z",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "Invoice",
+        "relativeParentPath": "Redirect_to_routes"
+    }
+]
