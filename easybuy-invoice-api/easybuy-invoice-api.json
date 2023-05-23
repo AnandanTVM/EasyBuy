@@ -1,0 +1,13 @@
+{
+    "displayName": "Easybuy-Invoice-Api",
+    "appName": "easybuy-invoice-api",
+    "description": "Easybuy Invoice Api",
+    "lastModified": "2023-05-23T04:49:41.112Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2023-05-23T04:49:36.777Z",
+    "analyticsId": "b51f0862-7909-596b-89f4-5961e781e4e6",
+    "createdStudioVersion": "9.1.2"
+}

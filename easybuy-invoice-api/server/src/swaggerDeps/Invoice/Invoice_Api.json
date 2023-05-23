@@ -1,0 +1,28 @@
+{
+    "/invoice": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "Invoice_Api"
+            ]
+        }
+    },
+    "/invoice/:id": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "Invoice_Api"
+            ]
+        }
+    }
+}
