@@ -18,11 +18,8 @@
         "viewType": "server",
         "nodeType": "flow",
         "name": "",
-        "methodMapping": "bh.local.request.method",
-        "methodMappingObj": {
-            "mapVarType": "bh.local",
-            "mapVarValue": "request.method"
-        },
+        "method": "post",
+        "methodMappingObj": {},
         "urlMapping": "bh.local.request.URL",
         "urlMappingObj": {
             "mapVarType": "bh.local",
@@ -74,8 +71,8 @@
         },
         "functionName": "sd_PEFvjynSc1DbtTIz",
         "category": "HTTP",
-        "x": 280,
-        "y": 80,
+        "x": 445,
+        "y": 140,
         "wires": [
             []
         ],
@@ -101,11 +98,124 @@
         "y": 80,
         "wires": [
             [
-                "sd_PEFvjynSc1DbtTIz"
+                "sd_MCGyoDgnWxM0Ej5F"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "pre_middlewares"
+    },
+    {
+        "id": "sd_9I38adVDSGlacXfF",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.request.URL",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "request.URL"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.response",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "response"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "useAuthTypeMappingObj": {},
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "sd_9I38adVDSGlacXfF",
+        "category": "HTTP",
+        "x": 445,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pre_middlewares",
+        "generated": true
+    },
+    {
+        "id": "sd_MCGyoDgnWxM0Ej5F",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "request.method",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.request.method",
+        "rules": [
+            {
+                "t": "se",
+                "v": "get",
+                "vt": "str",
+                "gv": "\"get\""
+            },
+            {
+                "t": "se",
+                "v": "post",
+                "vt": "str",
+                "gv": "\"post\""
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_MCGyoDgnWxM0Ej5F",
+        "category": "Function",
+        "x": 285,
+        "y": 80,
+        "wires": [
+            [
+                "sd_9I38adVDSGlacXfF"
+            ],
+            [
+                "sd_PEFvjynSc1DbtTIz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pre_middlewares",
+        "generated": true
     }
 ]
