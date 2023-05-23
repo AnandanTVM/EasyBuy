@@ -1,0 +1,68 @@
+{
+    "TYPE": {
+        "name": "TYPE",
+        "properties": {
+            "production": "client",
+            "ssdURL": "client",
+            "tenantName": "client",
+            "appName": "client",
+            "namespace": "client",
+            "useDefaultExceptionUI": "client",
+            "isIDSEnabled": "client",
+            "SSD_BASE_PATH": "server",
+            "SSD_DEFAULT_PORT": "server",
+            "webAppMountpoint": "both",
+            "CLOCK_TOLERANCE": "server",
+            "NGFORAGE_MOBILE_DRIVER": "client",
+            "LOGIN_PORT": "server",
+            "GET_PRODUCT_BYID_PROT": "server",
+            "GET_USER_BYID_PORT": "server",
+            "INVOICE_PROT": "server",
+            "ORDER_PORT": "server"
+        }
+    },
+    "dev": {
+        "name": "dev",
+        "properties": {
+            "production": false,
+            "ssdURL": "http://localhost:8081/api/",
+            "tenantName": "brototype",
+            "appName": "easybuy-apigateway",
+            "namespace": "com.brototype.easybuy-apigateway",
+            "useDefaultExceptionUI": true,
+            "isIDSEnabled": "false",
+            "SSD_BASE_PATH": "/api",
+            "SSD_DEFAULT_PORT": "8081",
+            "webAppMountpoint": "web",
+            "CLOCK_TOLERANCE": "5",
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "LOGIN_PORT": "http://localhost:8003/api/",
+            "GET_PRODUCT_BYID_PROT": "http://localhost:8004/api/",
+            "GET_USER_BYID_PORT": "http://localhost:8005/api/",
+            "INVOICE_PROT": "http://localhost:8006/api/",
+            "ORDER_PORT": "http://localhost:8007/api/"
+        }
+    },
+    "prod": {
+        "name": "prod",
+        "properties": {
+            "production": true,
+            "ssdURL": "http://localhost:8081/api/",
+            "tenantName": "brototype",
+            "appName": "easybuy-apigateway",
+            "namespace": "com.brototype.easybuy-apigateway",
+            "useDefaultExceptionUI": true,
+            "isIDSEnabled": "false",
+            "SSD_BASE_PATH": "/api",
+            "SSD_DEFAULT_PORT": "8081",
+            "webAppMountpoint": "web",
+            "CLOCK_TOLERANCE": "5",
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "LOGIN_PORT": "http://localhost:8003/api/",
+            "GET_PRODUCT_BYID_PROT": "http://localhost:8004/api/",
+            "GET_USER_BYID_PORT": "http://localhost:8005/api/",
+            "INVOICE_PROT": "http://localhost:8006/api/",
+            "ORDER_PORT": "http://localhost:8007/api/"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "displayName": "Easybuy-ApiGateway",
+    "appName": "easybuy-apigateway",
+    "description": "Easybuy ApiGateway",
+    "lastModified": "2023-05-23T07:10:55.171Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2023-05-23T07:10:52.600Z",
+    "analyticsId": "37fc75c6-1e92-8207-2fd1-09156bd56919",
+    "createdStudioVersion": "9.1.2"
+}
