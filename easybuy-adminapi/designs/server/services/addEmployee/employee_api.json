@@ -1,24 +1,24 @@
 [
     {
-        "id": "SSD_SERVICE_ID_sd_7PEQ6IKkw8FKDYw7",
+        "id": "SSD_SERVICE_ID_sd_1EoaOopzViZOQn8M",
         "type": "tab",
-        "createdDate": "2023-05-03T08:27:14.966Z",
-        "label": "adminLogin_api",
+        "createdDate": "2023-05-23T05:33:34.746Z",
+        "label": "employee_api",
         "disabled": false,
         "info": "",
         "functionSeq": 0,
         "generateNext": true,
-        "serviceName": "adminLogin_api",
-        "relativeParentPath": "adminLogin"
+        "serviceName": "employee_api",
+        "relativeParentPath": "addEmployee"
     },
     {
-        "id": "sd_JQeiqgytdKaG4ldQ",
+        "id": "sd_T5c9UymX1HJnQqFM",
         "type": "HttpIn",
-        "z": "SSD_SERVICE_ID_sd_7PEQ6IKkw8FKDYw7",
+        "z": "SSD_SERVICE_ID_sd_1EoaOopzViZOQn8M",
         "viewType": "server",
         "nodeType": "start",
-        "name": "",
-        "path": "/admin/login",
+        "name": "addEmployee",
+        "path": "/admin/employee",
         "uploadpath": "",
         "summary": "",
         "description": "",
@@ -30,7 +30,6 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
-        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -45,11 +44,11 @@
         "outputs": 1,
         "validateRequestUsingSwaggerDocs": false,
         "category": "HTTP",
-        "x": 143.00000190734863,
-        "y": 161.00000381469727,
+        "x": 185,
+        "y": 120,
         "wires": [
             [
-                "sd_qnc3r5qPc3KtMTqs"
+                "sd_M3DRxsFZcnqPSDOQ"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -63,13 +62,59 @@
         },
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "adminLogin_api",
-        "functionName": "sd_JQeiqgytdKaG4ldQ"
+        "serviceName": "employee_api",
+        "functionName": "sd_T5c9UymX1HJnQqFM"
     },
     {
-        "id": "sd_NKy5p9G3ZSmYv3Sw",
+        "id": "sd_M3DRxsFZcnqPSDOQ",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_1EoaOopzViZOQn8M",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum",
+            "type": "tab",
+            "createdDate": "2023-05-23T05:34:12.394Z",
+            "label": "employee_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_WjW9z909UnYoE4BM",
+            "flowName": "addEmployeeStart"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "./employee_service",
+        "startName": "addEmployeeStart",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_M3DRxsFZcnqPSDOQ",
+        "category": "General",
+        "x": 365,
+        "y": 120,
+        "wires": [
+            [
+                "sd_x7tWXysewOi6CgV6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "employee_api",
+        "generated": true
+    },
+    {
+        "id": "sd_x7tWXysewOi6CgV6",
         "type": "HttpOut",
-        "z": "SSD_SERVICE_ID_sd_7PEQ6IKkw8FKDYw7",
+        "z": "SSD_SERVICE_ID_sd_1EoaOopzViZOQn8M",
         "viewType": "server",
         "nodeType": "flow",
         "name": "",
@@ -108,60 +153,14 @@
             "headers": "Map",
             "cookies": "Map"
         },
-        "functionName": "sd_NKy5p9G3ZSmYv3Sw",
+        "functionName": "sd_x7tWXysewOi6CgV6",
         "category": "HTTP",
-        "x": 503.00000190734863,
-        "y": 161.00000381469727,
+        "x": 525,
+        "y": 120,
         "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "serviceName": "adminLogin_api",
-        "generated": true
-    },
-    {
-        "id": "sd_qnc3r5qPc3KtMTqs",
-        "type": "CallService",
-        "z": "SSD_SERVICE_ID_sd_7PEQ6IKkw8FKDYw7",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 1,
-        "isValidNode": true,
-        "noerr": 0,
-        "service": {
-            "id": "SSD_SERVICE_ID_sd_oZYnKtIC90NGL7Si",
-            "type": "tab",
-            "createdDate": "2023-05-03T08:27:37.410Z",
-            "label": "adminLogin_service",
-            "disabled": false,
-            "info": "",
-            "functionSeq": 0
-        },
-        "flow": {
-            "flowId": "sd_zwdzAAt98VdNJNc5",
-            "flowName": "adminLoginStart"
-        },
-        "inputVariables": [],
-        "bhVariables": [],
-        "outputMapping": [],
-        "callService": "./adminLogin_service",
-        "startName": "adminLoginStart",
-        "inputParams": [
-            "bh"
-        ],
-        "accept_bh": true,
-        "functionName": "sd_qnc3r5qPc3KtMTqs",
-        "category": "General",
-        "x": 323.00000190734863,
-        "y": 161.00000381469727,
-        "wires": [
-            [
-                "sd_NKy5p9G3ZSmYv3Sw"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "adminLogin_api",
+        "serviceName": "employee_api",
         "generated": true
     }
 ]

@@ -1,0 +1,69 @@
+{
+    "name": "entity_1",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_9g8ji3ho3f",
+    "y": 98,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_tk56lb056t",
+                "nullable": false
+            }
+        },
+        "name": {
+            "name": "name",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_1eqshtyym5",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "employeeid": {
+            "name": "employeeid",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_4cve9clqza",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "password": {
+            "name": "password",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_914s15vq2o",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        }
+    },
+    "required": [
+        "name",
+        "employeeid",
+        "password"
+    ],
+    "value": "",
+    "x": 275,
+    "userList": {
+        "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum": [
+            "sd_iilxqFezwTNhFhhX"
+        ]
+    }
+}

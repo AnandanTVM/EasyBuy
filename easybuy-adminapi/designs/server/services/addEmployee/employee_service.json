@@ -1,0 +1,382 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum",
+        "type": "tab",
+        "createdDate": "2023-05-23T05:34:12.394Z",
+        "label": "employee_service",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "employee_service",
+        "relativeParentPath": "addEmployee"
+    },
+    {
+        "id": "sd_WjW9z909UnYoE4BM",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "addEmployeeStart",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "accept_bh": true,
+        "functionName": "addEmployeeStart",
+        "category": "General",
+        "x": 105,
+        "y": 140,
+        "wires": [
+            [
+                "sd_iilxqFezwTNhFhhX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "employee_service"
+    },
+    {
+        "id": "sd_nlwmpRUBBW7JI2cS",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nconst bcrypt=require('bcryptjs')\n\n\nconst salt=await bcrypt.genSalt(10)\nbh.local.hashedPassword=await bcrypt.hash(bh.input.body.password,salt);\n\n\nbh.local.queryData={\n    name:bh.input.body.name,\n    employeeid:bh.input.body.employeeid,\n    password:bh.local.hashedPassword\n    \n}\n\nbh.local.pipeline=[{$match:{employeeid:bh.local.queryData.employeeid}}]\n\nbh.local.collection='employees'\n\n",
+        "functionName": "sd_nlwmpRUBBW7JI2cS",
+        "category": "Function",
+        "x": 330,
+        "y": 140,
+        "wires": [
+            [
+                "sd_B2zZgz10axFeIpxk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "employee_service",
+        "generated": true
+    },
+    {
+        "id": "sd_iilxqFezwTNhFhhX",
+        "type": "validate",
+        "z": "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "erd": "_DM_2j74jga24",
+        "entityId": "_EN_9g8ji3ho3f",
+        "_UI_entityName": "entity_1",
+        "dbConfigId": "",
+        "validateObject": "bh.input.body",
+        "checkboxThrowError": true,
+        "resultMapping": "",
+        "functionName": "sd_iilxqFezwTNhFhhX",
+        "category": "Data Model",
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "sd_nlwmpRUBBW7JI2cS"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "validateObject": {
+                "type": "bh.input",
+                "value": "body",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {
+            "resultMapping": true
+        },
+        "generateNext": false,
+        "serviceName": "employee_service",
+        "generated": true
+    },
+    {
+        "id": "sd_B2zZgz10axFeIpxk",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_0e8kKGbWBfVK6Tfz",
+        "collection": "bh.local.collection",
+        "options": "",
+        "resultMapping": "bh.local.result",
+        "operation": "aggregate",
+        "argumentArray": [
+            "aggregate"
+        ],
+        "aggregate": "bh.local.pipeline",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_B2zZgz10axFeIpxk",
+        "category": "Storage",
+        "x": 445,
+        "y": 140,
+        "wires": [
+            [
+                "sd_yyjZZVcdtGB4I0lx"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh.local",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "aggregate": {
+                "type": "bh.local",
+                "value": "pipeline",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "employee_service",
+        "generated": true
+    },
+    {
+        "id": "sd_yyjZZVcdtGB4I0lx",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "result",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.result",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_yyjZZVcdtGB4I0lx",
+        "category": "Function",
+        "x": 590,
+        "y": 140,
+        "wires": [
+            [
+                "sd_NYiM0p0kQwzEZ4Hm"
+            ],
+            [
+                "sd_dJY0QEXrHmZ8FRGC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "employee_service",
+        "generated": true
+    },
+    {
+        "id": "sd_NYiM0p0kQwzEZ4Hm",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_0e8kKGbWBfVK6Tfz",
+        "collection": "bh.local.collection",
+        "options": "",
+        "resultMapping": "bh.local.finalResult",
+        "operation": "insertOne",
+        "argumentArray": [
+            "document"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "bh.local.queryData",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_NYiM0p0kQwzEZ4Hm",
+        "category": "Storage",
+        "x": 765,
+        "y": 100,
+        "wires": [
+            [
+                "sd_q1888HsZs0aaPn7w"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh.local",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "finalResult",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "document": {
+                "type": "bh.local",
+                "value": "queryData",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "employee_service",
+        "generated": true
+    },
+    {
+        "id": "sd_q1888HsZs0aaPn7w",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.response={\n    statusCode:201,\n    data:bh.local.finalResult\n}",
+        "functionName": "sd_q1888HsZs0aaPn7w",
+        "category": "Function",
+        "x": 885,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "employee_service",
+        "generated": true
+    },
+    {
+        "id": "sd_dJY0QEXrHmZ8FRGC",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.response={\n    statusCode:409,\n    data:\"Already Exist\"\n}\n",
+        "functionName": "sd_dJY0QEXrHmZ8FRGC",
+        "category": "Function",
+        "x": 765,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "employee_service",
+        "generated": true
+    },
+    {
+        "id": "sd_lFBFzMg7wzpiHWoP",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n bh.local.errorMessage=bh.error.error.map((value:any)=>{\n     return value.message\n\n })\n\n\nbh.local.response={\n    statusCode:401,\n    data:bh.local.errorMessage\n}\n",
+        "functionName": "sd_lFBFzMg7wzpiHWoP",
+        "category": "Function",
+        "x": 525,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "employee_service",
+        "generated": true
+    },
+    {
+        "id": "sd_UBFkuL36zoGfs1oM",
+        "type": "Catch",
+        "z": "SSD_SERVICE_ID_sd_RFmWqLpLYQJ44wum",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": "all-nodes",
+        "selectCatchType": "allnodes",
+        "masternodeList": "",
+        "ignoreList": [
+            "sd_lFBFzMg7wzpiHWoP"
+        ],
+        "functionName": "sd_UBFkuL36zoGfs1oM",
+        "category": "General",
+        "x": 365,
+        "y": 320,
+        "wires": [
+            [
+                "sd_lFBFzMg7wzpiHWoP"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "employee_service"
+    }
+]

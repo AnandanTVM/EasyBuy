@@ -1,0 +1,58 @@
+{
+    "name": "entity_1",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_5e8542yqxo",
+    "y": 86,
+    "properties": {
+        "couponcode": {
+            "name": "couponcode",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_caro0a182s",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "expiredate": {
+            "name": "expiredate",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_55h5pv12bp",
+                "nullable": false,
+                "constraints": {}
+            }
+        },
+        "description": {
+            "name": "description",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_kdfx2jq545",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        }
+    },
+    "required": [
+        "couponcode",
+        "expiredate",
+        "description"
+    ],
+    "value": "",
+    "x": 254,
+    "userList": {
+        "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J": [
+            "sd_BFCjW3DdxAOyrhTp"
+        ]
+    }
+}

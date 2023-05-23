@@ -1,0 +1,42 @@
+{
+    "/admin/coupon": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "couponDetails",
+                    "description": "coupon details as req body to add a coupon ",
+                    "required": true
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "api"
+            ]
+        }
+    },
+    "/get-coupon/:couponcode": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "couponCode",
+                    "description": "for getting the coupon code",
+                    "required": false
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "api"
+            ]
+        }
+    }
+}

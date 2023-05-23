@@ -1,0 +1,13 @@
+{
+    "displayName": "Easybuy-adminApi",
+    "appName": "easybuy-adminapi",
+    "description": "Admin Api Microservice",
+    "lastModified": "2023-05-22T12:51:27.504Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2023-05-22T12:51:25.307Z",
+    "analyticsId": "9c1affe9-2cba-dd2f-2774-b8f198d87177",
+    "createdStudioVersion": "9.1.2"
+}
