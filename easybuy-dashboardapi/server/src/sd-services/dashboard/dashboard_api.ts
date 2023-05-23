@@ -162,7 +162,7 @@ export class dashboard_api {
 
   async sd_VPMbjSgKOEVyzQaz(bh, parentSpanInst) {
     try {
-      bh.web.res.status(bh.local.response.status).send(bh.local.response);
+      bh.web.res.status(bh.local.response.statusCode).send(bh.local.response);
 
       return bh;
     } catch (e) {

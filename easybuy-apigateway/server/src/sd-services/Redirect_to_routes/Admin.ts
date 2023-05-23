@@ -159,6 +159,102 @@ export class Admin {
         this.generatedMiddlewares
       )
     );
+
+    this.app['post'](
+      `${this.serviceBasePath}/admin/employee`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_JLyYm55eaH8RXaxC(bh, parentSpanInst);
+          //appendnew_next_sd_7dwiFDggpywZ2aaw
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_7dwiFDggpywZ2aaw');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
+
+    this.app['post'](
+      `${this.serviceBasePath}/admin/product`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_b7OWUoRphFNTREN1(bh, parentSpanInst);
+          //appendnew_next_sd_dpJMDfOhAYAzpLiK
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_dpJMDfOhAYAzpLiK');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
+
+    this.app['post'](
+      `${this.serviceBasePath}/admin/login`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_VMUvymVl5ZwDx0Su(bh, parentSpanInst);
+          //appendnew_next_sd_1lgKlj1FRl7Isctp
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_1lgKlj1FRl7Isctp');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
     //appendnew_flow_Admin_HttpIn
   }
   //   service flows_Admin
@@ -171,7 +267,6 @@ export class Admin {
       parentSpanInst
     );
     try {
-      console.log(`${process.env.ADMIN_PORT}admin/coupon`);
       bh.local.request = {
         method: 'post',
         URL: `${process.env.ADMIN_PORT}admin/coupon`,
@@ -252,9 +347,8 @@ export class Admin {
       parentSpanInst
     );
     try {
-      console.log(`${process.env.ADMIN_PORT}get-coupon/${bh.input.params.id}`);
       bh.local.request = {
-        method: 'post',
+        method: 'get',
         URL: `${process.env.ADMIN_PORT}get-coupon/${bh.input.params.id}`,
       };
       this.tracerService.sendData(spanInst, bh);
@@ -323,6 +417,246 @@ export class Admin {
         'sd_PK5kRoxj2RLe6fy2',
         spanInst,
         'sd_PK5kRoxj2RLe6fy2'
+      );
+    }
+  }
+
+  async sd_JLyYm55eaH8RXaxC(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_JLyYm55eaH8RXaxC',
+      parentSpanInst
+    );
+    try {
+      bh.local.request = {
+        method: 'post',
+        URL: `${process.env.ADMIN_PORT}admin/employee`,
+      };
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_iFIequ2w2lky4OhC(bh, parentSpanInst);
+      //appendnew_next_sd_JLyYm55eaH8RXaxC
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_JLyYm55eaH8RXaxC',
+        spanInst,
+        'sd_JLyYm55eaH8RXaxC'
+      );
+    }
+  }
+
+  async sd_iFIequ2w2lky4OhC(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_iFIequ2w2lky4OhC',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NAInstance: SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA.pre_middlewares =
+        SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA.pre_middlewares.getInstance();
+      bh = await SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NAInstance.api_Request_start(
+        spanInst,
+        bh
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_l8UymK9wsqsHbYWF(bh, parentSpanInst);
+      //appendnew_next_sd_iFIequ2w2lky4OhC
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_iFIequ2w2lky4OhC',
+        spanInst,
+        'sd_iFIequ2w2lky4OhC'
+      );
+    }
+  }
+
+  async sd_l8UymK9wsqsHbYWF(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_l8UymK9wsqsHbYWF',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhcInstance: SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc.Post_middlewares =
+        SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc.Post_middlewares.getInstance();
+      bh = await SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhcInstance.httpOut_start(
+        spanInst,
+        bh
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_l8UymK9wsqsHbYWF
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_l8UymK9wsqsHbYWF',
+        spanInst,
+        'sd_l8UymK9wsqsHbYWF'
+      );
+    }
+  }
+
+  async sd_b7OWUoRphFNTREN1(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_b7OWUoRphFNTREN1',
+      parentSpanInst
+    );
+    try {
+      bh.local.request = {
+        method: 'post',
+        URL: `${process.env.ADMIN_PORT}admin/product`,
+      };
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_LlP76PYczG46T8sy(bh, parentSpanInst);
+      //appendnew_next_sd_b7OWUoRphFNTREN1
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_b7OWUoRphFNTREN1',
+        spanInst,
+        'sd_b7OWUoRphFNTREN1'
+      );
+    }
+  }
+
+  async sd_LlP76PYczG46T8sy(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_LlP76PYczG46T8sy',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NAInstance: SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA.pre_middlewares =
+        SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA.pre_middlewares.getInstance();
+      bh = await SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NAInstance.api_Request_start(
+        spanInst,
+        bh
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_a3u94r9aF2FYAi1O(bh, parentSpanInst);
+      //appendnew_next_sd_LlP76PYczG46T8sy
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_LlP76PYczG46T8sy',
+        spanInst,
+        'sd_LlP76PYczG46T8sy'
+      );
+    }
+  }
+
+  async sd_a3u94r9aF2FYAi1O(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_a3u94r9aF2FYAi1O',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhcInstance: SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc.Post_middlewares =
+        SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc.Post_middlewares.getInstance();
+      bh = await SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhcInstance.httpOut_start(
+        spanInst,
+        bh
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_a3u94r9aF2FYAi1O
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_a3u94r9aF2FYAi1O',
+        spanInst,
+        'sd_a3u94r9aF2FYAi1O'
+      );
+    }
+  }
+
+  async sd_VMUvymVl5ZwDx0Su(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_VMUvymVl5ZwDx0Su',
+      parentSpanInst
+    );
+    try {
+      bh.local.request = {
+        method: 'post',
+        URL: `${process.env.ADMIN_PORT}admin/login`,
+      };
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_07ul4PbQyW8LTQKj(bh, parentSpanInst);
+      //appendnew_next_sd_VMUvymVl5ZwDx0Su
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_VMUvymVl5ZwDx0Su',
+        spanInst,
+        'sd_VMUvymVl5ZwDx0Su'
+      );
+    }
+  }
+
+  async sd_07ul4PbQyW8LTQKj(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_07ul4PbQyW8LTQKj',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NAInstance: SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA.pre_middlewares =
+        SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA.pre_middlewares.getInstance();
+      bh = await SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NAInstance.api_Request_start(
+        spanInst,
+        bh
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_OuMno5Y5fbZnqVWm(bh, parentSpanInst);
+      //appendnew_next_sd_07ul4PbQyW8LTQKj
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_07ul4PbQyW8LTQKj',
+        spanInst,
+        'sd_07ul4PbQyW8LTQKj'
+      );
+    }
+  }
+
+  async sd_OuMno5Y5fbZnqVWm(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_OuMno5Y5fbZnqVWm',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhcInstance: SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc.Post_middlewares =
+        SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc.Post_middlewares.getInstance();
+      bh = await SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhcInstance.httpOut_start(
+        spanInst,
+        bh
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_OuMno5Y5fbZnqVWm
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_OuMno5Y5fbZnqVWm',
+        spanInst,
+        'sd_OuMno5Y5fbZnqVWm'
       );
     }
   }

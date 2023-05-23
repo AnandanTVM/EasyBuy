@@ -263,7 +263,7 @@ export class dashboard_service {
         31.1035;
 
       bh.local.response = {
-        status: 200,
+        statusCode: 200,
         clients: bh.local.result[0]?.count,
         earnings: bh.local.earningsResult[0]?.totalEarnings,
         gold,

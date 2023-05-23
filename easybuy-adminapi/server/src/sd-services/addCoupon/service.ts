@@ -468,7 +468,7 @@ export class service {
     );
     try {
       bh.local.response = {
-        message: b.error.messge,
+        message: bh.error.messge,
         statusCode: 404,
       };
       this.tracerService.sendData(spanInst, bh);

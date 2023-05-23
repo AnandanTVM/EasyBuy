@@ -14,9 +14,10 @@ import { Middleware } from '../../middleware/Middleware'; //_splitter_
 import * as settings from '../../config/config'; //_splitter_
 import log from '../../utils/Logger'; //_splitter_
 import { TracerService } from '../../services/TracerService'; //_splitter_
-import * as SSD_SERVICE_ID_sd_74KAAt4XKsJDDJi4 from './customerList_service'; //_splitter_
+import * as SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA from '../middlewares/pre_middlewares'; //_splitter_
+import * as SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc from '../middlewares/Post_middlewares'; //_splitter_
 //append_imports_end
-export class customerList_api {
+export class Dashboard {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -32,7 +33,7 @@ export class customerList_api {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'customerList_api';
+    this.serviceName = 'Dashboard';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -47,7 +48,7 @@ export class customerList_api {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new customerList_api(
+      instance = new Dashboard(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -81,22 +82,22 @@ export class customerList_api {
 
   async mountTimers() {
     try {
-      //appendnew_flow_customerList_api_TimerStart
+      //appendnew_flow_Dashboard_TimerStart
     } catch (e) {
       throw e;
     }
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: customerList_api');
+    log.debug('mounting all middlewares for service :: Dashboard');
 
-    //appendnew_flow_customerList_api_MiddlewareStart
+    //appendnew_flow_Dashboard_MiddlewareStart
   }
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: customerList_api');
+    log.debug('mounting all paths for service :: Dashboard');
 
     this.app['get'](
-      `${this.serviceBasePath}/customer-list/:empId`,
+      `${this.serviceBasePath}/dashboard/:id`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -114,10 +115,10 @@ export class customerList_api {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_EA4GOaTfY8iJfkPr(bh, parentSpanInst);
-          //appendnew_next_sd_nU09HfUVwEYegdpe
+          bh = await this.sd_MpSZXslMPrVgVUG2(bh, parentSpanInst);
+          //appendnew_next_sd_HwcrCVbvT51xslrU
         } catch (e) {
-          return await this.errorHandler(bh, e, 'sd_nU09HfUVwEYegdpe');
+          return await this.errorHandler(bh, e, 'sd_HwcrCVbvT51xslrU');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
@@ -126,47 +127,89 @@ export class customerList_api {
         this.generatedMiddlewares
       )
     );
-    //appendnew_flow_customerList_api_HttpIn
+    //appendnew_flow_Dashboard_HttpIn
   }
-  //   service flows_customerList_api
+  //   service flows_Dashboard
 
-  //appendnew_flow_customerList_api_start
+  //appendnew_flow_Dashboard_start
 
-  async sd_EA4GOaTfY8iJfkPr(bh, parentSpanInst) {
+  async sd_MpSZXslMPrVgVUG2(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_EA4GOaTfY8iJfkPr',
+      'sd_MpSZXslMPrVgVUG2',
       parentSpanInst
     );
     try {
-      const SSD_SERVICE_ID_sd_74KAAt4XKsJDDJi4Instance: SSD_SERVICE_ID_sd_74KAAt4XKsJDDJi4.customerList_service =
-        SSD_SERVICE_ID_sd_74KAAt4XKsJDDJi4.customerList_service.getInstance();
-      bh = await SSD_SERVICE_ID_sd_74KAAt4XKsJDDJi4Instance.cutomerListService(
-        spanInst,
-        bh
-      );
-
+      bh.local.request = {
+        method: 'get',
+        URL: `${process.env.DASHBOARD_POART}dashboard/${bh.input.params.id}`,
+      };
       this.tracerService.sendData(spanInst, bh);
-      await this.sd_HgkomHT8NwB3B0s7(bh, parentSpanInst);
-      //appendnew_next_sd_EA4GOaTfY8iJfkPr
+      bh = await this.sd_Or3M6Kzc0rNQp7Gq(bh, parentSpanInst);
+      //appendnew_next_sd_MpSZXslMPrVgVUG2
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_EA4GOaTfY8iJfkPr',
+        'sd_MpSZXslMPrVgVUG2',
         spanInst,
-        'sd_EA4GOaTfY8iJfkPr'
+        'sd_MpSZXslMPrVgVUG2'
       );
     }
   }
 
-  async sd_HgkomHT8NwB3B0s7(bh, parentSpanInst) {
+  async sd_Or3M6Kzc0rNQp7Gq(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_Or3M6Kzc0rNQp7Gq',
+      parentSpanInst
+    );
     try {
-      bh.web.res.status(bh.local.response.statusCode).send(bh.local.response);
+      const SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NAInstance: SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA.pre_middlewares =
+        SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA.pre_middlewares.getInstance();
+      bh = await SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NAInstance.api_Request_start(
+        spanInst,
+        bh
+      );
 
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_1UBfL73IfHqJDouD(bh, parentSpanInst);
+      //appendnew_next_sd_Or3M6Kzc0rNQp7Gq
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_HgkomHT8NwB3B0s7');
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_Or3M6Kzc0rNQp7Gq',
+        spanInst,
+        'sd_Or3M6Kzc0rNQp7Gq'
+      );
+    }
+  }
+
+  async sd_1UBfL73IfHqJDouD(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_1UBfL73IfHqJDouD',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhcInstance: SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc.Post_middlewares =
+        SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc.Post_middlewares.getInstance();
+      bh = await SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhcInstance.httpOut_start(
+        spanInst,
+        bh
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_1UBfL73IfHqJDouD
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_1UBfL73IfHqJDouD',
+        spanInst,
+        'sd_1UBfL73IfHqJDouD'
+      );
     }
   }
 
@@ -191,5 +234,5 @@ export class customerList_api {
       }
     }
   }
-  //appendnew_flow_customerList_api_Catch
+  //appendnew_flow_Dashboard_Catch
 }

@@ -1,4 +1,7 @@
 {
     "/admin/coupon": {},
-    "/get-coupon/:id": {}
+    "/get-coupon/:id": {},
+    "/admin/employee": {},
+    "/admin/product": {},
+    "/admin/login": {}
 }

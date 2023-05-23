@@ -228,7 +228,10 @@ export class customerList_service {
         // .payment
         // bh.local.aggResult[i].productDetails = null
       }
-
+      bh.local.response = {
+        statusCode: 200,
+        result: bh.local.aggResult,
+      };
       bh.local.out = bh.local.aggResult;
 
       this.tracerService.sendData(spanInst, bh);
