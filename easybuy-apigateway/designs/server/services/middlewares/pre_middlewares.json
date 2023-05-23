@@ -217,5 +217,52 @@
         "generateNext": false,
         "serviceName": "pre_middlewares",
         "generated": true
+    },
+    {
+        "id": "sd_INVWagMMfQa5bJf2",
+        "type": "Catch",
+        "z": "SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_PEFvjynSc1DbtTIz",
+            "sd_9I38adVDSGlacXfF"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_INVWagMMfQa5bJf2",
+        "category": "General",
+        "x": 445,
+        "y": 240,
+        "wires": [
+            [
+                "sd_psQH37PLC6keF6Zx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "pre_middlewares"
+    },
+    {
+        "id": "sd_psQH37PLC6keF6Zx",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(bh.error.message === \"connect ECONNREFUSED 127.0.0.1:8006\"){\n    bh.error.message = \"Server Down\"\n}\n\nbh.local.response = {\n    statusCode:404,\n    payload:{\n        message:bh.error.message\n    }\n}",
+        "functionName": "sd_psQH37PLC6keF6Zx",
+        "category": "Function",
+        "x": 585,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pre_middlewares",
+        "generated": true
     }
 ]
