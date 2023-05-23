@@ -71,15 +71,14 @@
         },
         "functionName": "sd_PEFvjynSc1DbtTIz",
         "category": "HTTP",
-        "x": 445,
-        "y": 140,
+        "x": 205,
+        "y": 280,
         "wires": [
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "pre_middlewares",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "pre_middlewares"
     },
     {
         "id": "sd_ssMY2VoOAJfypBH0",
@@ -164,15 +163,14 @@
         },
         "functionName": "sd_9I38adVDSGlacXfF",
         "category": "HTTP",
-        "x": 445,
-        "y": 40,
+        "x": 205,
+        "y": 200,
         "wires": [
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "pre_middlewares",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "pre_middlewares"
     },
     {
         "id": "sd_MCGyoDgnWxM0Ej5F",
@@ -207,10 +205,10 @@
         "y": 80,
         "wires": [
             [
-                "sd_9I38adVDSGlacXfF"
+                "sd_kfrErzRLXD38OePl"
             ],
             [
-                "sd_PEFvjynSc1DbtTIz"
+                "sd_i9wQZJlltnksyp2V"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -219,44 +217,37 @@
         "generated": true
     },
     {
-        "id": "sd_INVWagMMfQa5bJf2",
-        "type": "Catch",
-        "z": "SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "",
-        "selectedNodes": [
-            "sd_PEFvjynSc1DbtTIz",
-            "sd_9I38adVDSGlacXfF"
-        ],
-        "selectCatchType": "selectednodes",
-        "masternodeList": "",
-        "ignoreList": "",
-        "functionName": "sd_INVWagMMfQa5bJf2",
-        "category": "General",
-        "x": 445,
-        "y": 240,
-        "wires": [
-            [
-                "sd_psQH37PLC6keF6Zx"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "pre_middlewares"
-    },
-    {
-        "id": "sd_psQH37PLC6keF6Zx",
+        "id": "sd_i9wQZJlltnksyp2V",
         "type": "Script",
         "z": "SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "if(bh.error.message === \"connect ECONNREFUSED 127.0.0.1:8006\"){\n    bh.error.message = \"Server Down\"\n}\n\nbh.local.response = {\n    statusCode:404,\n    payload:{\n        message:bh.error.message\n    }\n}",
-        "functionName": "sd_psQH37PLC6keF6Zx",
+        "script": "const axios = require('axios')\n\nbh.local.response = await axios.post(bh.local.request.URL,bh.input.body)",
+        "functionName": "sd_i9wQZJlltnksyp2V",
         "category": "Function",
-        "x": 585,
-        "y": 240,
+        "x": 445,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pre_middlewares",
+        "generated": true
+    },
+    {
+        "id": "sd_kfrErzRLXD38OePl",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const axios = require('axios')\n\nbh.local.response = await axios.get(bh.local.request.URL)",
+        "functionName": "sd_kfrErzRLXD38OePl",
+        "category": "Function",
+        "x": 445,
+        "y": 40,
         "wires": [
             []
         ],

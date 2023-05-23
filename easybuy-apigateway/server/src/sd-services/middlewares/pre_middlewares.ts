@@ -134,7 +134,7 @@ export class pre_middlewares {
           undefined
         )
       ) {
-        bh = await this.sd_9I38adVDSGlacXfF(bh, parentSpanInst);
+        bh = await this.sd_kfrErzRLXD38OePl(bh, parentSpanInst);
       } else if (
         this.sdService.operators['se'](
           bh.local.request.method,
@@ -143,7 +143,7 @@ export class pre_middlewares {
           undefined
         )
       ) {
-        bh = await this.sd_PEFvjynSc1DbtTIz(bh, parentSpanInst);
+        bh = await this.sd_i9wQZJlltnksyp2V(bh, parentSpanInst);
       }
       this.tracerService.sendData(spanInst, bh);
 
@@ -159,144 +159,48 @@ export class pre_middlewares {
     }
   }
 
-  async sd_9I38adVDSGlacXfF(bh, parentSpanInst) {
-    try {
-      let requestOptions = {
-        url: bh.local.request.URL,
-        timeout: 30000,
-        method: 'get',
-        headers: {},
-        followRedirects: true,
-        cookies: undefined,
-        authType: undefined,
-        body: undefined,
-        paytoqs: false,
-        proxyConfig: undefined,
-        tlsConfig: undefined,
-        ret: 'json',
-        params: {},
-        username: undefined,
-        password: undefined,
-        token: undefined,
-        rejectUnauthorized: undefined,
-        useQuerystring: false,
-      };
-      if (!false) {
-        requestOptions.rejectUnauthorized = false;
-      }
-      requestOptions.tlsConfig = undefined;
-      requestOptions.proxyConfig = undefined;
-      let responseMsg: any = await this.sdService.httpRequest(
-        requestOptions.url,
-        requestOptions.timeout,
-        requestOptions.method,
-        requestOptions.headers,
-        requestOptions.followRedirects,
-        requestOptions.cookies,
-        requestOptions.authType,
-        requestOptions.body,
-        requestOptions.paytoqs,
-        requestOptions.proxyConfig,
-        requestOptions.tlsConfig,
-        requestOptions.ret,
-        requestOptions.params,
-        requestOptions.rejectUnauthorized,
-        requestOptions.username,
-        requestOptions.password,
-        requestOptions.token
-      );
-
-      bh.local.response = responseMsg;
-
-      //appendnew_next_sd_9I38adVDSGlacXfF
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_9I38adVDSGlacXfF');
-    }
-  }
-
-  async sd_PEFvjynSc1DbtTIz(bh, parentSpanInst) {
-    try {
-      let requestOptions = {
-        url: bh.local.request.URL,
-        timeout: 30000,
-        method: 'post',
-        headers: {},
-        followRedirects: true,
-        cookies: undefined,
-        authType: undefined,
-        body: bh.input.body,
-        paytoqs: false,
-        proxyConfig: undefined,
-        tlsConfig: undefined,
-        ret: 'json',
-        params: {},
-        username: undefined,
-        password: undefined,
-        token: undefined,
-        rejectUnauthorized: undefined,
-        useQuerystring: false,
-      };
-      if (!false) {
-        requestOptions.rejectUnauthorized = false;
-      }
-      requestOptions.tlsConfig = undefined;
-      requestOptions.proxyConfig = undefined;
-      let responseMsg: any = await this.sdService.httpRequest(
-        requestOptions.url,
-        requestOptions.timeout,
-        requestOptions.method,
-        requestOptions.headers,
-        requestOptions.followRedirects,
-        requestOptions.cookies,
-        requestOptions.authType,
-        requestOptions.body,
-        requestOptions.paytoqs,
-        requestOptions.proxyConfig,
-        requestOptions.tlsConfig,
-        requestOptions.ret,
-        requestOptions.params,
-        requestOptions.rejectUnauthorized,
-        requestOptions.username,
-        requestOptions.password,
-        requestOptions.token
-      );
-
-      bh.local.response = responseMsg;
-
-      //appendnew_next_sd_PEFvjynSc1DbtTIz
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_PEFvjynSc1DbtTIz');
-    }
-  }
-
-  async sd_psQH37PLC6keF6Zx(bh, parentSpanInst) {
+  async sd_kfrErzRLXD38OePl(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_psQH37PLC6keF6Zx',
+      'sd_kfrErzRLXD38OePl',
       parentSpanInst
     );
     try {
-      if (bh.error.message === 'connect ECONNREFUSED 127.0.0.1:8006') {
-        bh.error.message = 'Server Down';
-      }
+      const axios = require('axios');
 
-      bh.local.response = {
-        statusCode: 404,
-        payload: {
-          message: bh.error.message,
-        },
-      };
+      bh.local.response = await axios.get(bh.local.request.URL);
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_psQH37PLC6keF6Zx
+      //appendnew_next_sd_kfrErzRLXD38OePl
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_psQH37PLC6keF6Zx',
+        'sd_kfrErzRLXD38OePl',
         spanInst,
-        'sd_psQH37PLC6keF6Zx'
+        'sd_kfrErzRLXD38OePl'
+      );
+    }
+  }
+
+  async sd_i9wQZJlltnksyp2V(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_i9wQZJlltnksyp2V',
+      parentSpanInst
+    );
+    try {
+      const axios = require('axios');
+
+      bh.local.response = await axios.post(bh.local.request.URL, bh.input.body);
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_i9wQZJlltnksyp2V
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_i9wQZJlltnksyp2V',
+        spanInst,
+        'sd_i9wQZJlltnksyp2V'
       );
     }
   }
@@ -310,8 +214,7 @@ export class pre_middlewares {
     bh.errorFunName = functionName;
     this.tracerService.sendData(parentSpanInst, bh, true);
     if (
-      false ||
-      (await this.sd_INVWagMMfQa5bJf2(bh, parentSpanInst))
+      false
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -322,15 +225,6 @@ export class pre_middlewares {
         throw e;
       }
     }
-  }
-  async sd_INVWagMMfQa5bJf2(bh, parentSpanInst) {
-    const nodes = ['sd_PEFvjynSc1DbtTIz', 'sd_9I38adVDSGlacXfF'];
-    if (nodes.includes(bh.errorSource)) {
-      bh = await this.sd_psQH37PLC6keF6Zx(bh, parentSpanInst);
-      //appendnew_next_sd_INVWagMMfQa5bJf2
-      return true;
-    }
-    return false;
   }
   //appendnew_flow_pre_middlewares_Catch
 }
