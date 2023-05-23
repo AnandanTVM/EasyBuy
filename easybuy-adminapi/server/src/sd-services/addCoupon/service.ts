@@ -202,13 +202,22 @@ export class service {
     try {
       if (bh.local.coupons.length === 0) {
         bh.local.isCoupon = false;
-        bh.local.isCouponCode = 200;
-        bh.local.isCouponMsg = 'coupon added successfully';
+        bh.local.response = {
+          statusCode: 200,
+          result: {
+            message: 'coupon added successfully',
+          },
+        };
       } else {
         bh.local.isCoupon = true;
-        bh.local.isCouponCode = 404;
-        bh.local.isCouponMsg = 'coupon already added';
+        bh.local.response = {
+          statusCode: 404,
+          result: {
+            message: 'coupon already added',
+          },
+        };
       }
+
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_nNcNx1IxH2Rbr9k2(bh, parentSpanInst);
       //appendnew_next_sd_YU32BtvXZ2qkXQCS
@@ -411,7 +420,7 @@ export class service {
     );
     try {
       bh.local.response = {
-        response: 'sorry! no coupon found',
+        message: 'sorry! no coupon found',
         statusCode: 404,
       };
       this.tracerService.sendData(spanInst, bh);
@@ -435,7 +444,7 @@ export class service {
     );
     try {
       bh.local.response = {
-        response: bh.local.couponData[0],
+        message: bh.local.couponData[0],
         statusCode: 200,
       };
       this.tracerService.sendData(spanInst, bh);
@@ -452,6 +461,30 @@ export class service {
     }
   }
 
+  async sd_UL2VZsJKkrkeq7lS(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_UL2VZsJKkrkeq7lS',
+      parentSpanInst
+    );
+    try {
+      bh.local.response = {
+        message: b.error.messge,
+        statusCode: 404,
+      };
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_UL2VZsJKkrkeq7lS
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_UL2VZsJKkrkeq7lS',
+        spanInst,
+        'sd_UL2VZsJKkrkeq7lS'
+      );
+    }
+  }
+
   //appendnew_node
 
   async errorHandler(bh, e, src, parentSpanInst?, functionName?) {
@@ -461,7 +494,8 @@ export class service {
     bh.errorFunName = functionName;
     this.tracerService.sendData(parentSpanInst, bh, true);
     if (
-      false
+      false ||
+      (await this.sd_TZz3kWzhMubgEEsh(bh, parentSpanInst))
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -472,6 +506,15 @@ export class service {
         throw e;
       }
     }
+  }
+  async sd_TZz3kWzhMubgEEsh(bh, parentSpanInst) {
+    const catchConnectedNodes = ['sd_UL2VZsJKkrkeq7lS'];
+    if (catchConnectedNodes.includes(bh.errorSource)) {
+      return false;
+    }
+    bh = await this.sd_UL2VZsJKkrkeq7lS(bh, parentSpanInst);
+    //appendnew_next_sd_TZz3kWzhMubgEEsh
+    return true;
   }
   //appendnew_flow_service_Catch
 }

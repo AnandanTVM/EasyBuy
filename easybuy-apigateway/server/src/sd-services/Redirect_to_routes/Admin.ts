@@ -128,7 +128,7 @@ export class Admin {
       )
     );
 
-    this.app['post'](
+    this.app['get'](
       `${this.serviceBasePath}/get-coupon/:id`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
@@ -252,10 +252,10 @@ export class Admin {
       parentSpanInst
     );
     try {
-      console.log(`${process.env.LOGIN_PORT}get-coupon/${bh.body.params.id}`);
+      console.log(`${process.env.ADMIN_PORT}get-coupon/${bh.input.params.id}`);
       bh.local.request = {
         method: 'post',
-        URL: `${process.env.LOGIN_PORT}get-coupon/${bh.body.params.id}`,
+        URL: `${process.env.ADMIN_PORT}get-coupon/${bh.input.params.id}`,
       };
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_4poprBE42sm6Ecq4(bh, parentSpanInst);

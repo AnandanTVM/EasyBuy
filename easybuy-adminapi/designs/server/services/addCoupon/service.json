@@ -136,7 +136,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "if(bh.local.coupons.length === 0) {\n    bh.local.isCoupon = false;\n    bh.local.isCouponCode = 200;\n    bh.local.isCouponMsg = 'coupon added successfully'\n} else {\n    bh.local.isCoupon = true;\n    bh.local.isCouponCode = 404;\n    bh.local.isCouponMsg = 'coupon already added';\n}",
+        "script": "if (bh.local.coupons.length === 0) {\n    bh.local.isCoupon = false;\n    bh.local.response = {\n        statusCode: 200,\n        result: {\n            message: 'coupon added successfully'\n        }\n\n    }\n\n} else {\n    bh.local.isCoupon = true;\n    bh.local.response = {\n        statusCode: 404,\n        result: {\n            message: 'coupon already added'\n        }\n    }\n}\n",
         "functionName": "sd_YU32BtvXZ2qkXQCS",
         "category": "Function",
         "x": 525,
@@ -447,7 +447,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.response = {\n    response: \"sorry! no coupon found\",\n    statusCode: 404\n}",
+        "script": "bh.local.response = {\n    message: \"sorry! no coupon found\",\n    statusCode: 404\n}",
         "functionName": "sd_mHbI4pU2Vp07IbYH",
         "category": "Function",
         "x": 785,
@@ -467,11 +467,57 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.response = {\n    response: bh.local.couponData[0],\n    statusCode: 200\n}",
+        "script": "bh.local.response = {\n    message: bh.local.couponData[0],\n    statusCode: 200\n}",
         "functionName": "sd_lloyDllOmDUmU6Qx",
         "category": "Function",
         "x": 785,
         "y": 340,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "service",
+        "generated": true
+    },
+    {
+        "id": "sd_TZz3kWzhMubgEEsh",
+        "type": "Catch",
+        "z": "SSD_SERVICE_ID_sd_cUEheVlMRjOpDQvy",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": "all-nodes",
+        "selectCatchType": "allnodes",
+        "masternodeList": "",
+        "ignoreList": [
+            "sd_UL2VZsJKkrkeq7lS"
+        ],
+        "functionName": "sd_TZz3kWzhMubgEEsh",
+        "category": "General",
+        "x": 320,
+        "y": 60,
+        "wires": [
+            [
+                "sd_UL2VZsJKkrkeq7lS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "service"
+    },
+    {
+        "id": "sd_UL2VZsJKkrkeq7lS",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_cUEheVlMRjOpDQvy",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.response = {\n    message: b.error.messge,\n    statusCode: 404\n}",
+        "functionName": "sd_UL2VZsJKkrkeq7lS",
+        "category": "Function",
+        "x": 445,
+        "y": 60,
         "wires": [
             []
         ],
