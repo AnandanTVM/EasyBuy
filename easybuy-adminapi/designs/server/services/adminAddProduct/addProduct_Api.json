@@ -1,0 +1,184 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_WosgSQPDL0z4EjAb",
+        "type": "tab",
+        "createdDate": "2023-05-23T05:53:21.624Z",
+        "label": "addProduct_Api",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "addProduct_Api",
+        "relativeParentPath": "adminAddProduct"
+    },
+    {
+        "id": "sd_YqRXOEMxf18qVnsn",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_WosgSQPDL0z4EjAb",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/admin/product",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": true,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": {
+            "type": "path",
+            "fileOptions": [
+                {
+                    "name": "image",
+                    "maxCount": 1
+                }
+            ],
+            "path": ""
+        },
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "fileoptions": [
+                {
+                    "key": "image",
+                    "value": "1",
+                    "rowId": "sd_wWjKHEw1JcRRDkpT",
+                    "valid": true
+                }
+            ],
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 165,
+        "y": 100,
+        "wires": [
+            [
+                "sd_g8elVY6pnhqAskj9"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "addProduct_Api",
+        "functionName": "sd_YqRXOEMxf18qVnsn"
+    },
+    {
+        "id": "sd_g8elVY6pnhqAskj9",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_WosgSQPDL0z4EjAb",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
+            "type": "tab",
+            "createdDate": "2023-05-23T05:53:09.380Z",
+            "label": "addProduct_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_tVrcW0BGgpOr82MF",
+            "flowName": "sd_tVrcW0BGgpOr82MF"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "./addProduct_service",
+        "startName": "sd_tVrcW0BGgpOr82MF",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_g8elVY6pnhqAskj9",
+        "category": "General",
+        "x": 305,
+        "y": 120,
+        "wires": [
+            [
+                "sd_sPlEMxWhVWdqllWV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "addProduct_Api",
+        "generated": true
+    },
+    {
+        "id": "sd_sPlEMxWhVWdqllWV",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_WosgSQPDL0z4EjAb",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "bh.local",
+            "value": "response.statusCode",
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": "bh.local.response.statusCode",
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_sPlEMxWhVWdqllWV",
+        "category": "HTTP",
+        "x": 425,
+        "y": 120,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "addProduct_Api",
+        "generated": true
+    }
+]

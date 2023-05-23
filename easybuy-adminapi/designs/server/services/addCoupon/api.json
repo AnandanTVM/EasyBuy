@@ -1,0 +1,501 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J",
+        "type": "tab",
+        "createdDate": "2023-05-23T03:49:40.839Z",
+        "label": "api",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "api",
+        "relativeParentPath": "addCoupon"
+    },
+    {
+        "id": "sd_h1ZUGZI3TkMb1EKV",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "addCoupon",
+        "path": "/admin/coupon",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "couponDetails",
+                    "desc": "coupon details as req body to add a coupon ",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_2aJoHG4KlbXNoXpv",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 145,
+        "y": 100,
+        "wires": [
+            [
+                "sd_BFCjW3DdxAOyrhTp"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "api",
+        "functionName": "sd_h1ZUGZI3TkMb1EKV"
+    },
+    {
+        "id": "sd_BFCjW3DdxAOyrhTp",
+        "type": "validate",
+        "z": "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "erd": "_DM_9czttpy1a",
+        "entityId": "_EN_5e8542yqxo",
+        "_UI_entityName": "entity_1",
+        "dbConfigId": "",
+        "validateObject": "bh.input.body",
+        "checkboxThrowError": true,
+        "resultMapping": "",
+        "functionName": "sd_BFCjW3DdxAOyrhTp",
+        "category": "Data Model",
+        "x": 265,
+        "y": 100,
+        "wires": [
+            [
+                "sd_DrxMVGill3wLNciN"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "validateObject": {
+                "type": "bh.input",
+                "value": "body",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {
+            "resultMapping": true
+        },
+        "generateNext": false,
+        "serviceName": "api",
+        "generated": true
+    },
+    {
+        "id": "sd_DrxMVGill3wLNciN",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_cUEheVlMRjOpDQvy",
+            "type": "tab",
+            "createdDate": "2023-05-23T03:49:51.252Z",
+            "label": "service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_2D0J4EoULYFyPGm5",
+            "flowName": "addCouponService"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "./service",
+        "startName": "addCouponService",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_DrxMVGill3wLNciN",
+        "category": "General",
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "sd_peXkISLTPJ18iSjR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api",
+        "generated": true
+    },
+    {
+        "id": "sd_peXkISLTPJ18iSjR",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log('hiiiii')",
+        "functionName": "sd_peXkISLTPJ18iSjR",
+        "category": "Function",
+        "x": 510,
+        "y": 100,
+        "wires": [
+            [
+                "sd_v2Lk6FHYrRk8tahE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api",
+        "generated": true
+    },
+    {
+        "id": "sd_v2Lk6FHYrRk8tahE",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "isCouponMsg",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "bh.local",
+            "value": "isCouponCode",
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": "bh.local.isCouponCode",
+            "obj": "bh.local.isCouponMsg",
+            "send": "bh.local.isCouponMsg"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_v2Lk6FHYrRk8tahE",
+        "category": "HTTP",
+        "x": 630,
+        "y": 100,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api",
+        "generated": true
+    },
+    {
+        "id": "sd_ivpKEq2804u4j3RZ",
+        "type": "Catch",
+        "z": "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_lkToXN55d62jcQSV"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_ivpKEq2804u4j3RZ",
+        "category": "General",
+        "x": 205,
+        "y": 360,
+        "wires": [
+            [
+                "sd_aIA8rYJcAJqk2Dry"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "api"
+    },
+    {
+        "id": "sd_aIA8rYJcAJqk2Dry",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let instancePath = bh.error.error[0].instancePath.split('');\nlet spliced = instancePath.splice(1, instancePath.length);\nlet str = spliced.join('');\nbh.local.errMsg = str + \" \" +bh.error.error[0].message",
+        "functionName": "sd_aIA8rYJcAJqk2Dry",
+        "category": "Function",
+        "x": 365,
+        "y": 360,
+        "wires": [
+            [
+                "sd_AL3XuWB7XUgJVVqS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api",
+        "generated": true
+    },
+    {
+        "id": "sd_AL3XuWB7XUgJVVqS",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "errMsg",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 500,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 500,
+            "obj": "bh.local.errMsg",
+            "send": "bh.local.errMsg"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_AL3XuWB7XUgJVVqS",
+        "category": "HTTP",
+        "x": 520,
+        "y": 360,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api",
+        "generated": true
+    },
+    {
+        "id": "sd_NZUc18RQHqyyVUAK",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "getCoupon",
+        "path": "/get-coupon/:couponcode",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "couponCode",
+                    "desc": "for getting the coupon code",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_FX9tTpgl4NC9JlIK",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 205,
+        "y": 220,
+        "wires": [
+            [
+                "sd_gtxPhy5l8RQHXno7"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "api",
+        "functionName": "sd_NZUc18RQHqyyVUAK"
+    },
+    {
+        "id": "sd_gtxPhy5l8RQHXno7",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_cUEheVlMRjOpDQvy",
+            "type": "tab",
+            "createdDate": "2023-05-23T03:49:51.252Z",
+            "label": "service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_ONBF29y0ZyACeqSQ",
+            "flowName": "getCouponService"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "./service",
+        "startName": "getCouponService",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_gtxPhy5l8RQHXno7",
+        "category": "General",
+        "x": 365,
+        "y": 220,
+        "wires": [
+            [
+                "sd_5MOyESNrIeMPAXUF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api",
+        "generated": true
+    },
+    {
+        "id": "sd_5MOyESNrIeMPAXUF",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_02hP0bO9sixgU29J",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "bh.local",
+            "value": "response.statusCode",
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": "bh.local.response.statusCode",
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_5MOyESNrIeMPAXUF",
+        "category": "HTTP",
+        "x": 500,
+        "y": 220,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api",
+        "generated": true
+    }
+]

@@ -1,8 +1,8 @@
 [
     {
-        "id": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
+        "id": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
         "type": "tab",
-        "createdDate": "2023-05-03T09:46:27.238Z",
+        "createdDate": "2023-05-23T05:53:09.380Z",
         "label": "addProduct_service",
         "disabled": false,
         "info": "",
@@ -12,9 +12,9 @@
         "relativeParentPath": "adminAddProduct"
     },
     {
-        "id": "sd_C4K7yVlBWTkyDi0x",
+        "id": "sd_tVrcW0BGgpOr82MF",
         "type": "Start",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
         "viewType": "client-server",
         "nodeType": "start",
         "name": "",
@@ -22,13 +22,13 @@
         "inputVariables": [],
         "localVariables": [],
         "accept_bh": true,
-        "functionName": "sd_C4K7yVlBWTkyDi0x",
+        "functionName": "sd_tVrcW0BGgpOr82MF",
         "category": "General",
-        "x": 165,
-        "y": 260,
+        "x": 45,
+        "y": 200,
         "wires": [
             [
-                "sd_2VlY1gvnXtHOebBw"
+                "sd_ITTGLKmLHSiFtGlt"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -36,20 +36,20 @@
         "serviceName": "addProduct_service"
     },
     {
-        "id": "sd_2VlY1gvnXtHOebBw",
+        "id": "sd_ITTGLKmLHSiFtGlt",
         "type": "Script",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
         "script": "bh.local.isImage = bh.input.files?.image\nconsole.log(bh.input)",
-        "functionName": "sd_2VlY1gvnXtHOebBw",
+        "functionName": "sd_ITTGLKmLHSiFtGlt",
         "category": "Function",
-        "x": 320,
-        "y": 260,
+        "x": 200,
+        "y": 200,
         "wires": [
             [
-                "sd_BsdnO1vdnlj542Mi"
+                "sd_Tfs2fEdJt5noVmcq"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -58,9 +58,9 @@
         "generated": true
     },
     {
-        "id": "sd_mTUX2NmKcEhegym8",
+        "id": "sd_Tfs2fEdJt5noVmcq",
         "type": "Switch",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
@@ -78,62 +78,44 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "functionName": "sd_mTUX2NmKcEhegym8",
+        "functionName": "sd_Tfs2fEdJt5noVmcq",
         "category": "Function",
-        "x": 465,
-        "y": 180,
+        "x": 365,
+        "y": 200,
         "wires": [
             [
-                "sd_BsdnO1vdnlj542Mi"
+                "sd_dv8sIqOrUEwx88wI"
             ],
             [
-                "sd_jZleK088QykB3kgs"
+                "sd_DY4Q9RUgaxIotExa"
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "addProduct_service"
+        "generateNext": false,
+        "serviceName": "addProduct_service",
+        "generated": true
     },
     {
-        "id": "sd_jZleK088QykB3kgs",
-        "type": "Script",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "\nbh.local.response={\n    statusCode : 400,\n    message : \"must need image\"\n}",
-        "functionName": "sd_jZleK088QykB3kgs",
-        "category": "Function",
-        "x": 640,
-        "y": 140,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "addProduct_service"
-    },
-    {
-        "id": "sd_BsdnO1vdnlj542Mi",
+        "id": "sd_dv8sIqOrUEwx88wI",
         "type": "validate",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
         "viewType": "server",
         "nodeType": "flow",
         "name": "",
-        "erd": "_DM_vm8jywvzs",
-        "entityId": "_EN_psnsdlfz8t",
+        "erd": "_DM_dktfa1mfe",
+        "entityId": "_EN_r7ftmleuz2",
         "_UI_entityName": "entity_1",
         "dbConfigId": "",
         "validateObject": "bh.input.body",
         "checkboxThrowError": true,
         "resultMapping": "",
-        "functionName": "sd_BsdnO1vdnlj542Mi",
+        "functionName": "sd_dv8sIqOrUEwx88wI",
         "category": "Data Model",
-        "x": 645,
-        "y": 360,
+        "x": 445,
+        "y": 300,
         "wires": [
             [
-                "sd_QtpqGHnGhOHUbhk0"
+                "sd_fuhyMpezTPnKK64w"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -158,65 +140,17 @@
         "generated": true
     },
     {
-        "id": "sd_QtpqGHnGhOHUbhk0",
+        "id": "sd_DY4Q9RUgaxIotExa",
         "type": "Script",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.isValid = true\nif(!bh.input.body.name){\n  bh.local.isValid=false\n  bh.local.message=\"empty field name\"\n}else if(!bh.input.body.gram){\n  bh.local.isValid=false\n  bh.local.message=\"empty field price\"\n}else if(!bh.input.body.description){\n  bh.local.isValid=false\n bh.local.message=\"empty field description\"\n}else if(!bh.input.body.category){\n    bh.local.isValid=false\n bh.local.message=\"empty field category\"\n}",
-        "functionName": "sd_QtpqGHnGhOHUbhk0",
+        "script": "\nbh.local.response={\n    statusCode : 400,\n    message : \"must need image\"\n}",
+        "functionName": "sd_DY4Q9RUgaxIotExa",
         "category": "Function",
-        "x": 800,
-        "y": 360,
-        "wires": [
-            [
-                "sd_rb0bQt43usUv6aG7"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "addProduct_service",
-        "generated": true
-    },
-    {
-        "id": "sd_Wgg3iAiMLiETzP54",
-        "type": "Catch",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "",
-        "selectedNodes": [
-            "sd_BsdnO1vdnlj542Mi"
-        ],
-        "selectCatchType": "selectednodes",
-        "masternodeList": "",
-        "ignoreList": "",
-        "functionName": "sd_Wgg3iAiMLiETzP54",
-        "category": "General",
-        "x": 645,
-        "y": 480,
-        "wires": [
-            [
-                "sd_eReSr4m4ZRMMVyTr"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "addProduct_service"
-    },
-    {
-        "id": "sd_eReSr4m4ZRMMVyTr",
-        "type": "Script",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "bh.local.response={\n    statusCode : 400,\n    message : bh.error.error[0].message\n}",
-        "functionName": "sd_eReSr4m4ZRMMVyTr",
-        "category": "Function",
-        "x": 645,
-        "y": 600,
+        "x": 445,
+        "y": 80,
         "wires": [
             []
         ],
@@ -226,9 +160,31 @@
         "generated": true
     },
     {
-        "id": "sd_rb0bQt43usUv6aG7",
+        "id": "sd_fuhyMpezTPnKK64w",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.isValid = true\nif(!bh.input.body.name){\n  bh.local.isValid=false\n  bh.local.message=\"empty field name\"\n}else if(!bh.input.body.gram){\n  bh.local.isValid=false\n  bh.local.message=\"empty field price\"\n}else if(!bh.input.body.description){\n  bh.local.isValid=false\n bh.local.message=\"empty field description\"\n}else if(!bh.input.body.category){\n    bh.local.isValid=false\n bh.local.message=\"empty field category\"\n}",
+        "functionName": "sd_fuhyMpezTPnKK64w",
+        "category": "Function",
+        "x": 585,
+        "y": 300,
+        "wires": [
+            [
+                "sd_mNNu3mYojUndTkgy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "addProduct_service",
+        "generated": true
+    },
+    {
+        "id": "sd_mNNu3mYojUndTkgy",
         "type": "Switch",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
@@ -246,16 +202,16 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "functionName": "sd_rb0bQt43usUv6aG7",
+        "functionName": "sd_mNNu3mYojUndTkgy",
         "category": "Function",
-        "x": 925,
-        "y": 360,
+        "x": 705,
+        "y": 300,
         "wires": [
             [
-                "sd_9ThPGk4VAORjNTBo"
+                "sd_84MV6CWCmQQkZTMD"
             ],
             [
-                "sd_4lUj9DXgwQB1jSSZ"
+                "sd_DydvHAMpTWH2EnJ3"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -264,17 +220,39 @@
         "generated": true
     },
     {
-        "id": "sd_4lUj9DXgwQB1jSSZ",
+        "id": "sd_84MV6CWCmQQkZTMD",
         "type": "Script",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const axios = require('axios');\n\nbh.local.findQuery = {\"name\":bh.input.body.name}\nconst key = bh.input.body.category\nbh.local.collection = \"product\"\nbh.input.body.image = bh.input.files.image\nconst api = \"https://api.exchangerate-api.com/v4/latest/USD\";\nconst metalpriceapi = \"https://api.metals.live/v1/spot\"\n\nlet metalprice = await axios.get(metalpriceapi)\n\n\n\nlet currency = await axios.get(api)\n\n\n \n    const result = metalprice.data.find(obj => obj.hasOwnProperty(key));\n    const price = result[key]\n    let fromRate = currency.data.rates.USD;\n    let toRate = currency.data.rates.INR;\n    let convertedPrice =\n        (((toRate / fromRate) * price).toFixed(2))/31.1035;\n        bh.input.body.price = convertedPrice*bh.input.body.gram\n\n        console.log(bh.input.body)\n\n        bh.input.body._id = Math.floor(100000 + Math.random() * 900000).toString()",
+        "functionName": "sd_84MV6CWCmQQkZTMD",
+        "category": "Function",
+        "x": 805,
+        "y": 420,
+        "wires": [
+            [
+                "sd_zBzeKj9dSLf5EpSz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "addProduct_service",
+        "generated": true
+    },
+    {
+        "id": "sd_DydvHAMpTWH2EnJ3",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
         "script": "bh.local.response={\n    statusCode : 400,\n    message : bh.local.message\n}",
-        "functionName": "sd_4lUj9DXgwQB1jSSZ",
+        "functionName": "sd_DydvHAMpTWH2EnJ3",
         "category": "Function",
-        "x": 1060,
-        "y": 240,
+        "x": 805,
+        "y": 180,
         "wires": [
             []
         ],
@@ -284,13 +262,13 @@
         "generated": true
     },
     {
-        "id": "sd_khoBFH8EWsG4uodr",
+        "id": "sd_zBzeKj9dSLf5EpSz",
         "type": "Mongodb",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
         "viewType": "server",
         "nodeType": "flow",
         "name": "",
-        "databaseConfig": "sd_qYoT2PgM4f1tomGX",
+        "databaseConfig": "sd_Bd4DJQTzXivkt0hw",
         "collection": "bh.local.collection",
         "options": "",
         "resultMapping": "bh.local.result",
@@ -318,13 +296,13 @@
         "filePath": "",
         "fileName": "",
         "pipeline": "",
-        "functionName": "sd_khoBFH8EWsG4uodr",
+        "functionName": "sd_zBzeKj9dSLf5EpSz",
         "category": "Storage",
-        "x": 1245,
-        "y": 500,
+        "x": 965,
+        "y": 420,
         "wires": [
             [
-                "sd_mfucgqMZPb1pM0Wa"
+                "sd_xwz3WsDccT1wCulB"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -361,21 +339,19 @@
         "generated": true
     },
     {
-        "id": "sd_9ThPGk4VAORjNTBo",
+        "id": "sd_xwz3WsDccT1wCulB",
         "type": "Script",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "const axios = require('axios');\n\nbh.local.findQuery = {\"name\":bh.input.body.name}\nconst key = bh.input.body.category\nbh.local.collection = \"product\"\nbh.input.body.image = bh.input.files.image\nconst api = \"https://api.exchangerate-api.com/v4/latest/USD\";\nconst metalpriceapi = \"https://api.metals.live/v1/spot\"\n\nlet metalprice = await axios.get(metalpriceapi)\n\n\n\nlet currency = await axios.get(api)\n\n\n \n    const result = metalprice.data.find(obj => obj.hasOwnProperty(key));\n    const price = result[key]\n    let fromRate = currency.data.rates.USD;\n    let toRate = currency.data.rates.INR;\n    let convertedPrice =\n        (((toRate / fromRate) * price).toFixed(2))/31.1035;\n        bh.input.body.price = convertedPrice*bh.input.body.gram\n\n        console.log(bh.input.body)\n\n        bh.input.body._id = Math.floor(100000 + Math.random() * 900000).toString()",
-        "functionName": "sd_9ThPGk4VAORjNTBo",
+        "script": "bh.local.response={\n    statusCode:200,\n    message:bh.local.result\n  }",
+        "functionName": "sd_xwz3WsDccT1wCulB",
         "category": "Function",
-        "x": 1065,
-        "y": 500,
+        "x": 1125,
+        "y": 420,
         "wires": [
-            [
-                "sd_khoBFH8EWsG4uodr"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -383,17 +359,43 @@
         "generated": true
     },
     {
-        "id": "sd_mfucgqMZPb1pM0Wa",
+        "id": "sd_33dpmMiyg5XuKo47",
+        "type": "Catch",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_BsdnO1vdnlj542Mi"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_33dpmMiyg5XuKo47",
+        "category": "General",
+        "x": 45,
+        "y": 80,
+        "wires": [
+            [
+                "sd_8kCcnsiRYhBbcAUK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "addProduct_service"
+    },
+    {
+        "id": "sd_8kCcnsiRYhBbcAUK",
         "type": "Script",
-        "z": "SSD_SERVICE_ID_sd_xbNeNUCGJ7jhR2iZ",
+        "z": "SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.response={\n    statusCode:200,\n    message:bh.local.result\n  }",
-        "functionName": "sd_mfucgqMZPb1pM0Wa",
+        "script": "bh.local.response={\n    statusCode : 400,\n    message : bh.error.error[0].message\n}",
+        "functionName": "sd_8kCcnsiRYhBbcAUK",
         "category": "Function",
-        "x": 1405,
-        "y": 500,
+        "x": 205,
+        "y": 80,
         "wires": [
             []
         ],

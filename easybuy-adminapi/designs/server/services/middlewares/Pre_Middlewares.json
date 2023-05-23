@@ -1,0 +1,34 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_qO2KGm9zO1csflg7",
+        "type": "tab",
+        "createdDate": "2023-05-23T04:52:14.310Z",
+        "label": "Pre_Middlewares",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "Pre_Middlewares",
+        "relativeParentPath": "middlewares"
+    },
+    {
+        "id": "sd_wSnaGBc1j7KwqSM5",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_qO2KGm9zO1csflg7",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "accept_bh": "",
+        "functionName": "sd_wSnaGBc1j7KwqSM5",
+        "category": "General",
+        "x": 120,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Pre_Middlewares"
+    }
+]

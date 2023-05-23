@@ -100,78 +100,121 @@ export class addProduct_service {
   }
   //   service flows_addProduct_service
 
-  async sd_C4K7yVlBWTkyDi0x(parentSpanInst, bh) {
+  async sd_tVrcW0BGgpOr82MF(parentSpanInst, bh) {
     const spanInst = this.tracerService.createSpan(
-      'sd_C4K7yVlBWTkyDi0x',
+      'sd_tVrcW0BGgpOr82MF',
       parentSpanInst
     );
     try {
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_2VlY1gvnXtHOebBw(bh, parentSpanInst);
-      //appendnew_next_sd_C4K7yVlBWTkyDi0x
+      bh = await this.sd_ITTGLKmLHSiFtGlt(bh, parentSpanInst);
+      //appendnew_next_sd_tVrcW0BGgpOr82MF
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_C4K7yVlBWTkyDi0x',
+        'sd_tVrcW0BGgpOr82MF',
         spanInst,
-        'sd_C4K7yVlBWTkyDi0x'
+        'sd_tVrcW0BGgpOr82MF'
       );
     }
   }
 
   //appendnew_flow_addProduct_service_start
 
-  async sd_2VlY1gvnXtHOebBw(bh, parentSpanInst) {
+  async sd_ITTGLKmLHSiFtGlt(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_2VlY1gvnXtHOebBw',
+      'sd_ITTGLKmLHSiFtGlt',
       parentSpanInst
     );
     try {
       bh.local.isImage = bh.input.files?.image;
       console.log(bh.input);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_BsdnO1vdnlj542Mi(bh, parentSpanInst);
-      //appendnew_next_sd_2VlY1gvnXtHOebBw
+      bh = await this.sd_Tfs2fEdJt5noVmcq(bh, parentSpanInst);
+      //appendnew_next_sd_ITTGLKmLHSiFtGlt
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_2VlY1gvnXtHOebBw',
+        'sd_ITTGLKmLHSiFtGlt',
         spanInst,
-        'sd_2VlY1gvnXtHOebBw'
+        'sd_ITTGLKmLHSiFtGlt'
       );
     }
   }
 
-  async sd_BsdnO1vdnlj542Mi(bh, parentSpanInst) {
+  async sd_Tfs2fEdJt5noVmcq(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_BsdnO1vdnlj542Mi',
+      'sd_Tfs2fEdJt5noVmcq',
       parentSpanInst
     );
     try {
-      validateNode('_EN_psnsdlfz8t', bh.input.body, true);
-
+      let otherwiseFlag = true;
+      if (
+        this.sdService.operators['null'](
+          bh.local.isImage,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_DY4Q9RUgaxIotExa(bh, parentSpanInst);
+        otherwiseFlag = false;
+      }
+      if (
+        this.sdService.operators['else'](
+          otherwiseFlag,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_dv8sIqOrUEwx88wI(bh, parentSpanInst);
+        otherwiseFlag = false;
+      }
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_QtpqGHnGhOHUbhk0(bh, parentSpanInst);
-      //appendnew_next_sd_BsdnO1vdnlj542Mi
+
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_BsdnO1vdnlj542Mi',
+        'sd_Tfs2fEdJt5noVmcq',
         spanInst,
-        'sd_BsdnO1vdnlj542Mi'
+        'sd_Tfs2fEdJt5noVmcq'
       );
     }
   }
 
-  async sd_QtpqGHnGhOHUbhk0(bh, parentSpanInst) {
+  async sd_dv8sIqOrUEwx88wI(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_QtpqGHnGhOHUbhk0',
+      'sd_dv8sIqOrUEwx88wI',
+      parentSpanInst
+    );
+    try {
+      validateNode('_EN_r7ftmleuz2', bh.input.body, true);
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_fuhyMpezTPnKK64w(bh, parentSpanInst);
+      //appendnew_next_sd_dv8sIqOrUEwx88wI
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_dv8sIqOrUEwx88wI',
+        spanInst,
+        'sd_dv8sIqOrUEwx88wI'
+      );
+    }
+  }
+
+  async sd_fuhyMpezTPnKK64w(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_fuhyMpezTPnKK64w',
       parentSpanInst
     );
     try {
@@ -190,23 +233,23 @@ export class addProduct_service {
         bh.local.message = 'empty field category';
       }
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_rb0bQt43usUv6aG7(bh, parentSpanInst);
-      //appendnew_next_sd_QtpqGHnGhOHUbhk0
+      bh = await this.sd_mNNu3mYojUndTkgy(bh, parentSpanInst);
+      //appendnew_next_sd_fuhyMpezTPnKK64w
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_QtpqGHnGhOHUbhk0',
+        'sd_fuhyMpezTPnKK64w',
         spanInst,
-        'sd_QtpqGHnGhOHUbhk0'
+        'sd_fuhyMpezTPnKK64w'
       );
     }
   }
 
-  async sd_rb0bQt43usUv6aG7(bh, parentSpanInst) {
+  async sd_mNNu3mYojUndTkgy(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_rb0bQt43usUv6aG7',
+      'sd_mNNu3mYojUndTkgy',
       parentSpanInst
     );
     try {
@@ -218,7 +261,7 @@ export class addProduct_service {
           undefined
         )
       ) {
-        bh = await this.sd_9ThPGk4VAORjNTBo(bh, parentSpanInst);
+        bh = await this.sd_84MV6CWCmQQkZTMD(bh, parentSpanInst);
       } else if (
         this.sdService.operators['false'](
           bh.local.isValid,
@@ -227,7 +270,7 @@ export class addProduct_service {
           undefined
         )
       ) {
-        bh = await this.sd_4lUj9DXgwQB1jSSZ(bh, parentSpanInst);
+        bh = await this.sd_DydvHAMpTWH2EnJ3(bh, parentSpanInst);
       }
       this.tracerService.sendData(spanInst, bh);
 
@@ -236,16 +279,16 @@ export class addProduct_service {
       return await this.errorHandler(
         bh,
         e,
-        'sd_rb0bQt43usUv6aG7',
+        'sd_mNNu3mYojUndTkgy',
         spanInst,
-        'sd_rb0bQt43usUv6aG7'
+        'sd_mNNu3mYojUndTkgy'
       );
     }
   }
 
-  async sd_9ThPGk4VAORjNTBo(bh, parentSpanInst) {
+  async sd_84MV6CWCmQQkZTMD(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_9ThPGk4VAORjNTBo',
+      'sd_84MV6CWCmQQkZTMD',
       parentSpanInst
     );
     try {
@@ -275,50 +318,50 @@ export class addProduct_service {
         100000 + Math.random() * 900000
       ).toString();
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_khoBFH8EWsG4uodr(bh, parentSpanInst);
-      //appendnew_next_sd_9ThPGk4VAORjNTBo
+      bh = await this.sd_zBzeKj9dSLf5EpSz(bh, parentSpanInst);
+      //appendnew_next_sd_84MV6CWCmQQkZTMD
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_9ThPGk4VAORjNTBo',
+        'sd_84MV6CWCmQQkZTMD',
         spanInst,
-        'sd_9ThPGk4VAORjNTBo'
+        'sd_84MV6CWCmQQkZTMD'
       );
     }
   }
 
-  async sd_khoBFH8EWsG4uodr(bh, parentSpanInst) {
+  async sd_zBzeKj9dSLf5EpSz(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_khoBFH8EWsG4uodr',
+      'sd_zBzeKj9dSLf5EpSz',
       parentSpanInst
     );
     try {
       bh.local.result = await MongoPersistance.getInstance().insertOne(
-        'sd_qYoT2PgM4f1tomGX',
+        'sd_Bd4DJQTzXivkt0hw',
         bh.local.collection,
         bh.input.body,
         {}
       );
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_mfucgqMZPb1pM0Wa(bh, parentSpanInst);
-      //appendnew_next_sd_khoBFH8EWsG4uodr
+      bh = await this.sd_xwz3WsDccT1wCulB(bh, parentSpanInst);
+      //appendnew_next_sd_zBzeKj9dSLf5EpSz
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_khoBFH8EWsG4uodr',
+        'sd_zBzeKj9dSLf5EpSz',
         spanInst,
-        'sd_khoBFH8EWsG4uodr'
+        'sd_zBzeKj9dSLf5EpSz'
       );
     }
   }
 
-  async sd_mfucgqMZPb1pM0Wa(bh, parentSpanInst) {
+  async sd_xwz3WsDccT1wCulB(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_mfucgqMZPb1pM0Wa',
+      'sd_xwz3WsDccT1wCulB',
       parentSpanInst
     );
     try {
@@ -327,22 +370,22 @@ export class addProduct_service {
         message: bh.local.result,
       };
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_mfucgqMZPb1pM0Wa
+      //appendnew_next_sd_xwz3WsDccT1wCulB
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_mfucgqMZPb1pM0Wa',
+        'sd_xwz3WsDccT1wCulB',
         spanInst,
-        'sd_mfucgqMZPb1pM0Wa'
+        'sd_xwz3WsDccT1wCulB'
       );
     }
   }
 
-  async sd_4lUj9DXgwQB1jSSZ(bh, parentSpanInst) {
+  async sd_DydvHAMpTWH2EnJ3(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_4lUj9DXgwQB1jSSZ',
+      'sd_DydvHAMpTWH2EnJ3',
       parentSpanInst
     );
     try {
@@ -351,22 +394,46 @@ export class addProduct_service {
         message: bh.local.message,
       };
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_4lUj9DXgwQB1jSSZ
+      //appendnew_next_sd_DydvHAMpTWH2EnJ3
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_4lUj9DXgwQB1jSSZ',
+        'sd_DydvHAMpTWH2EnJ3',
         spanInst,
-        'sd_4lUj9DXgwQB1jSSZ'
+        'sd_DydvHAMpTWH2EnJ3'
       );
     }
   }
 
-  async sd_eReSr4m4ZRMMVyTr(bh, parentSpanInst) {
+  async sd_DY4Q9RUgaxIotExa(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_eReSr4m4ZRMMVyTr',
+      'sd_DY4Q9RUgaxIotExa',
+      parentSpanInst
+    );
+    try {
+      bh.local.response = {
+        statusCode: 400,
+        message: 'must need image',
+      };
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_DY4Q9RUgaxIotExa
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_DY4Q9RUgaxIotExa',
+        spanInst,
+        'sd_DY4Q9RUgaxIotExa'
+      );
+    }
+  }
+
+  async sd_8kCcnsiRYhBbcAUK(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_8kCcnsiRYhBbcAUK',
       parentSpanInst
     );
     try {
@@ -375,15 +442,15 @@ export class addProduct_service {
         message: bh.error.error[0].message,
       };
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_eReSr4m4ZRMMVyTr
+      //appendnew_next_sd_8kCcnsiRYhBbcAUK
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_eReSr4m4ZRMMVyTr',
+        'sd_8kCcnsiRYhBbcAUK',
         spanInst,
-        'sd_eReSr4m4ZRMMVyTr'
+        'sd_8kCcnsiRYhBbcAUK'
       );
     }
   }
@@ -398,7 +465,7 @@ export class addProduct_service {
     this.tracerService.sendData(parentSpanInst, bh, true);
     if (
       false ||
-      (await this.sd_Wgg3iAiMLiETzP54(bh, parentSpanInst))
+      (await this.sd_33dpmMiyg5XuKo47(bh, parentSpanInst))
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -410,11 +477,11 @@ export class addProduct_service {
       }
     }
   }
-  async sd_Wgg3iAiMLiETzP54(bh, parentSpanInst) {
+  async sd_33dpmMiyg5XuKo47(bh, parentSpanInst) {
     const nodes = ['sd_BsdnO1vdnlj542Mi'];
     if (nodes.includes(bh.errorSource)) {
-      bh = await this.sd_eReSr4m4ZRMMVyTr(bh, parentSpanInst);
-      //appendnew_next_sd_Wgg3iAiMLiETzP54
+      bh = await this.sd_8kCcnsiRYhBbcAUK(bh, parentSpanInst);
+      //appendnew_next_sd_33dpmMiyg5XuKo47
       return true;
     }
     return false;

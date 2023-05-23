@@ -14,11 +14,10 @@ import { Middleware } from '../../middleware/Middleware'; //_splitter_
 import * as settings from '../../config/config'; //_splitter_
 import log from '../../utils/Logger'; //_splitter_
 import { TracerService } from '../../services/TracerService'; //_splitter_
-import { validateNode } from '../../utils/ndefault-datamodel/find/validateUtil'; //_splitter_
 import { MongoPersistance } from '../../utils/ndefault-mongodb/Mongodb/MongoPersistance'; //_splitter_
 import * as mongodb from 'mongodb'; //_splitter_
 //append_imports_end
-export class addProduct_service {
+export class service {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -34,7 +33,7 @@ export class addProduct_service {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'addProduct_service';
+    this.serviceName = 'service';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -49,7 +48,7 @@ export class addProduct_service {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new addProduct_service(
+      instance = new service(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -83,151 +82,171 @@ export class addProduct_service {
 
   async mountTimers() {
     try {
-      //appendnew_flow_addProduct_service_TimerStart
+      //appendnew_flow_service_TimerStart
     } catch (e) {
       throw e;
     }
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: addProduct_service');
+    log.debug('mounting all middlewares for service :: service');
 
-    //appendnew_flow_addProduct_service_MiddlewareStart
+    //appendnew_flow_service_MiddlewareStart
   }
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: addProduct_service');
-    //appendnew_flow_addProduct_service_HttpIn
+    log.debug('mounting all paths for service :: service');
+    //appendnew_flow_service_HttpIn
   }
-  //   service flows_addProduct_service
+  //   service flows_service
 
-  async sd_C4K7yVlBWTkyDi0x(parentSpanInst, bh) {
+  async addCouponService(parentSpanInst, bh) {
     const spanInst = this.tracerService.createSpan(
-      'sd_C4K7yVlBWTkyDi0x',
+      'addCouponService',
       parentSpanInst
     );
     try {
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_2VlY1gvnXtHOebBw(bh, parentSpanInst);
-      //appendnew_next_sd_C4K7yVlBWTkyDi0x
+      bh = await this.sd_XwC8glk5Q9zXXsLE(bh, parentSpanInst);
+      //appendnew_next_addCouponService
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_C4K7yVlBWTkyDi0x',
+        'sd_2D0J4EoULYFyPGm5',
         spanInst,
-        'sd_C4K7yVlBWTkyDi0x'
+        'addCouponService'
       );
     }
   }
 
-  //appendnew_flow_addProduct_service_start
-
-  async sd_2VlY1gvnXtHOebBw(bh, parentSpanInst) {
+  async getCouponService(parentSpanInst, bh) {
     const spanInst = this.tracerService.createSpan(
-      'sd_2VlY1gvnXtHOebBw',
+      'getCouponService',
       parentSpanInst
     );
     try {
-      bh.local.isImage = bh.input.files?.image;
-      console.log(bh.input);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_BsdnO1vdnlj542Mi(bh, parentSpanInst);
-      //appendnew_next_sd_2VlY1gvnXtHOebBw
+      bh = await this.sd_oBKGYzfYnVbjcJfU(bh, parentSpanInst);
+      //appendnew_next_getCouponService
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_2VlY1gvnXtHOebBw',
+        'sd_ONBF29y0ZyACeqSQ',
         spanInst,
-        'sd_2VlY1gvnXtHOebBw'
+        'getCouponService'
       );
     }
   }
 
-  async sd_BsdnO1vdnlj542Mi(bh, parentSpanInst) {
+  //appendnew_flow_service_start
+
+  async sd_XwC8glk5Q9zXXsLE(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_BsdnO1vdnlj542Mi',
+      'sd_XwC8glk5Q9zXXsLE',
       parentSpanInst
     );
     try {
-      validateNode('_EN_psnsdlfz8t', bh.input.body, true);
+      bh.local.collection = 'coupon';
+      bh.local.findCoupon = { couponcode: bh.input.body.couponcode };
 
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_QtpqGHnGhOHUbhk0(bh, parentSpanInst);
-      //appendnew_next_sd_BsdnO1vdnlj542Mi
+      bh = await this.sd_82bS2oh3Lmcytfgw(bh, parentSpanInst);
+      //appendnew_next_sd_XwC8glk5Q9zXXsLE
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_BsdnO1vdnlj542Mi',
+        'sd_XwC8glk5Q9zXXsLE',
         spanInst,
-        'sd_BsdnO1vdnlj542Mi'
+        'sd_XwC8glk5Q9zXXsLE'
       );
     }
   }
 
-  async sd_QtpqGHnGhOHUbhk0(bh, parentSpanInst) {
+  async sd_82bS2oh3Lmcytfgw(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_QtpqGHnGhOHUbhk0',
+      'sd_82bS2oh3Lmcytfgw',
       parentSpanInst
     );
     try {
-      bh.local.isValid = true;
-      if (!bh.input.body.name) {
-        bh.local.isValid = false;
-        bh.local.message = 'empty field name';
-      } else if (!bh.input.body.gram) {
-        bh.local.isValid = false;
-        bh.local.message = 'empty field price';
-      } else if (!bh.input.body.description) {
-        bh.local.isValid = false;
-        bh.local.message = 'empty field description';
-      } else if (!bh.input.body.category) {
-        bh.local.isValid = false;
-        bh.local.message = 'empty field category';
+      bh.local.coupons = await MongoPersistance.getInstance().find(
+        'sd_lWTIBAUI8umrFcfl',
+        bh.local.collection,
+        bh.local.findCoupon,
+        {}
+      );
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_YU32BtvXZ2qkXQCS(bh, parentSpanInst);
+      //appendnew_next_sd_82bS2oh3Lmcytfgw
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_82bS2oh3Lmcytfgw',
+        spanInst,
+        'sd_82bS2oh3Lmcytfgw'
+      );
+    }
+  }
+
+  async sd_YU32BtvXZ2qkXQCS(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_YU32BtvXZ2qkXQCS',
+      parentSpanInst
+    );
+    try {
+      if (bh.local.coupons.length === 0) {
+        bh.local.isCoupon = false;
+        bh.local.isCouponCode = 200;
+        bh.local.isCouponMsg = 'coupon added successfully';
+      } else {
+        bh.local.isCoupon = true;
+        bh.local.isCouponCode = 404;
+        bh.local.isCouponMsg = 'coupon already added';
       }
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_rb0bQt43usUv6aG7(bh, parentSpanInst);
-      //appendnew_next_sd_QtpqGHnGhOHUbhk0
+      bh = await this.sd_nNcNx1IxH2Rbr9k2(bh, parentSpanInst);
+      //appendnew_next_sd_YU32BtvXZ2qkXQCS
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_QtpqGHnGhOHUbhk0',
+        'sd_YU32BtvXZ2qkXQCS',
         spanInst,
-        'sd_QtpqGHnGhOHUbhk0'
+        'sd_YU32BtvXZ2qkXQCS'
       );
     }
   }
 
-  async sd_rb0bQt43usUv6aG7(bh, parentSpanInst) {
+  async sd_nNcNx1IxH2Rbr9k2(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_rb0bQt43usUv6aG7',
+      'sd_nNcNx1IxH2Rbr9k2',
       parentSpanInst
     );
     try {
       if (
         this.sdService.operators['true'](
-          bh.local.isValid,
+          bh.local.isCoupon,
           undefined,
           undefined,
           undefined
         )
       ) {
-        bh = await this.sd_9ThPGk4VAORjNTBo(bh, parentSpanInst);
       } else if (
         this.sdService.operators['false'](
-          bh.local.isValid,
+          bh.local.isCoupon,
           undefined,
           undefined,
           undefined
         )
       ) {
-        bh = await this.sd_4lUj9DXgwQB1jSSZ(bh, parentSpanInst);
+        bh = await this.sd_UEUAPsvpuZnqv4Rb(bh, parentSpanInst);
       }
       this.tracerService.sendData(spanInst, bh);
 
@@ -236,154 +255,199 @@ export class addProduct_service {
       return await this.errorHandler(
         bh,
         e,
-        'sd_rb0bQt43usUv6aG7',
+        'sd_nNcNx1IxH2Rbr9k2',
         spanInst,
-        'sd_rb0bQt43usUv6aG7'
+        'sd_nNcNx1IxH2Rbr9k2'
       );
     }
   }
 
-  async sd_9ThPGk4VAORjNTBo(bh, parentSpanInst) {
+  async sd_UEUAPsvpuZnqv4Rb(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_9ThPGk4VAORjNTBo',
-      parentSpanInst
-    );
-    try {
-      const axios = require('axios');
-
-      bh.local.findQuery = { name: bh.input.body.name };
-      const key = bh.input.body.category;
-      bh.local.collection = 'product';
-      bh.input.body.image = bh.input.files.image;
-      const api = 'https://api.exchangerate-api.com/v4/latest/USD';
-      const metalpriceapi = 'https://api.metals.live/v1/spot';
-
-      let metalprice = await axios.get(metalpriceapi);
-
-      let currency = await axios.get(api);
-
-      const result = metalprice.data.find((obj) => obj.hasOwnProperty(key));
-      const price = result[key];
-      let fromRate = currency.data.rates.USD;
-      let toRate = currency.data.rates.INR;
-      let convertedPrice = ((toRate / fromRate) * price).toFixed(2) / 31.1035;
-      bh.input.body.price = convertedPrice * bh.input.body.gram;
-
-      console.log(bh.input.body);
-
-      bh.input.body._id = Math.floor(
-        100000 + Math.random() * 900000
-      ).toString();
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_khoBFH8EWsG4uodr(bh, parentSpanInst);
-      //appendnew_next_sd_9ThPGk4VAORjNTBo
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_9ThPGk4VAORjNTBo',
-        spanInst,
-        'sd_9ThPGk4VAORjNTBo'
-      );
-    }
-  }
-
-  async sd_khoBFH8EWsG4uodr(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_khoBFH8EWsG4uodr',
+      'sd_UEUAPsvpuZnqv4Rb',
       parentSpanInst
     );
     try {
       bh.local.result = await MongoPersistance.getInstance().insertOne(
-        'sd_qYoT2PgM4f1tomGX',
+        'sd_lWTIBAUI8umrFcfl',
         bh.local.collection,
         bh.input.body,
         {}
       );
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_mfucgqMZPb1pM0Wa(bh, parentSpanInst);
-      //appendnew_next_sd_khoBFH8EWsG4uodr
+      //appendnew_next_sd_UEUAPsvpuZnqv4Rb
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_khoBFH8EWsG4uodr',
+        'sd_UEUAPsvpuZnqv4Rb',
         spanInst,
-        'sd_khoBFH8EWsG4uodr'
+        'sd_UEUAPsvpuZnqv4Rb'
       );
     }
   }
 
-  async sd_mfucgqMZPb1pM0Wa(bh, parentSpanInst) {
+  async sd_oBKGYzfYnVbjcJfU(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_mfucgqMZPb1pM0Wa',
+      'sd_oBKGYzfYnVbjcJfU',
+      parentSpanInst
+    );
+    try {
+      console.log(bh.input.body);
+      bh.local.collection = 'coupon';
+      bh.local.query = { couponcode: bh.input.params.couponcode };
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_8TLnPc02SQYSf7tR(bh, parentSpanInst);
+      //appendnew_next_sd_oBKGYzfYnVbjcJfU
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_oBKGYzfYnVbjcJfU',
+        spanInst,
+        'sd_oBKGYzfYnVbjcJfU'
+      );
+    }
+  }
+
+  async sd_8TLnPc02SQYSf7tR(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_8TLnPc02SQYSf7tR',
+      parentSpanInst
+    );
+    try {
+      bh.local.couponData = await MongoPersistance.getInstance().find(
+        'sd_5DxcwTS42BtTpoen',
+        bh.local.collection,
+        bh.local.query,
+        {}
+      );
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_FKVYuY7tQxh7B7uA(bh, parentSpanInst);
+      //appendnew_next_sd_8TLnPc02SQYSf7tR
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_8TLnPc02SQYSf7tR',
+        spanInst,
+        'sd_8TLnPc02SQYSf7tR'
+      );
+    }
+  }
+
+  async sd_FKVYuY7tQxh7B7uA(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_FKVYuY7tQxh7B7uA',
+      parentSpanInst
+    );
+    try {
+      if (bh.local.couponData.length === 0) {
+        bh.local.noCoupon = true;
+      } else {
+        bh.local.noCoupon = false;
+      }
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_07mst6wWjxvgMjR8(bh, parentSpanInst);
+      //appendnew_next_sd_FKVYuY7tQxh7B7uA
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_FKVYuY7tQxh7B7uA',
+        spanInst,
+        'sd_FKVYuY7tQxh7B7uA'
+      );
+    }
+  }
+
+  async sd_07mst6wWjxvgMjR8(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_07mst6wWjxvgMjR8',
+      parentSpanInst
+    );
+    try {
+      if (
+        this.sdService.operators['true'](
+          bh.local.noCoupon,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_mHbI4pU2Vp07IbYH(bh, parentSpanInst);
+      } else if (
+        this.sdService.operators['false'](
+          bh.local.noCoupon,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_lloyDllOmDUmU6Qx(bh, parentSpanInst);
+      }
+      this.tracerService.sendData(spanInst, bh);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_07mst6wWjxvgMjR8',
+        spanInst,
+        'sd_07mst6wWjxvgMjR8'
+      );
+    }
+  }
+
+  async sd_mHbI4pU2Vp07IbYH(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_mHbI4pU2Vp07IbYH',
       parentSpanInst
     );
     try {
       bh.local.response = {
+        response: 'sorry! no coupon found',
+        statusCode: 404,
+      };
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_mHbI4pU2Vp07IbYH
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_mHbI4pU2Vp07IbYH',
+        spanInst,
+        'sd_mHbI4pU2Vp07IbYH'
+      );
+    }
+  }
+
+  async sd_lloyDllOmDUmU6Qx(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_lloyDllOmDUmU6Qx',
+      parentSpanInst
+    );
+    try {
+      bh.local.response = {
+        response: bh.local.couponData[0],
         statusCode: 200,
-        message: bh.local.result,
       };
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_mfucgqMZPb1pM0Wa
+      //appendnew_next_sd_lloyDllOmDUmU6Qx
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_mfucgqMZPb1pM0Wa',
+        'sd_lloyDllOmDUmU6Qx',
         spanInst,
-        'sd_mfucgqMZPb1pM0Wa'
-      );
-    }
-  }
-
-  async sd_4lUj9DXgwQB1jSSZ(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_4lUj9DXgwQB1jSSZ',
-      parentSpanInst
-    );
-    try {
-      bh.local.response = {
-        statusCode: 400,
-        message: bh.local.message,
-      };
-      this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_4lUj9DXgwQB1jSSZ
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_4lUj9DXgwQB1jSSZ',
-        spanInst,
-        'sd_4lUj9DXgwQB1jSSZ'
-      );
-    }
-  }
-
-  async sd_eReSr4m4ZRMMVyTr(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_eReSr4m4ZRMMVyTr',
-      parentSpanInst
-    );
-    try {
-      bh.local.response = {
-        statusCode: 400,
-        message: bh.error.error[0].message,
-      };
-      this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_eReSr4m4ZRMMVyTr
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_eReSr4m4ZRMMVyTr',
-        spanInst,
-        'sd_eReSr4m4ZRMMVyTr'
+        'sd_lloyDllOmDUmU6Qx'
       );
     }
   }
@@ -397,8 +461,7 @@ export class addProduct_service {
     bh.errorFunName = functionName;
     this.tracerService.sendData(parentSpanInst, bh, true);
     if (
-      false ||
-      (await this.sd_Wgg3iAiMLiETzP54(bh, parentSpanInst))
+      false
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -410,14 +473,5 @@ export class addProduct_service {
       }
     }
   }
-  async sd_Wgg3iAiMLiETzP54(bh, parentSpanInst) {
-    const nodes = ['sd_BsdnO1vdnlj542Mi'];
-    if (nodes.includes(bh.errorSource)) {
-      bh = await this.sd_eReSr4m4ZRMMVyTr(bh, parentSpanInst);
-      //appendnew_next_sd_Wgg3iAiMLiETzP54
-      return true;
-    }
-    return false;
-  }
-  //appendnew_flow_addProduct_service_Catch
+  //appendnew_flow_service_Catch
 }
