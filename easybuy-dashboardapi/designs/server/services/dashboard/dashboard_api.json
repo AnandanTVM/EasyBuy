@@ -127,18 +127,17 @@
         },
         "httpcode": {
             "type": "bh.local",
-            "value": "response.status",
+            "value": "response.statusCode",
             "ssd_typedInputField": true
         },
         "responseType": "obj",
         "swaggerResponse": {},
         "responseMapping": {
-            "status": "bh.local.response.status",
+            "status": "bh.local.response.statusCode",
             "obj": "bh.local.response",
             "send": "bh.local.response"
         },
         "dataModelIsArray": false,
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",

@@ -30,6 +30,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -196,22 +197,23 @@
         "headers": {},
         "responseBody": {
             "type": "bh.local",
-            "value": "isCouponMsg",
+            "value": "response",
             "ssd_typedInputField": true
         },
         "httpcode": {
             "type": "bh.local",
-            "value": "isCouponCode",
+            "value": "response.statusCode",
             "ssd_typedInputField": true
         },
         "responseType": "obj",
         "swaggerResponse": {},
         "responseMapping": {
-            "status": "bh.local.isCouponCode",
-            "obj": "bh.local.isCouponMsg",
-            "send": "bh.local.isCouponMsg"
+            "status": "bh.local.response.statusCode",
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -295,7 +297,7 @@
         "headers": {},
         "responseBody": {
             "type": "bh.local",
-            "value": "errMsg",
+            "value": "response",
             "ssd_typedInputField": true
         },
         "httpcode": {
@@ -307,8 +309,8 @@
         "swaggerResponse": {},
         "responseMapping": {
             "status": 500,
-            "obj": "bh.local.errMsg",
-            "send": "bh.local.errMsg"
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
         },
         "dataModelIsArray": false,
         "cookies": [],
@@ -356,6 +358,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -472,7 +475,6 @@
             "send": "bh.local.response"
         },
         "dataModelIsArray": false,
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",

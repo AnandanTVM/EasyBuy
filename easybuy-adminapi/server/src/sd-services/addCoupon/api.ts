@@ -240,7 +240,7 @@ export class api {
 
   async sd_v2Lk6FHYrRk8tahE(bh, parentSpanInst) {
     try {
-      bh.web.res.status(bh.local.isCouponCode).send(bh.local.isCouponMsg);
+      bh.web.res.status(bh.local.response.statusCode).send(bh.local.response);
 
       return bh;
     } catch (e) {
@@ -275,7 +275,7 @@ export class api {
 
   async sd_AL3XuWB7XUgJVVqS(bh, parentSpanInst) {
     try {
-      bh.web.res.status(500).send(bh.local.errMsg);
+      bh.web.res.status(500).send(bh.local.response);
 
       return bh;
     } catch (e) {

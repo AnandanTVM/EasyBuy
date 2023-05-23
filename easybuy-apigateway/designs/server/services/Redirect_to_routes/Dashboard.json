@@ -1,0 +1,180 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_G5FL4cRkn3sWVIx9",
+        "type": "tab",
+        "createdDate": "2023-05-23T12:15:01.282Z",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "Dashboard",
+        "relativeParentPath": "Redirect_to_routes"
+    },
+    {
+        "id": "sd_HwcrCVbvT51xslrU",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_G5FL4cRkn3sWVIx9",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "dashboard/:id",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 125,
+        "y": 140,
+        "wires": [
+            [
+                "sd_MpSZXslMPrVgVUG2"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Dashboard",
+        "functionName": "sd_HwcrCVbvT51xslrU"
+    },
+    {
+        "id": "sd_MpSZXslMPrVgVUG2",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_G5FL4cRkn3sWVIx9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.local.request = {\n    method: \"get\",\n    URL: `${process.env.DASHBOARD_POART}dashboard/${bh.input.params.id}`\n}",
+        "functionName": "sd_MpSZXslMPrVgVUG2",
+        "category": "Function",
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "sd_Or3M6Kzc0rNQp7Gq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Dashboard",
+        "generated": true
+    },
+    {
+        "id": "sd_Or3M6Kzc0rNQp7Gq",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_G5FL4cRkn3sWVIx9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA",
+            "type": "tab",
+            "createdDate": "2023-05-23T07:25:27.644Z",
+            "label": "pre_middlewares",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_ssMY2VoOAJfypBH0",
+            "flowName": "api_Request_start"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "../middlewares/pre_middlewares",
+        "startName": "api_Request_start",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_Or3M6Kzc0rNQp7Gq",
+        "category": "General",
+        "x": 385,
+        "y": 140,
+        "wires": [
+            [
+                "sd_1UBfL73IfHqJDouD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Dashboard",
+        "generated": true
+    },
+    {
+        "id": "sd_1UBfL73IfHqJDouD",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_G5FL4cRkn3sWVIx9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc",
+            "type": "tab",
+            "createdDate": "2023-05-23T07:13:07.779Z",
+            "label": "Post_middlewares",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_kKlwdvfwmKdXzpzY",
+            "flowName": "httpOut_start"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "../middlewares/Post_middlewares",
+        "startName": "httpOut_start",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_1UBfL73IfHqJDouD",
+        "category": "General",
+        "x": 530,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Dashboard",
+        "generated": true
+    }
+]
