@@ -1,0 +1,281 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_17cqdBJAntu5OVtB",
+        "type": "tab",
+        "createdDate": "2023-05-23T07:08:34.060Z",
+        "label": "dashboard_service",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "dashboard_service",
+        "relativeParentPath": "dashboard"
+    },
+    {
+        "id": "sd_FkCeRscXRM3oPD0A",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_17cqdBJAntu5OVtB",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "accept_bh": true,
+        "functionName": "sd_FkCeRscXRM3oPD0A",
+        "category": "General",
+        "x": 125,
+        "y": 100,
+        "wires": [
+            [
+                "sd_M4vHyrwa7HOfuc7p"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dashboard_service"
+    },
+    {
+        "id": "sd_M4vHyrwa7HOfuc7p",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_17cqdBJAntu5OVtB",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"hellooooo\")\nbh.local.collection = \"orders\"\nbh.local.queryCount = [{ \n    $match: {\n        empId: bh.input.params.id} \n    }, {\n    $group: {\n      _id: \"$customerNumber\",\n      // count: { $sum: 1 }\n    },\n  },\n  {\n    $group: {\n      _id: null,\n      count: { $sum: 1 }\n    },\n  }]\n\nbh.local.queryEarnings = [{ \n    $match: {\n        empId: bh.input.params.id} \n    }, {\n    $group: {\n      _id: null,\n      totalEarnings: { $sum: \"$totalAmount\" }\n    }\n  }]\n",
+        "functionName": "sd_M4vHyrwa7HOfuc7p",
+        "category": "Function",
+        "x": 260,
+        "y": 100,
+        "wires": [
+            [
+                "sd_4KNIJWZRFcTfsvHk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboard_service",
+        "generated": true
+    },
+    {
+        "id": "sd_4KNIJWZRFcTfsvHk",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_17cqdBJAntu5OVtB",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_ORRTtHi0etM9AAps",
+        "collection": "bh.local.collection",
+        "options": "",
+        "resultMapping": "bh.local.result",
+        "operation": "aggregate",
+        "argumentArray": [
+            "aggregate"
+        ],
+        "aggregate": "bh.local.queryCount",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_4KNIJWZRFcTfsvHk",
+        "category": "Storage",
+        "x": 405,
+        "y": 100,
+        "wires": [
+            [
+                "sd_OYXliB9251tOFWK9"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh.local",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "aggregate": {
+                "type": "bh.local",
+                "value": "queryCount",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboard_service",
+        "generated": true
+    },
+    {
+        "id": "sd_OYXliB9251tOFWK9",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_17cqdBJAntu5OVtB",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_ORRTtHi0etM9AAps",
+        "collection": "bh.local.collection",
+        "options": "",
+        "resultMapping": "bh.local.earningsResult",
+        "operation": "aggregate",
+        "argumentArray": [
+            "aggregate"
+        ],
+        "aggregate": "bh.local.queryEarnings",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_OYXliB9251tOFWK9",
+        "category": "Storage",
+        "x": 585,
+        "y": 100,
+        "wires": [
+            [
+                "sd_cW8fo9JyukOdfVvB"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh.local",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "earningsResult",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "aggregate": {
+                "type": "bh.local",
+                "value": "queryEarnings",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboard_service",
+        "generated": true
+    },
+    {
+        "id": "sd_NEwxS5rtbJtdkZQi",
+        "type": "Catch",
+        "z": "SSD_SERVICE_ID_sd_17cqdBJAntu5OVtB",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_Aw45Cat5RckiXfqv",
+            "sd_3ZCwK3AO86upqqe4"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_NEwxS5rtbJtdkZQi",
+        "category": "General",
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "sd_ZwRl5ORsEGKqRp6L"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dashboard_service"
+    },
+    {
+        "id": "sd_ZwRl5ORsEGKqRp6L",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_17cqdBJAntu5OVtB",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.response = {\n    status: 401,\n    message: \"something went wrong\"\n}",
+        "functionName": "sd_ZwRl5ORsEGKqRp6L",
+        "category": "Function",
+        "x": 480,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboard_service",
+        "generated": true
+    },
+    {
+        "id": "sd_cW8fo9JyukOdfVvB",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_17cqdBJAntu5OVtB",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const axios = require('axios');\nconst api = \"https://api.exchangerate-api.com/v4/latest/USD\";\nconst metalpriceapi = \"https://api.metals.live/v1/spot\"\n\nlet metalprice = await axios.get(metalpriceapi);\nconsole.log(metalprice.data);\n\n\n\nlet currency = await axios.get(api)\n\n    // const price = result[key]\n    let fromRate = currency.data.rates.USD;\n    let toRate = currency.data.rates.INR;\n    // let convertedPrice =\n    //     (((toRate / fromRate) * price).toFixed(2))/31.1035;\n\nconst gold = (((toRate / fromRate) * metalprice.data[0].gold).toFixed(2))/31.1035;\nconst silver = (((toRate / fromRate) * metalprice.data[1].silver).toFixed(2))/31.1035;\nconst platinum = (((toRate / fromRate) * metalprice.data[2].platinum).toFixed(2))/31.1035;\n\nbh.local.response = {\n    status: 200,\n    clients: bh.local.result[0]?.count,\n    earnings: bh.local.earningsResult[0]?.totalEarnings,\n    gold,\n    silver,\n    platinum\n}\n\nconsole.log(\"bh.local.result\");\nconsole.log(bh.local.result);\nconsole.log(\"bh.local.result\");",
+        "functionName": "sd_cW8fo9JyukOdfVvB",
+        "category": "Function",
+        "x": 705,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboard_service",
+        "generated": true
+    }
+]

@@ -1,0 +1,13 @@
+{
+    "displayName": "Easybuy-customerApi",
+    "appName": "easybuy-customerapi",
+    "description": "Api for customerList.",
+    "lastModified": "2023-05-23T06:58:32.171Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2023-05-23T06:58:30.008Z",
+    "analyticsId": "ace83283-85ec-58f2-c041-987bca1073c6",
+    "createdStudioVersion": "9.1.2"
+}

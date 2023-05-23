@@ -1,0 +1,167 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_ej4axidf640sCsLE",
+        "type": "tab",
+        "createdDate": "2023-05-23T07:08:25.616Z",
+        "label": "dashboard_api",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "dashboard_api",
+        "relativeParentPath": "dashboard"
+    },
+    {
+        "id": "sd_9AncCV2265i2HG2N",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_ej4axidf640sCsLE",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/dashboard/:id",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 105,
+        "y": 120,
+        "wires": [
+            [
+                "sd_65U9yKxg7IEsXgWh"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dashboard_api",
+        "functionName": "sd_9AncCV2265i2HG2N"
+    },
+    {
+        "id": "sd_65U9yKxg7IEsXgWh",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_ej4axidf640sCsLE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_17cqdBJAntu5OVtB",
+            "type": "tab",
+            "createdDate": "2023-05-23T07:08:34.060Z",
+            "label": "dashboard_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_FkCeRscXRM3oPD0A",
+            "flowName": "sd_FkCeRscXRM3oPD0A"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "./dashboard_service",
+        "startName": "sd_FkCeRscXRM3oPD0A",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_65U9yKxg7IEsXgWh",
+        "category": "General",
+        "x": 265,
+        "y": 120,
+        "wires": [
+            [
+                "sd_VPMbjSgKOEVyzQaz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboard_api",
+        "generated": true
+    },
+    {
+        "id": "sd_VPMbjSgKOEVyzQaz",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_ej4axidf640sCsLE",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "bh.local",
+            "value": "response.status",
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": "bh.local.response.status",
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_VPMbjSgKOEVyzQaz",
+        "category": "HTTP",
+        "x": 390,
+        "y": 120,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboard_api",
+        "generated": true
+    }
+]
