@@ -1,0 +1,14 @@
+[
+    {
+        "type": "tab",
+        "id": "SSD_SERVICE_ID_sd_4wDSzW1YsujYpikt",
+        "disabled": false,
+        "info": "",
+        "label": "GetUserById",
+        "createdDate": "2023-05-23T07:48:55.799Z",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "GetUserById",
+        "relativeParentPath": "Redirect_to_routes"
+    }
+]
