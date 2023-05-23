@@ -1,0 +1,13 @@
+//CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-GetUser_services-SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI
+import { GetUser_services as SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI } from './sd-services/GetUser/GetUser_services';
+//CORE_REFERENCE_IMPORT-GetUser_Api-SSD_SERVICE_ID_sd_6FFNiYc987zK7EWD
+import { GetUser_Api as SSD_SERVICE_ID_sd_6FFNiYc987zK7EWD } from './sd-services/GetUser/GetUser_Api';
+
+export const UserRoutes = [
+    //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY
+//CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-GetUser_services-SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI
+SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI,
+//CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-GetUser_Api-SSD_SERVICE_ID_sd_6FFNiYc987zK7EWD
+SSD_SERVICE_ID_sd_6FFNiYc987zK7EWD,
+];

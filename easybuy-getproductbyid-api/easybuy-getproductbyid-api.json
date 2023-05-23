@@ -1,0 +1,13 @@
+{
+    "displayName": "Easybuy-GetproductById-api",
+    "appName": "easybuy-getproductbyid-api",
+    "description": "Easybuy Get product ById Api",
+    "lastModified": "2023-05-23T04:42:16.497Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2023-05-23T04:42:14.739Z",
+    "analyticsId": "c8e589ea-ebdd-d2e1-bc4a-50dce7f82f4c",
+    "createdStudioVersion": "9.1.2"
+}
