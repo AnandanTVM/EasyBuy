@@ -14,6 +14,8 @@ import { Middleware } from '../../middleware/Middleware'; //_splitter_
 import * as settings from '../../config/config'; //_splitter_
 import log from '../../utils/Logger'; //_splitter_
 import { TracerService } from '../../services/TracerService'; //_splitter_
+import * as SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA from '../middlewares/pre_middlewares'; //_splitter_
+import * as SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc from '../middlewares/Post_middlewares'; //_splitter_
 //append_imports_end
 export class GetUserById {
   private sdService = new SDBaseService();
@@ -93,11 +95,123 @@ export class GetUserById {
   }
   private mountAllPaths() {
     log.debug('mounting all paths for service :: GetUserById');
+
+    this.app['get'](
+      `${this.serviceBasePath}/user/:phone`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_ghHRFrf8WBQnNZLA(bh, parentSpanInst);
+          //appendnew_next_sd_Xrzvnw97aaKCHPiz
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_Xrzvnw97aaKCHPiz');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
     //appendnew_flow_GetUserById_HttpIn
   }
   //   service flows_GetUserById
 
   //appendnew_flow_GetUserById_start
+
+  async sd_ghHRFrf8WBQnNZLA(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_ghHRFrf8WBQnNZLA',
+      parentSpanInst
+    );
+    try {
+      bh.local.request = {
+        method: 'get',
+        URL: `${process.env.GET_PRODUCT_BYID_PROT}product/${bh.input.params.phone}`,
+      };
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_lzGWWivgSkqzfCUK(bh, parentSpanInst);
+      //appendnew_next_sd_ghHRFrf8WBQnNZLA
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_ghHRFrf8WBQnNZLA',
+        spanInst,
+        'sd_ghHRFrf8WBQnNZLA'
+      );
+    }
+  }
+
+  async sd_lzGWWivgSkqzfCUK(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_lzGWWivgSkqzfCUK',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NAInstance: SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA.pre_middlewares =
+        SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA.pre_middlewares.getInstance();
+      bh = await SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NAInstance.api_Request_start(
+        spanInst,
+        bh
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_A4p8mWnKVbHpHwVc(bh, parentSpanInst);
+      //appendnew_next_sd_lzGWWivgSkqzfCUK
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_lzGWWivgSkqzfCUK',
+        spanInst,
+        'sd_lzGWWivgSkqzfCUK'
+      );
+    }
+  }
+
+  async sd_A4p8mWnKVbHpHwVc(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_A4p8mWnKVbHpHwVc',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhcInstance: SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc.Post_middlewares =
+        SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc.Post_middlewares.getInstance();
+      bh = await SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhcInstance.httpOut_start(
+        spanInst,
+        bh
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_A4p8mWnKVbHpHwVc
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_A4p8mWnKVbHpHwVc',
+        spanInst,
+        'sd_A4p8mWnKVbHpHwVc'
+      );
+    }
+  }
 
   //appendnew_node
 

@@ -1,14 +1,180 @@
 [
     {
-        "type": "tab",
         "id": "SSD_SERVICE_ID_sd_4wDSzW1YsujYpikt",
+        "type": "tab",
+        "createdDate": "2023-05-23T07:48:55.799Z",
+        "label": "GetUserById",
         "disabled": false,
         "info": "",
-        "label": "GetUserById",
-        "createdDate": "2023-05-23T07:48:55.799Z",
         "functionSeq": 0,
         "generateNext": true,
         "serviceName": "GetUserById",
         "relativeParentPath": "Redirect_to_routes"
+    },
+    {
+        "id": "sd_Xrzvnw97aaKCHPiz",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_4wDSzW1YsujYpikt",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/user/:phone",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 100,
+        "wires": [
+            [
+                "sd_ghHRFrf8WBQnNZLA"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "GetUserById",
+        "functionName": "sd_Xrzvnw97aaKCHPiz"
+    },
+    {
+        "id": "sd_ghHRFrf8WBQnNZLA",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_4wDSzW1YsujYpikt",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.local.request= {\n    method:\"get\",\n    URL:`${process.env.GET_PRODUCT_BYID_PROT}product/${bh.input.params.phone}`\n}",
+        "functionName": "sd_ghHRFrf8WBQnNZLA",
+        "category": "Function",
+        "x": 209,
+        "y": 99.8125,
+        "wires": [
+            [
+                "sd_lzGWWivgSkqzfCUK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "GetUserById",
+        "generated": true
+    },
+    {
+        "id": "sd_lzGWWivgSkqzfCUK",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_4wDSzW1YsujYpikt",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA",
+            "type": "tab",
+            "createdDate": "2023-05-23T07:25:27.644Z",
+            "label": "pre_middlewares",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_ssMY2VoOAJfypBH0",
+            "flowName": "api_Request_start"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "../middlewares/pre_middlewares",
+        "startName": "api_Request_start",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_lzGWWivgSkqzfCUK",
+        "category": "General",
+        "x": 329,
+        "y": 99.8125,
+        "wires": [
+            [
+                "sd_A4p8mWnKVbHpHwVc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "GetUserById",
+        "generated": true
+    },
+    {
+        "id": "sd_A4p8mWnKVbHpHwVc",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_4wDSzW1YsujYpikt",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc",
+            "type": "tab",
+            "createdDate": "2023-05-23T07:13:07.779Z",
+            "label": "Post_middlewares",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_kKlwdvfwmKdXzpzY",
+            "flowName": "httpOut_start"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "../middlewares/Post_middlewares",
+        "startName": "httpOut_start",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_A4p8mWnKVbHpHwVc",
+        "category": "General",
+        "x": 469,
+        "y": 99.8125,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "GetUserById",
+        "generated": true
     }
 ]
