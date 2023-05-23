@@ -271,6 +271,36 @@ export class pre_middlewares {
     }
   }
 
+  async sd_psQH37PLC6keF6Zx(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_psQH37PLC6keF6Zx',
+      parentSpanInst
+    );
+    try {
+      if (bh.error.message === 'connect ECONNREFUSED 127.0.0.1:8006') {
+        bh.error.message = 'Server Down';
+      }
+
+      bh.local.response = {
+        statusCode: 404,
+        payload: {
+          message: bh.error.message,
+        },
+      };
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_psQH37PLC6keF6Zx
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_psQH37PLC6keF6Zx',
+        spanInst,
+        'sd_psQH37PLC6keF6Zx'
+      );
+    }
+  }
+
   //appendnew_node
 
   async errorHandler(bh, e, src, parentSpanInst?, functionName?) {
@@ -280,7 +310,8 @@ export class pre_middlewares {
     bh.errorFunName = functionName;
     this.tracerService.sendData(parentSpanInst, bh, true);
     if (
-      false
+      false ||
+      (await this.sd_INVWagMMfQa5bJf2(bh, parentSpanInst))
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -291,6 +322,15 @@ export class pre_middlewares {
         throw e;
       }
     }
+  }
+  async sd_INVWagMMfQa5bJf2(bh, parentSpanInst) {
+    const nodes = ['sd_PEFvjynSc1DbtTIz', 'sd_9I38adVDSGlacXfF'];
+    if (nodes.includes(bh.errorSource)) {
+      bh = await this.sd_psQH37PLC6keF6Zx(bh, parentSpanInst);
+      //appendnew_next_sd_INVWagMMfQa5bJf2
+      return true;
+    }
+    return false;
   }
   //appendnew_flow_pre_middlewares_Catch
 }
