@@ -183,10 +183,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.response={\n    statusCode:500,\n    message:'EMPLOYEE_NOT_FOUND'\n}",
+        "script": "bh.local.response={\n    statusCode:404,\n    message:'EMPLOYEE_NOT_FOUND'\n}",
         "functionName": "sd_sDxKTISS5es0STt6",
         "category": "Function",
-        "x": 765,
+        "x": 785,
         "y": 220,
         "wires": [
             []

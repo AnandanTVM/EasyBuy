@@ -45,7 +45,7 @@
         "headers": {},
         "responseBody": {
             "type": "bh.local",
-            "value": "response.payload",
+            "value": "response",
             "ssd_typedInputField": true
         },
         "httpcode": {
@@ -57,8 +57,8 @@
         "swaggerResponse": {},
         "responseMapping": {
             "status": "bh.local.response.statusCode",
-            "obj": "bh.local.response.payload",
-            "send": "bh.local.response.payload"
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
         },
         "dataModelIsArray": false,
         "inputs": 1,
