@@ -1,3 +1,4 @@
 {
-    "/invoice/:id": {}
+    "/invoice/:id": {},
+    "/invoice": {}
 }

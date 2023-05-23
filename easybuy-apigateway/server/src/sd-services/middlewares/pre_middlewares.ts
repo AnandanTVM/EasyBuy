@@ -171,18 +171,14 @@ export class pre_middlewares {
         .get(bh.local.request.URL)
         .then((response) => {
           // Handle successful response
-          bh.local.response = {
-            statusCode: response.data.statusCode,
-            message: response.data.message,
-          };
+          bh.local.response = response.data;
         })
         .catch((error) => {
           // Handle error
-          bh.local.response = {
-            statusCode: error.response.data.statusCode,
-            message: error.response.data.message,
-          };
+          bh.local.response = error.response.data;
         });
+
+      console.log(bh.local.response);
       this.tracerService.sendData(spanInst, bh);
       //appendnew_next_sd_kfrErzRLXD38OePl
       return bh;
@@ -209,17 +205,11 @@ export class pre_middlewares {
         .post(bh.local.request.URL, bh.input.body)
         .then((response) => {
           // Handle successful response
-          bh.local.response = {
-            statusCode: response.data.statusCode,
-            message: response.data.message,
-          };
+          bh.local.response = response.data;
         })
         .catch((error) => {
           // Handle error
-          bh.local.response = {
-            statusCode: error.response.data.statusCode,
-            message: error.response.data.message,
-          };
+          bh.local.response = error.response.data;
         });
 
       console.log(bh.local.response);
