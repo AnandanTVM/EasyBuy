@@ -1,0 +1,13 @@
+{
+    "displayName": "Easybuy-dashboardApi",
+    "appName": "easybuy-dashboardapi",
+    "description": "dashboard apis",
+    "lastModified": "2023-05-23T07:07:11.381Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2023-05-23T07:07:07.830Z",
+    "analyticsId": "d8d59c30-087f-e573-8304-7fea673ff51a",
+    "createdStudioVersion": "9.1.2"
+}

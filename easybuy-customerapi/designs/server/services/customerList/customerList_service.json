@@ -1,0 +1,247 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_74KAAt4XKsJDDJi4",
+        "type": "tab",
+        "createdDate": "2023-05-23T07:05:00.258Z",
+        "label": "customerList_service",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "customerList_service",
+        "relativeParentPath": "customerList"
+    },
+    {
+        "id": "sd_PWWpjlK2fZNBh4RK",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_74KAAt4XKsJDDJi4",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "cutomerListService",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "accept_bh": true,
+        "functionName": "cutomerListService",
+        "category": "General",
+        "x": 125,
+        "y": 120,
+        "wires": [
+            [
+                "sd_82Ua2PBqMVPx5eve"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "customerList_service"
+    },
+    {
+        "id": "sd_82Ua2PBqMVPx5eve",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_74KAAt4XKsJDDJi4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.collection = \"orders\"\n// bh.local.query = {empId: bh.local.employee.data.employeeid};\n\nbh.local.aggregate = ([\n    {\n        $match: {empId: bh.input.params.empId}\n    },\n    {\n        $project:{\n             product: {\n        $arrayElemAt: [\"$product\", 0]\n      },\n            customerNumber:1,\n            totalAmount:1,\n            paymentStatus:1,\n            paymentid:1\n\n        }\n    },\n     {\n    $lookup: {\n      from: \"product\",\n      localField: \"product.productid\",\n      foreignField: \"_id\",\n      as: \"productDetails\"\n    }\n  },\n   {\n        $project:{\n            customerNumber:1,\n            totalAmount:1,\n            paymentStatus:1,\n            paymentid:1,\n            productDetails:{\n              $arrayElemAt: [\"$productDetails\", 0]\n            }\n\n        }\n    },\n])",
+        "functionName": "sd_82Ua2PBqMVPx5eve",
+        "category": "Function",
+        "x": 285,
+        "y": 120,
+        "wires": [
+            [
+                "sd_NaksEetKRlhvSR5K"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "customerList_service",
+        "generated": true
+    },
+    {
+        "id": "sd_UKakPEvQyWP4EDj0",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_74KAAt4XKsJDDJi4",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_BTmgYI5ucgzMdekf",
+        "collection": "bh.local.collection",
+        "options": "",
+        "resultMapping": "bh.local.result",
+        "operation": "find",
+        "argumentArray": [
+            "query"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh.local.query",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_UKakPEvQyWP4EDj0",
+        "category": "Storage",
+        "x": 445,
+        "y": 260,
+        "wires": [
+            [
+                "sd_IyZMYx8yWK3PcY3C"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh.local",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh.local",
+                "value": "query",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "customerList_service"
+    },
+    {
+        "id": "sd_IyZMYx8yWK3PcY3C",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_74KAAt4XKsJDDJi4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const {ObjectId} = require(\"mongodb\")\n\nconst recentprchs = bh.local.result[0].product.length-1\nbh.local.result[0].product = bh.local.result[0].product[recentprchs].productid\nbh.local.result.forEach(x=>{\n    x.product = ObjectId(x.product)\n})\nbh.local.out = bh.local.result\n\n",
+        "functionName": "sd_IyZMYx8yWK3PcY3C",
+        "category": "Function",
+        "x": 625,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "customerList_service"
+    },
+    {
+        "id": "sd_NaksEetKRlhvSR5K",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_74KAAt4XKsJDDJi4",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_BTmgYI5ucgzMdekf",
+        "collection": "bh.local.collection",
+        "options": "",
+        "resultMapping": "bh.local.aggResult",
+        "operation": "aggregate",
+        "argumentArray": [
+            "aggregate"
+        ],
+        "aggregate": "bh.local.aggregate",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_NaksEetKRlhvSR5K",
+        "category": "Storage",
+        "x": 445,
+        "y": 120,
+        "wires": [
+            [
+                "sd_Bl0vAEavzBG0utFG"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh.local",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "aggResult",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "aggregate": {
+                "type": "bh.local",
+                "value": "aggregate",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "customerList_service",
+        "generated": true
+    },
+    {
+        "id": "sd_Bl0vAEavzBG0utFG",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_74KAAt4XKsJDDJi4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const Razorpay = require('razorpay');\nvar instance = new Razorpay({ key_id: \"rzp_test_JK2eMcWr8sfXEU\", key_secret: \"LwCYMNILRX63OEKmwIzORX0f\" });\n\n\nfor(let i=0; i<bh.local.aggResult.length; i++) {\n    let result = await instance.paymentLink.fetch(bh.local.aggResult[i].paymentid);\n    bh.local.aggResult[i].payment = result\n    // .payment\n    // bh.local.aggResult[i].productDetails = null\n}\n\nbh.local.out = bh.local.aggResult\n",
+        "functionName": "sd_Bl0vAEavzBG0utFG",
+        "category": "Function",
+        "x": 565,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "customerList_service",
+        "generated": true
+    }
+]
