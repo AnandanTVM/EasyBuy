@@ -1,0 +1,346 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_EdxKKjWbOdHn28TC",
+        "type": "tab",
+        "createdDate": "2023-05-23T07:48:55.840Z",
+        "label": "Admin",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "Admin",
+        "relativeParentPath": "Redirect_to_routes"
+    },
+    {
+        "id": "sd_1udtSKurOG2k2VPf",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_EdxKKjWbOdHn28TC",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/admin/coupon",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 165,
+        "y": 100,
+        "wires": [
+            [
+                "sd_VaaZfZLzlh4DeaX1"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Admin",
+        "functionName": "sd_1udtSKurOG2k2VPf"
+    },
+    {
+        "id": "sd_VaaZfZLzlh4DeaX1",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_EdxKKjWbOdHn28TC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(`${process.env.ADMIN_PORT}admin/coupon`)\nbh.local.request = {\n    method: \"post\",\n    URL: `${process.env.ADMIN_PORT}admin/coupon`\n}",
+        "functionName": "sd_VaaZfZLzlh4DeaX1",
+        "category": "Function",
+        "x": 310,
+        "y": 100,
+        "wires": [
+            [
+                "sd_0EN2e8PUZTSZAm21"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Admin",
+        "generated": true
+    },
+    {
+        "id": "sd_0EN2e8PUZTSZAm21",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_EdxKKjWbOdHn28TC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA",
+            "type": "tab",
+            "createdDate": "2023-05-23T07:25:27.644Z",
+            "label": "pre_middlewares",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_ssMY2VoOAJfypBH0",
+            "flowName": "api_Request_start"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "../middlewares/pre_middlewares",
+        "startName": "api_Request_start",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_0EN2e8PUZTSZAm21",
+        "category": "General",
+        "x": 430,
+        "y": 100,
+        "wires": [
+            [
+                "sd_OFN8SUaW6pN3UBuk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Admin",
+        "generated": true
+    },
+    {
+        "id": "sd_OFN8SUaW6pN3UBuk",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_EdxKKjWbOdHn28TC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc",
+            "type": "tab",
+            "createdDate": "2023-05-23T07:13:07.779Z",
+            "label": "Post_middlewares",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_kKlwdvfwmKdXzpzY",
+            "flowName": "httpOut_start"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "../middlewares/Post_middlewares",
+        "startName": "httpOut_start",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_OFN8SUaW6pN3UBuk",
+        "category": "General",
+        "x": 570,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Admin",
+        "generated": true
+    },
+    {
+        "id": "sd_l0tOG5UMvzmqT9Fl",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_EdxKKjWbOdHn28TC",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/get-coupon/:id",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 165,
+        "y": 240,
+        "wires": [
+            [
+                "sd_chHSlL5nWT9kgYMP"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Admin",
+        "functionName": "sd_l0tOG5UMvzmqT9Fl"
+    },
+    {
+        "id": "sd_chHSlL5nWT9kgYMP",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_EdxKKjWbOdHn28TC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(`${process.env.LOGIN_PORT}get-coupon/${bh.body.params.id}`)\nbh.local.request = {\n    method: \"post\",\n    URL: `${process.env.LOGIN_PORT}get-coupon/${bh.body.params.id}`\n}",
+        "functionName": "sd_chHSlL5nWT9kgYMP",
+        "category": "Function",
+        "x": 310,
+        "y": 240,
+        "wires": [
+            [
+                "sd_4poprBE42sm6Ecq4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Admin",
+        "generated": true
+    },
+    {
+        "id": "sd_4poprBE42sm6Ecq4",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_EdxKKjWbOdHn28TC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA",
+            "type": "tab",
+            "createdDate": "2023-05-23T07:25:27.644Z",
+            "label": "pre_middlewares",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_ssMY2VoOAJfypBH0",
+            "flowName": "api_Request_start"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "../middlewares/pre_middlewares",
+        "startName": "api_Request_start",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_4poprBE42sm6Ecq4",
+        "category": "General",
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "sd_PK5kRoxj2RLe6fy2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Admin",
+        "generated": true
+    },
+    {
+        "id": "sd_PK5kRoxj2RLe6fy2",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_EdxKKjWbOdHn28TC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc",
+            "type": "tab",
+            "createdDate": "2023-05-23T07:13:07.779Z",
+            "label": "Post_middlewares",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_kKlwdvfwmKdXzpzY",
+            "flowName": "httpOut_start"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "../middlewares/Post_middlewares",
+        "startName": "httpOut_start",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_PK5kRoxj2RLe6fy2",
+        "category": "General",
+        "x": 570,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Admin",
+        "generated": true
+    }
+]

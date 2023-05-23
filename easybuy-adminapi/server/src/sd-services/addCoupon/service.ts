@@ -151,7 +151,7 @@ export class service {
     try {
       bh.local.collection = 'coupon';
       bh.local.findCoupon = { couponcode: bh.input.body.couponcode };
-
+      console.log(bh.input.body.couponcode);
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_82bS2oh3Lmcytfgw(bh, parentSpanInst);
       //appendnew_next_sd_XwC8glk5Q9zXXsLE
