@@ -1,0 +1,293 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI",
+        "type": "tab",
+        "createdDate": "2023-05-23T05:05:23.152Z",
+        "label": "GetUser_services",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "GetUser_services",
+        "relativeParentPath": "GetUser"
+    },
+    {
+        "id": "sd_0jjgIEvlurBhhXxl",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "GetUser_start",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "accept_bh": true,
+        "functionName": "getUser_start",
+        "category": "General",
+        "x": 45,
+        "y": 340,
+        "wires": [
+            [
+                "sd_I24y9Ch12PRrCrcQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "GetUser_services"
+    },
+    {
+        "id": "sd_I24y9Ch12PRrCrcQ",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const regex = /^\\d{10}$/;\n\nif (regex.test(bh.input.params.phone+\"\")) {\n  bh.local.isValid = true\n} else {\n  bh.local.isValid = false\n}\n\nconsole.log('shinas')",
+        "functionName": "sd_I24y9Ch12PRrCrcQ",
+        "category": "Function",
+        "x": 165,
+        "y": 340,
+        "wires": [
+            [
+                "sd_iLAjHTbHIm4thnN1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "GetUser_services",
+        "generated": true
+    },
+    {
+        "id": "sd_iLAjHTbHIm4thnN1",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "isValid",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.isValid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_iLAjHTbHIm4thnN1",
+        "category": "Function",
+        "x": 305,
+        "y": 340,
+        "wires": [
+            [
+                "sd_FL7vOEO7RX2H3vfa"
+            ],
+            [
+                "sd_r3zZ2gR6JQjk9OD5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "GetUser_services",
+        "generated": true
+    },
+    {
+        "id": "sd_FL7vOEO7RX2H3vfa",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.findQuery = {mobile:bh.input.params.phone}\nbh.local.collection = \"customer\"\nconsole.log(bh.local.findQuery)",
+        "functionName": "sd_FL7vOEO7RX2H3vfa",
+        "category": "Function",
+        "x": 410,
+        "y": 220,
+        "wires": [
+            [
+                "sd_ndddTkforYR4JLlO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "GetUser_services",
+        "generated": true
+    },
+    {
+        "id": "sd_r3zZ2gR6JQjk9OD5",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.response={\n    statusCode:400,\n    message:\"number is  not valid\"\n}",
+        "functionName": "sd_r3zZ2gR6JQjk9OD5",
+        "category": "Function",
+        "x": 410,
+        "y": 460,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "GetUser_services",
+        "generated": true
+    },
+    {
+        "id": "sd_ndddTkforYR4JLlO",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_bznVYbBzndwxigWl",
+        "collection": "bh.local.collection",
+        "options": "",
+        "resultMapping": "bh.local.result",
+        "operation": "find",
+        "argumentArray": [
+            "query"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh.local.findQuery",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_ndddTkforYR4JLlO",
+        "category": "Storage",
+        "x": 550,
+        "y": 220,
+        "wires": [
+            [
+                "sd_13zT8OogjourUhVg"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh.local",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh.local",
+                "value": "findQuery",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "GetUser_services",
+        "generated": true
+    },
+    {
+        "id": "sd_13zT8OogjourUhVg",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "result",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.result",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "str",
+                "gv": "\"0\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_13zT8OogjourUhVg",
+        "category": "Function",
+        "x": 705,
+        "y": 220,
+        "wires": [
+            [
+                "sd_Oi4tk72cAs0p2kFc"
+            ],
+            [
+                "sd_OZQihdxZitbXfpd5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "GetUser_services",
+        "generated": true
+    },
+    {
+        "id": "sd_Oi4tk72cAs0p2kFc",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.response={\n    statusCode:200,\n    message:bh.local.result\n}",
+        "functionName": "sd_Oi4tk72cAs0p2kFc",
+        "category": "Function",
+        "x": 805,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "GetUser_services",
+        "generated": true
+    },
+    {
+        "id": "sd_OZQihdxZitbXfpd5",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Wivv9hBXFNKdFZAI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.response={\n    statusCode:400,\n    message:\"no result found\"\n}",
+        "functionName": "sd_OZQihdxZitbXfpd5",
+        "category": "Function",
+        "x": 810,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "GetUser_services",
+        "generated": true
+    }
+]

@@ -1,0 +1,13 @@
+{
+    "displayName": "Easybuy-Order-Api",
+    "appName": "easybuy-order-api",
+    "description": "Easybuy Order Api",
+    "lastModified": "2023-05-23T05:49:28.685Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2023-05-23T05:49:25.473Z",
+    "analyticsId": "6063d054-4599-d092-0b1c-031d08dc838d",
+    "createdStudioVersion": "9.1.2"
+}

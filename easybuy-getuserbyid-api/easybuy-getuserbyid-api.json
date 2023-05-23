@@ -1,0 +1,13 @@
+{
+    "displayName": "Easybuy-GetUserById-Api",
+    "appName": "easybuy-getuserbyid-api",
+    "description": "Easybuy Get User ById Api",
+    "lastModified": "2023-05-23T04:44:05.899Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2023-05-23T04:44:02.751Z",
+    "analyticsId": "913a98ce-d9a0-d937-9bcf-ea909ff6158a",
+    "createdStudioVersion": "9.1.2"
+}
