@@ -1,14 +1,181 @@
 [
     {
-        "type": "tab",
         "id": "SSD_SERVICE_ID_sd_FQOu5LUIqMU7hAbF",
+        "type": "tab",
+        "createdDate": "2023-05-23T07:49:14.601Z",
+        "label": "Order",
         "disabled": false,
         "info": "",
-        "label": "Order",
-        "createdDate": "2023-05-23T07:49:14.601Z",
         "functionSeq": 0,
         "generateNext": true,
         "serviceName": "Order",
         "relativeParentPath": "Redirect_to_routes"
+    },
+    {
+        "id": "sd_giYkhpe90mWjoQtE",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_FQOu5LUIqMU7hAbF",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/invoice",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 120,
+        "wires": [
+            [
+                "sd_sSdnqps9adtltujy"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Order",
+        "functionName": "sd_giYkhpe90mWjoQtE"
+    },
+    {
+        "id": "sd_sSdnqps9adtltujy",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_FQOu5LUIqMU7hAbF",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.local.request= {\n    method:\"post\",\n    URL:`${process.env.INVOICE_PROT}invoice`\n}",
+        "functionName": "sd_sSdnqps9adtltujy",
+        "category": "Function",
+        "x": 209,
+        "y": 119.8125,
+        "wires": [
+            [
+                "sd_OnDeC8x2HkIlqWx9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Order",
+        "generated": true
+    },
+    {
+        "id": "sd_OnDeC8x2HkIlqWx9",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_FQOu5LUIqMU7hAbF",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA",
+            "type": "tab",
+            "createdDate": "2023-05-23T07:25:27.644Z",
+            "label": "pre_middlewares",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_ssMY2VoOAJfypBH0",
+            "flowName": "api_Request_start"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "../middlewares/pre_middlewares",
+        "startName": "api_Request_start",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_OnDeC8x2HkIlqWx9",
+        "category": "General",
+        "x": 329,
+        "y": 119.8125,
+        "wires": [
+            [
+                "sd_HVpRgb5HnHD35cNB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Order",
+        "generated": true
+    },
+    {
+        "id": "sd_HVpRgb5HnHD35cNB",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_FQOu5LUIqMU7hAbF",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc",
+            "type": "tab",
+            "createdDate": "2023-05-23T07:13:07.779Z",
+            "label": "Post_middlewares",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_kKlwdvfwmKdXzpzY",
+            "flowName": "httpOut_start"
+        },
+        "inputVariables": [],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "../middlewares/Post_middlewares",
+        "startName": "httpOut_start",
+        "inputParams": [
+            "bh"
+        ],
+        "accept_bh": true,
+        "functionName": "sd_HVpRgb5HnHD35cNB",
+        "category": "General",
+        "x": 469,
+        "y": 119.8125,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Order",
+        "generated": true
     }
 ]

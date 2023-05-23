@@ -127,6 +127,38 @@ export class Invoice {
         this.generatedMiddlewares
       )
     );
+
+    this.app['post'](
+      `${this.serviceBasePath}/invoice`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_EiwrXAsJW7zanjSK(bh, parentSpanInst);
+          //appendnew_next_sd_UOsNsl5p76mtD7ZA
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_UOsNsl5p76mtD7ZA');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
     //appendnew_flow_Invoice_HttpIn
   }
   //   service flows_Invoice
@@ -209,6 +241,86 @@ export class Invoice {
         'sd_poILT2Yv2ho7BNTv',
         spanInst,
         'sd_poILT2Yv2ho7BNTv'
+      );
+    }
+  }
+
+  async sd_EiwrXAsJW7zanjSK(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_EiwrXAsJW7zanjSK',
+      parentSpanInst
+    );
+    try {
+      bh.local.request = {
+        method: 'post',
+        URL: `${process.env.INVOICE_PROT}invoice`,
+      };
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_4nCg4pUMf3esEl9r(bh, parentSpanInst);
+      //appendnew_next_sd_EiwrXAsJW7zanjSK
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_EiwrXAsJW7zanjSK',
+        spanInst,
+        'sd_EiwrXAsJW7zanjSK'
+      );
+    }
+  }
+
+  async sd_4nCg4pUMf3esEl9r(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_4nCg4pUMf3esEl9r',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NAInstance: SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA.pre_middlewares =
+        SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NA.pre_middlewares.getInstance();
+      bh = await SSD_SERVICE_ID_sd_oRvQXaA1cV6Qs9NAInstance.api_Request_start(
+        spanInst,
+        bh
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_AvUxFhvuVLDuKa7q(bh, parentSpanInst);
+      //appendnew_next_sd_4nCg4pUMf3esEl9r
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_4nCg4pUMf3esEl9r',
+        spanInst,
+        'sd_4nCg4pUMf3esEl9r'
+      );
+    }
+  }
+
+  async sd_AvUxFhvuVLDuKa7q(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_AvUxFhvuVLDuKa7q',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhcInstance: SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc.Post_middlewares =
+        SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhc.Post_middlewares.getInstance();
+      bh = await SSD_SERVICE_ID_sd_zIkw7O66hUnZvIhcInstance.httpOut_start(
+        spanInst,
+        bh
+      );
+
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_AvUxFhvuVLDuKa7q
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_AvUxFhvuVLDuKa7q',
+        spanInst,
+        'sd_AvUxFhvuVLDuKa7q'
       );
     }
   }
