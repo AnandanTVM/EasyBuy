@@ -1,4 +1,8 @@
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-adminLogin_api-SSD_SERVICE_ID_sd_QIqfjHOUdX1CzAdB
+import { adminLogin_api as SSD_SERVICE_ID_sd_QIqfjHOUdX1CzAdB } from './sd-services/adminLogin/adminLogin_api';
+//CORE_REFERENCE_IMPORT-adminLogin_service-SSD_SERVICE_ID_sd_JqXhLhjkY7BLUwS2
+import { adminLogin_service as SSD_SERVICE_ID_sd_JqXhLhjkY7BLUwS2 } from './sd-services/adminLogin/adminLogin_service';
 //CORE_REFERENCE_IMPORT-addProduct_Api-SSD_SERVICE_ID_sd_WosgSQPDL0z4EjAb
 import { addProduct_Api as SSD_SERVICE_ID_sd_WosgSQPDL0z4EjAb } from './sd-services/adminAddProduct/addProduct_Api';
 //CORE_REFERENCE_IMPORT-addProduct_service-SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH
@@ -16,6 +20,10 @@ import { api as SSD_SERVICE_ID_sd_02hP0bO9sixgU29J } from './sd-services/addCoup
 
 export const UserRoutes = [
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY
+//CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-adminLogin_api-SSD_SERVICE_ID_sd_QIqfjHOUdX1CzAdB
+SSD_SERVICE_ID_sd_QIqfjHOUdX1CzAdB,
+//CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-adminLogin_service-SSD_SERVICE_ID_sd_JqXhLhjkY7BLUwS2
+SSD_SERVICE_ID_sd_JqXhLhjkY7BLUwS2,
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-addProduct_Api-SSD_SERVICE_ID_sd_WosgSQPDL0z4EjAb
 SSD_SERVICE_ID_sd_WosgSQPDL0z4EjAb,
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-addProduct_service-SSD_SERVICE_ID_sd_ClZkeNwI7NBUxDOH

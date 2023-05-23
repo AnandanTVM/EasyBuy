@@ -132,7 +132,7 @@ export class addProduct_service {
       bh.local.isImage = bh.input.files?.image;
       console.log(bh.input);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_BsdnO1vdnlj542Mi(bh, parentSpanInst);
+      bh = await this.sd_mTUX2NmKcEhegym8(bh, parentSpanInst);
       //appendnew_next_sd_2VlY1gvnXtHOebBw
       return bh;
     } catch (e) {
@@ -142,6 +142,49 @@ export class addProduct_service {
         'sd_2VlY1gvnXtHOebBw',
         spanInst,
         'sd_2VlY1gvnXtHOebBw'
+      );
+    }
+  }
+
+  async sd_mTUX2NmKcEhegym8(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_mTUX2NmKcEhegym8',
+      parentSpanInst
+    );
+    try {
+      let otherwiseFlag = true;
+      if (
+        this.sdService.operators['null'](
+          bh.local.isImage,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_jZleK088QykB3kgs(bh, parentSpanInst);
+        otherwiseFlag = false;
+      }
+      if (
+        this.sdService.operators['else'](
+          otherwiseFlag,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_BsdnO1vdnlj542Mi(bh, parentSpanInst);
+        otherwiseFlag = false;
+      }
+      this.tracerService.sendData(spanInst, bh);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_mTUX2NmKcEhegym8',
+        spanInst,
+        'sd_mTUX2NmKcEhegym8'
       );
     }
   }
@@ -360,6 +403,30 @@ export class addProduct_service {
         'sd_4lUj9DXgwQB1jSSZ',
         spanInst,
         'sd_4lUj9DXgwQB1jSSZ'
+      );
+    }
+  }
+
+  async sd_jZleK088QykB3kgs(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_jZleK088QykB3kgs',
+      parentSpanInst
+    );
+    try {
+      bh.local.response = {
+        statusCode: 400,
+        message: 'must need image',
+      };
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_jZleK088QykB3kgs
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_jZleK088QykB3kgs',
+        spanInst,
+        'sd_jZleK088QykB3kgs'
       );
     }
   }
