@@ -122,9 +122,7 @@ export class Post_middlewares {
 
   async httpOut(bh, parentSpanInst) {
     try {
-      bh.web.res
-        .status(bh.local.response.statusCode)
-        .send(bh.local.response.payload);
+      bh.web.res.status(bh.local.response.statusCode).send(bh.local.response);
 
       return bh;
     } catch (e) {

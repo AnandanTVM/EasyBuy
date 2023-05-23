@@ -167,7 +167,22 @@ export class pre_middlewares {
     try {
       const axios = require('axios');
 
-      bh.local.response = await axios.get(bh.local.request.URL);
+      await axios
+        .get(bh.local.request.URL)
+        .then((response) => {
+          // Handle successful response
+          bh.local.response = {
+            statusCode: response.data.statusCode,
+            message: response.data.message,
+          };
+        })
+        .catch((error) => {
+          // Handle error
+          bh.local.response = {
+            statusCode: error.response.data.statusCode,
+            message: error.response.data.message,
+          };
+        });
       this.tracerService.sendData(spanInst, bh);
       //appendnew_next_sd_kfrErzRLXD38OePl
       return bh;
@@ -190,7 +205,25 @@ export class pre_middlewares {
     try {
       const axios = require('axios');
 
-      bh.local.response = await axios.post(bh.local.request.URL, bh.input.body);
+      await axios
+        .post(bh.local.request.URL, bh.input.body)
+        .then((response) => {
+          // Handle successful response
+          bh.local.response = {
+            statusCode: response.data.statusCode,
+            message: response.data.message,
+          };
+        })
+        .catch((error) => {
+          // Handle error
+          bh.local.response = {
+            statusCode: error.response.data.statusCode,
+            message: error.response.data.message,
+          };
+        });
+
+      console.log(bh.local.response);
+      console.log('bh.local.response');
       this.tracerService.sendData(spanInst, bh);
       //appendnew_next_sd_i9wQZJlltnksyp2V
       return bh;
@@ -205,6 +238,30 @@ export class pre_middlewares {
     }
   }
 
+  async sd_7uzpl8ES0F5YsOEy(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_7uzpl8ES0F5YsOEy',
+      parentSpanInst
+    );
+    try {
+      bh.local.response = {
+        statusCode: 503,
+        message: 'server Unavalilable',
+      };
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_7uzpl8ES0F5YsOEy
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_7uzpl8ES0F5YsOEy',
+        spanInst,
+        'sd_7uzpl8ES0F5YsOEy'
+      );
+    }
+  }
+
   //appendnew_node
 
   async errorHandler(bh, e, src, parentSpanInst?, functionName?) {
@@ -214,7 +271,8 @@ export class pre_middlewares {
     bh.errorFunName = functionName;
     this.tracerService.sendData(parentSpanInst, bh, true);
     if (
-      false
+      false ||
+      (await this.sd_vjhW5UQypR63O1eL(bh, parentSpanInst))
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -225,6 +283,15 @@ export class pre_middlewares {
         throw e;
       }
     }
+  }
+  async sd_vjhW5UQypR63O1eL(bh, parentSpanInst) {
+    const nodes = ['sd_i9wQZJlltnksyp2V', 'sd_kfrErzRLXD38OePl'];
+    if (nodes.includes(bh.errorSource)) {
+      bh = await this.sd_7uzpl8ES0F5YsOEy(bh, parentSpanInst);
+      //appendnew_next_sd_vjhW5UQypR63O1eL
+      return true;
+    }
+    return false;
   }
   //appendnew_flow_pre_middlewares_Catch
 }
