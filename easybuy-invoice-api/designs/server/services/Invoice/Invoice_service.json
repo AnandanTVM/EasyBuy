@@ -84,7 +84,7 @@
         "y": 100,
         "wires": [
             [
-                "sd_ATbp9YDI2SyEtJNf"
+                "sd_GO7o5StERblYGw94"
             ],
             [
                 "sd_sZWHxRWZhmaylv3K"
@@ -102,15 +102,13 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"valid\")",
+        "script": "bh.local.response = {\n    statusCode:200,\n    message:bh.local.result\n}",
         "functionName": "sd_ATbp9YDI2SyEtJNf",
         "category": "Function",
-        "x": 485,
+        "x": 625,
         "y": 60,
         "wires": [
-            [
-                "sd_GO7o5StERblYGw94"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -124,7 +122,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"not valid\")",
+        "script": "bh.local.response = {\n    statusCode:404,\n    message:bh.error.message || \"invalid\"\n}",
         "functionName": "sd_sZWHxRWZhmaylv3K",
         "category": "Function",
         "x": 490,
@@ -174,10 +172,12 @@
         "pipeline": "",
         "functionName": "sd_GO7o5StERblYGw94",
         "category": "Storage",
-        "x": 610,
+        "x": 505,
         "y": 60,
         "wires": [
-            []
+            [
+                "sd_ATbp9YDI2SyEtJNf"
+            ]
         ],
         "__ssdTypeInputs__": {
             "collection": {
@@ -249,7 +249,9 @@
         "x": 265,
         "y": 340,
         "wires": [
-            []
+            [
+                "sd_Z0UkycmtDCxePltt"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -271,8 +273,8 @@
         "ignoreList": "",
         "functionName": "sd_opWbztxJtLO4u8LQ",
         "category": "General",
-        "x": 430,
-        "y": 340,
+        "x": 245,
+        "y": 460,
         "wires": [
             [
                 "sd_ZhHKkDd80YcZZQat"
@@ -289,10 +291,59 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.error)",
+        "script": "bh.local.response = {\n    statusCode:404,\n    message:bh.error.message\n}",
         "functionName": "sd_ZhHKkDd80YcZZQat",
         "category": "Function",
-        "x": 605,
+        "x": 420,
+        "y": 460,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Invoice_service",
+        "generated": true
+    },
+    {
+        "id": "sd_TR04dHhy5Gb3KghX",
+        "type": "Catch",
+        "z": "SSD_SERVICE_ID_sd_1Q8BK98F6gaC7aBt",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_5IJzFZe0cxXXrJMP",
+            "sd_dK29qcoGYVYWv0TV",
+            "sd_ATbp9YDI2SyEtJNf",
+            "sd_GO7o5StERblYGw94"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_TR04dHhy5Gb3KghX",
+        "category": "General",
+        "x": 360,
+        "y": 220,
+        "wires": [
+            [
+                "sd_sZWHxRWZhmaylv3K"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Invoice_service"
+    },
+    {
+        "id": "sd_Z0UkycmtDCxePltt",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_1Q8BK98F6gaC7aBt",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": " bh.local.response = {\n    statusCode:200,\n    message:\"success\"\n  }",
+        "functionName": "sd_Z0UkycmtDCxePltt",
+        "category": "Function",
+        "x": 405,
         "y": 340,
         "wires": [
             []

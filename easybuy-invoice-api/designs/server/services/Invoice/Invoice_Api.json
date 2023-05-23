@@ -74,24 +74,23 @@
         "name": "",
         "headers": {},
         "responseBody": {
-            "type": "str",
-            "value": "ok",
+            "type": "bh.local",
+            "value": "response",
             "ssd_typedInputField": true
         },
         "httpcode": {
-            "type": "num",
-            "value": 200,
+            "type": "bh.local",
+            "value": "response.statusCode",
             "ssd_typedInputField": true
         },
         "responseType": "obj",
         "swaggerResponse": {},
         "responseMapping": {
-            "status": 200,
-            "obj": "\"ok\"",
-            "send": "\"ok\""
+            "status": "bh.local.response.statusCode",
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
         },
         "dataModelIsArray": false,
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -274,23 +273,22 @@
         "headers": {},
         "responseBody": {
             "type": "bh.local",
-            "value": "result",
+            "value": "response",
             "ssd_typedInputField": true
         },
         "httpcode": {
-            "type": "num",
-            "value": 200,
+            "type": "bh.local",
+            "value": "response.statusCode",
             "ssd_typedInputField": true
         },
         "responseType": "obj",
         "swaggerResponse": {},
         "responseMapping": {
-            "status": 200,
-            "obj": "bh.local.result",
-            "send": "bh.local.result"
+            "status": "bh.local.response.statusCode",
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
         },
         "dataModelIsArray": false,
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",

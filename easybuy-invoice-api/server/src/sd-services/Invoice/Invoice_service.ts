@@ -292,7 +292,7 @@ export class Invoice_service {
           undefined
         )
       ) {
-        bh = await this.sd_ATbp9YDI2SyEtJNf(bh, parentSpanInst);
+        bh = await this.sd_GO7o5StERblYGw94(bh, parentSpanInst);
       } else if (
         this.sdService.operators['false'](
           bh.local.isIdValid,
@@ -317,28 +317,6 @@ export class Invoice_service {
     }
   }
 
-  async sd_ATbp9YDI2SyEtJNf(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_ATbp9YDI2SyEtJNf',
-      parentSpanInst
-    );
-    try {
-      console.log('valid');
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_GO7o5StERblYGw94(bh, parentSpanInst);
-      //appendnew_next_sd_ATbp9YDI2SyEtJNf
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_ATbp9YDI2SyEtJNf',
-        spanInst,
-        'sd_ATbp9YDI2SyEtJNf'
-      );
-    }
-  }
-
   async sd_GO7o5StERblYGw94(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
       'sd_GO7o5StERblYGw94',
@@ -352,6 +330,7 @@ export class Invoice_service {
         {}
       );
       this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_ATbp9YDI2SyEtJNf(bh, parentSpanInst);
       //appendnew_next_sd_GO7o5StERblYGw94
       return bh;
     } catch (e) {
@@ -365,13 +344,40 @@ export class Invoice_service {
     }
   }
 
+  async sd_ATbp9YDI2SyEtJNf(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_ATbp9YDI2SyEtJNf',
+      parentSpanInst
+    );
+    try {
+      bh.local.response = {
+        statusCode: 200,
+        message: bh.local.result,
+      };
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_ATbp9YDI2SyEtJNf
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_ATbp9YDI2SyEtJNf',
+        spanInst,
+        'sd_ATbp9YDI2SyEtJNf'
+      );
+    }
+  }
+
   async sd_sZWHxRWZhmaylv3K(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
       'sd_sZWHxRWZhmaylv3K',
       parentSpanInst
     );
     try {
-      console.log('not valid');
+      bh.local.response = {
+        statusCode: 404,
+        message: bh.error.message || 'invalid',
+      };
       this.tracerService.sendData(spanInst, bh);
       //appendnew_next_sd_sZWHxRWZhmaylv3K
       return bh;
@@ -423,6 +429,7 @@ export class Invoice_service {
       //       }]
 
       this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_Z0UkycmtDCxePltt(bh, parentSpanInst);
       //appendnew_next_sendMail
       return bh;
     } catch (e) {
@@ -436,13 +443,40 @@ export class Invoice_service {
     }
   }
 
+  async sd_Z0UkycmtDCxePltt(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_Z0UkycmtDCxePltt',
+      parentSpanInst
+    );
+    try {
+      bh.local.response = {
+        statusCode: 200,
+        message: 'success',
+      };
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_Z0UkycmtDCxePltt
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_Z0UkycmtDCxePltt',
+        spanInst,
+        'sd_Z0UkycmtDCxePltt'
+      );
+    }
+  }
+
   async sd_ZhHKkDd80YcZZQat(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
       'sd_ZhHKkDd80YcZZQat',
       parentSpanInst
     );
     try {
-      console.log(bh.error);
+      bh.local.response = {
+        statusCode: 404,
+        message: bh.error.message,
+      };
       this.tracerService.sendData(spanInst, bh);
       //appendnew_next_sd_ZhHKkDd80YcZZQat
       return bh;
@@ -467,7 +501,8 @@ export class Invoice_service {
     this.tracerService.sendData(parentSpanInst, bh, true);
     if (
       false ||
-      (await this.sd_opWbztxJtLO4u8LQ(bh, parentSpanInst))
+      (await this.sd_opWbztxJtLO4u8LQ(bh, parentSpanInst)) ||
+      (await this.sd_TR04dHhy5Gb3KghX(bh, parentSpanInst))
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -484,6 +519,20 @@ export class Invoice_service {
     if (nodes.includes(bh.errorSource)) {
       bh = await this.sd_ZhHKkDd80YcZZQat(bh, parentSpanInst);
       //appendnew_next_sd_opWbztxJtLO4u8LQ
+      return true;
+    }
+    return false;
+  }
+  async sd_TR04dHhy5Gb3KghX(bh, parentSpanInst) {
+    const nodes = [
+      'sd_5IJzFZe0cxXXrJMP',
+      'sd_dK29qcoGYVYWv0TV',
+      'sd_ATbp9YDI2SyEtJNf',
+      'sd_GO7o5StERblYGw94',
+    ];
+    if (nodes.includes(bh.errorSource)) {
+      bh = await this.sd_sZWHxRWZhmaylv3K(bh, parentSpanInst);
+      //appendnew_next_sd_TR04dHhy5Gb3KghX
       return true;
     }
     return false;
