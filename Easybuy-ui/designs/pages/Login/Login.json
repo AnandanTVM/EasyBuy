@@ -363,7 +363,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.error.error.message,\"login error\")\n\ndocument.getElementById('loginError').innerText=bh.error.error?.message || \"something went wrong\"",
+        "script": "console.log(bh.error,\"login error\")\n\ndocument.getElementById('loginError').innerText=bh.error.error?.message || \"something went wrong\"",
         "functionName": "sd_s17i3CpiAPwChwat",
         "category": "Function",
         "x": 720,

@@ -255,7 +255,7 @@ export class LoginComponent {
   sd_s17i3CpiAPwChwat(bh) {
     try {
       const page = this.page;
-      console.log(bh.error.error.message, 'login error');
+      console.log(bh.error, 'login error');
 
       document.getElementById('loginError').innerText =
         bh.error.error?.message || 'something went wrong';
