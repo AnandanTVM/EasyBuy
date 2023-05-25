@@ -114,7 +114,7 @@ export class employeeLogin_api {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_KwxavTpf3DEVqNGE(bh, parentSpanInst);
+          bh = await this.sd_QtT0W3YOKJqQJjJf(bh, parentSpanInst);
           //appendnew_next_sd_zxCT0DK7moJQ2Zhv
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_zxCT0DK7moJQ2Zhv');
@@ -131,6 +131,28 @@ export class employeeLogin_api {
   //   service flows_employeeLogin_api
 
   //appendnew_flow_employeeLogin_api_start
+
+  async sd_QtT0W3YOKJqQJjJf(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_QtT0W3YOKJqQJjJf',
+      parentSpanInst
+    );
+    try {
+      console.log('endPont hitted..');
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_KwxavTpf3DEVqNGE(bh, parentSpanInst);
+      //appendnew_next_sd_QtT0W3YOKJqQJjJf
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_QtT0W3YOKJqQJjJf',
+        spanInst,
+        'sd_QtT0W3YOKJqQJjJf'
+      );
+    }
+  }
 
   async sd_KwxavTpf3DEVqNGE(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(

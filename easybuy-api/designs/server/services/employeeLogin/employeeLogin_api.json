@@ -44,11 +44,11 @@
         "outputs": 1,
         "validateRequestUsingSwaggerDocs": false,
         "category": "HTTP",
-        "x": 105,
+        "x": 45,
         "y": 80,
         "wires": [
             [
-                "sd_KwxavTpf3DEVqNGE"
+                "sd_QtT0W3YOKJqQJjJf"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -63,8 +63,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "employeeLogin_api",
-        "functionName": "sd_zxCT0DK7moJQ2Zhv",
-        "generated": false
+        "functionName": "sd_zxCT0DK7moJQ2Zhv"
     },
     {
         "id": "sd_iS67VT5Pc0CRXJKz",
@@ -160,8 +159,30 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
         "generateNext": false,
-        "serviceName": "employeeLogin_api"
+        "serviceName": "employeeLogin_api",
+        "generated": true
+    },
+    {
+        "id": "sd_QtT0W3YOKJqQJjJf",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_JBSoGI8HE5Fr9gcq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"endPont hitted..\")",
+        "functionName": "sd_QtT0W3YOKJqQJjJf",
+        "category": "Function",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "sd_KwxavTpf3DEVqNGE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "employeeLogin_api",
+        "generated": true
     }
 ]

@@ -6,8 +6,81 @@
         "label": "Navbar",
         "disabled": false,
         "info": "",
-        "functionSeq": 0,
+        "functionSeq": 1,
         "generateNext": true,
         "serviceName": "NavbarComponent"
+    },
+    {
+        "id": "sd_KC1iOswxwofo37mc",
+        "type": "OnInit",
+        "z": "sd_3P2cK0EohtqlB3gG",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_7lTfrt6Cf9D18M6X_1",
+        "category": "Lifecycle Events",
+        "x": 105,
+        "y": 220,
+        "wires": [
+            [
+                "sd_QFh2XH6cVfFhFBxN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "NavbarComponent"
+    },
+    {
+        "id": "sd_QFh2XH6cVfFhFBxN",
+        "type": "Script",
+        "z": "sd_3P2cK0EohtqlB3gG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.navbarValue = [{\n    \"Link\": \"/ui/home\",\n    \"img\":\"https://res.cloudinary.com/ddtcmyvhx/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1684931545/profile_4_edbhg1.jpg?_s=public-apps\"\n\n},\n{\n    \"Link\": \"/ui/home\",\n    \"img\":\"https://res.cloudinary.com/ddtcmyvhx/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1684931545/profile_4_edbhg1.jpg?_s=public-apps\"\n\n},\n{\n    \"Link\": \"/ui/scan\",\n    \"img\":\"https://res.cloudinary.com/ddtcmyvhx/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1684931437/profile_3_efmv9q.jpg?_s=public-apps\"\n\n},\n{\n    \"Link\": \"/ui/customer-list\",\n    \"img\":\"https://res.cloudinary.com/ddtcmyvhx/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1684930655/profile_2_ospmsp.jpg?_s=public-apps\"\n\n},\n{\n    \"Link\": \"/ui/profile\",\n    \"img\":\"https://res.cloudinary.com/ddtcmyvhx/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1684930521/profile_1_peovp6.jpg?_s=public-apps\"\n\n}]",
+        "functionName": "sd_9mrdYckLuTxBlVwN_1",
+        "category": "Function",
+        "x": 245,
+        "y": 220,
+        "wires": [
+            [
+                "sd_WK4zRfaPiiUxgDzT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "NavbarComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WK4zRfaPiiUxgDzT",
+        "type": "PageVariables",
+        "z": "sd_3P2cK0EohtqlB3gG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "navBar",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "navbarValue"
+                }
+            }
+        ],
+        "functionName": "sd_2lZeTT5zUUUj7P3O_1",
+        "category": "Function",
+        "x": 425,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "NavbarComponent",
+        "generated": true
     }
 ]

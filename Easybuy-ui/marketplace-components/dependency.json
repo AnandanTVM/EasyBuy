@@ -292,6 +292,30 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "navbar",
+            "version": "1.0.0",
+            "displayName": "navBar",
+            "type": "Components",
+            "publisher": "tkcli",
+            "platformSupportVersion": {
+                "min": "8.3.0"
+            },
+            "packageType": "studio-package",
+            "username": "tkcli@techventures",
+            "description": "Created Using tkcli Widget Builder",
+            "pluginImage": "packageicon.jpg",
+            "devInProgress": true,
+            "dependencies": [
+                {
+                    "name": "navbar",
+                    "version": "1.0.0",
+                    "packageType": "studio-package",
+                    "displayName": "navBar"
+                }
+            ],
+            "tkcli": {}
         }
     ]
 }

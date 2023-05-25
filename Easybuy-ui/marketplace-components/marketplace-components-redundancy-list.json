@@ -325,5 +325,20 @@
         "parentDeps": {
             "neutrinos-route": "1.0.0"
         }
+    },
+    "navbar": {
+        "name": "navbar",
+        "version": "1.0.0",
+        "packageType": "studio-package",
+        "deps": {
+            "navbar": {
+                "name": "navbar",
+                "version": "1.0.0",
+                "packageType": "studio-package"
+            }
+        },
+        "parentDeps": {
+            "navbar": "1.0.0"
+        }
     }
 }
