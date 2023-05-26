@@ -403,6 +403,52 @@
                 ]
             }
         },
+        "418d4389-20ee-e419-6fa5-5cb2cfcad9d2": {
+            "paletteKey": "NEUTRINOS_PACKAGE_easybuy_PALETTE_KEY_cardLoder_Componet",
+            "parentEditorKey": "a888014a-069c-d909-b77e-ac754879f6f0",
+            "commentid": null,
+            "designerReference": [
+                {
+                    "_key": "style",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "class",
+                    "_value": [
+                        "a"
+                    ],
+                    "_type": "dav",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "componentLabel",
+                    "_value": "cardLoder_Componet",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_useAsLabel": true
+                },
+                {
+                    "_key": "(click)",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "[disabled]",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "*ngIf",
+                    "_value": "!page.users",
+                    "_type": "kv",
+                    "_attrDef": "c"
+                }
+            ]
+        },
         "898f23b2-4066-ff91-1bec-51a1773846a5": {
             "paletteKey": "Html5",
             "parentEditorKey": "a888014a-069c-d909-b77e-ac754879f6f0",

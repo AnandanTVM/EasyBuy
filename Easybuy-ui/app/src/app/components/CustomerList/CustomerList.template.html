@@ -1,6 +1,83 @@
 <div style="padding-bottom:120px;" class="list-container">
   <span class="list-text">
                 Customer List</span>
+  <cardLoder_Componet *ngIf="!page.users" class="a">
+
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="height: 50; display: flex; flex-direction: column; justify-content: center; 00000align-items: center;" class="container" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" style="width: 220px; height: 80px;" class="post" fxFlex="10%" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="float: left; width: 52px; height: 52px; background-color: #ccc; border-radius: 25%; margin: 8px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-avatar 1.6s infinite linear;" class="avatar" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-lines 1.6s infinite linear;" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-color: #ddd" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" style="height: 50; display: flex; flex-direction: column; justify-content: center; 00000align-items: center;" class="container" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" style="width: 220px; height: 80px;" class="post" fxFlex="10%" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="float: left; width: 52px; height: 52px; background-color: #ccc; border-radius: 25%; margin: 8px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-avatar 1.6s infinite linear;" class="avatar" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-lines 1.6s infinite linear;" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-color: #ddd" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" style="height: 50; display: flex; flex-direction: column; justify-content: center; 00000align-items: center;" class="container" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" style="width: 220px; height: 80px;" class="post" fxFlex="10%" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="float: left; width: 52px; height: 52px; background-color: #ccc; border-radius: 25%; margin: 8px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-avatar 1.6s infinite linear;" class="avatar" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-lines 1.6s infinite linear;" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-color: #ddd" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" style="height: 50; display: flex; flex-direction: column; justify-content: center; 00000align-items: center;" class="container" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" style="width: 220px; height: 80px;" class="post" fxFlex="10%" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="float: left; width: 52px; height: 52px; background-color: #ccc; border-radius: 25%; margin: 8px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-avatar 1.6s infinite linear;" class="avatar" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-lines 1.6s infinite linear;" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-color: #ddd" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" style="height: 50; display: flex; flex-direction: column; justify-content: center; 00000align-items: center;" class="container" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" style="width: 220px; height: 80px;" class="post" fxFlex="10%" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="float: left; width: 52px; height: 52px; background-color: #ccc; border-radius: 25%; margin: 8px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-avatar 1.6s infinite linear;" class="avatar" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-lines 1.6s infinite linear;" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-color: #ddd" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" style="height: 50; display: flex; flex-direction: column; justify-content: center; align-items: center;" class="container" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" style="width: 220px; height: 80px;" class="post" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="float: left; width: 52px; height: 52px; background-color: #ccc; border-radius: 25%; margin: 8px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-avatar 1.6s infinite linear;" class="avatar" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-lines 1.6s infinite linear;" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-color: #ddd" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" style="height: 50; display: flex; flex-direction: column; justify-content: center; 00000align-items: center;" class="container" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" style="width: 220px; height: 80px;" class="post" fxFlex="10%" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="float: left; width: 52px; height: 52px; background-color: #ccc; border-radius: 25%; margin: 8px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-avatar 1.6s infinite linear;" class="avatar" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px); background-size: 600px; animation: shine-lines 1.6s infinite linear;" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <div fxLayout="row wrap" style="float: left; width: 200px; height: 16px; margin-top: 12px; border-radius: 7px; background-color: #ddd" class="line" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+        </div>
+      </div>
+    </div>
+    <style>
+      @keyframes shine-lines {
+        0% {
+          background-position: -100px;
+        }
+
+        40%,
+        100% {
+          background-position: 140px;
+        }
+      }
+
+      @keyframes shine-avatar {
+        0% {
+          background-position: -32px;
+        }
+
+        40%,
+        100% {
+          background-position: 208px;
+        }
+      }
+    </style>
+  </cardLoder_Componet>
   <div *ngFor="let user of page.users" style="width:100;padding:10px;">
     <div fxLayout="row wrap" style="height:100px;width:100%;padding:10px;" class="shadow-box" fxFlex="100" fxLayoutAlign="space-between center" [fxShow]="true" (click)="gotoInvoice(user._id)"><img [src]="user.productDetails.image" style="height:100%;border-radius:10px;">
       <div>
