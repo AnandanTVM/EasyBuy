@@ -38,7 +38,7 @@ export class NavbarComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_7lTfrt6Cf9D18M6X_1(bh);
+      this.sd_7lTfrt6Cf9D18M6X_2(bh);
     }
   }
 
@@ -50,26 +50,22 @@ export class NavbarComponent {
     //append_listeners
   }
 
-  sd_7lTfrt6Cf9D18M6X_1(bh) {
+  sd_7lTfrt6Cf9D18M6X_2(bh) {
     try {
-      bh = this.sd_9mrdYckLuTxBlVwN_1(bh);
-      //appendnew_next_sd_7lTfrt6Cf9D18M6X_1
+      bh = this.sd_9mrdYckLuTxBlVwN_2(bh);
+      //appendnew_next_sd_7lTfrt6Cf9D18M6X_2
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_KC1iOswxwofo37mc');
+      return this.errorHandler(bh, e, 'sd_hzX6qmSRp3uONEvu');
     }
   }
 
   //appendnew_flow_NavbarComponent_start
 
-  sd_9mrdYckLuTxBlVwN_1(bh) {
+  sd_9mrdYckLuTxBlVwN_2(bh) {
     try {
       const page = this.page;
       bh.local.navbarValue = [
-        {
-          Link: '/ui/home',
-          img: 'https://res.cloudinary.com/ddtcmyvhx/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1684931545/profile_4_edbhg1.jpg?_s=public-apps',
-        },
         {
           Link: '/ui/home',
           img: 'https://res.cloudinary.com/ddtcmyvhx/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1684931545/profile_4_edbhg1.jpg?_s=public-apps',
@@ -88,22 +84,22 @@ export class NavbarComponent {
         },
       ];
 
-      bh = this.sd_2lZeTT5zUUUj7P3O_1(bh);
-      //appendnew_next_sd_9mrdYckLuTxBlVwN_1
+      bh = this.sd_2lZeTT5zUUUj7P3O_2(bh);
+      //appendnew_next_sd_9mrdYckLuTxBlVwN_2
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_QFh2XH6cVfFhFBxN');
+      return this.errorHandler(bh, e, 'sd_l1M4e66i1qRrgWt5');
     }
   }
 
-  sd_2lZeTT5zUUUj7P3O_1(bh) {
+  sd_2lZeTT5zUUUj7P3O_2(bh) {
     try {
       this.page.navBar = bh.local.navbarValue;
 
-      //appendnew_next_sd_2lZeTT5zUUUj7P3O_1
+      //appendnew_next_sd_2lZeTT5zUUUj7P3O_2
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_WK4zRfaPiiUxgDzT');
+      return this.errorHandler(bh, e, 'sd_cvcIlazqfmgWYhfq');
     }
   }
 

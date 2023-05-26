@@ -186,8 +186,8 @@
                 "_visibility": false
             }
         ],
-        "8686f2d6-eea2-12a5-5add-4b3ec6a747b5": {
-            "paletteKey": "NEUTRINOS_PACKAGE_navbar_PALETTE_KEY_NAVBAR",
+        "201b0ae5-dc1f-9a6f-eeaa-9b1b441c8953": {
+            "paletteKey": "NEUTRINOS_PACKAGE_easybuy_PALETTE_KEY_navBar_Componet",
             "parentEditorKey": "11fd0fe3-fb9f-4b86-f2f9-12b6a0f844a3",
             "commentid": null,
             "designerReference": [
@@ -205,7 +205,7 @@
                 },
                 {
                     "_key": "componentLabel",
-                    "_value": "NAVBAR",
+                    "_value": "navBar_Componet",
                     "_type": "kv",
                     "_attrDef": "p",
                     "_useAsLabel": true
@@ -224,7 +224,7 @@
                 },
                 {
                     "_key": "navColor",
-                    "_value": "red",
+                    "_value": "white",
                     "_type": "a",
                     "_attrDef": "p"
                 }

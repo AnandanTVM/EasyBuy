@@ -12,8 +12,8 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
-import { Scan } from 'app/sd-services/Scan'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
+import { Scan } from 'app/sd-services/Scan'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -40,7 +40,7 @@ export class ScanComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_zrAR33Ye7lx66Zgj(bh);
+      this.sd_zrAR33Ye7lx66Zgj_1(bh);
     }
   }
 
@@ -50,16 +50,6 @@ export class ScanComponent {
       .constructFlowObject(this);
 
     //append_listeners
-  }
-
-  sd_zrAR33Ye7lx66Zgj(bh) {
-    try {
-      bh = this.sd_yGxv4THYziNBSaz7(bh);
-      //appendnew_next_sd_zrAR33Ye7lx66Zgj
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_zrAR33Ye7lx66Zgj');
-    }
   }
 
   start(barcodeText: any = undefined, ...others) {
@@ -107,76 +97,27 @@ export class ScanComponent {
     }
   }
 
-  sd_8BKyQMXau1hrRhfl(bh) {
+  sd_zrAR33Ye7lx66Zgj_1(bh) {
     try {
-      bh = this.sd_lYWGr6AypaQgA5qs(bh);
-      //appendnew_next_sd_8BKyQMXau1hrRhfl
+      bh = this.sd_yGxv4THYziNBSaz7_1(bh);
+      //appendnew_next_sd_zrAR33Ye7lx66Zgj_1
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_8BKyQMXau1hrRhfl');
+      return this.errorHandler(bh, e, 'sd_Vl3K71TByfHHZ5Uu');
+    }
+  }
+
+  sd_8BKyQMXau1hrRhfl_1(bh) {
+    try {
+      bh = this.sd_lYWGr6AypaQgA5qs_1(bh);
+      //appendnew_next_sd_8BKyQMXau1hrRhfl_1
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_6dYGuT3fu7gPn46S');
     }
   }
 
   //appendnew_flow_ScanComponent_start
-
-  sd_yGxv4THYziNBSaz7(bh) {
-    try {
-      bh = this.sd_OLogPnkIXIvbzjaW(bh);
-      //appendnew_next_sd_yGxv4THYziNBSaz7
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_yGxv4THYziNBSaz7');
-    }
-  }
-
-  async sd_OLogPnkIXIvbzjaW(bh) {
-    try {
-      const ScanInstance: Scan = this.__page_injector__.get(Scan);
-
-      let outputVariables = await ScanInstance.scan();
-
-      bh = this.sd_ZkmyuIakzgpuH7Kt(bh);
-      //appendnew_next_sd_OLogPnkIXIvbzjaW
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_OLogPnkIXIvbzjaW');
-    }
-  }
-
-  sd_ZkmyuIakzgpuH7Kt(bh) {
-    try {
-      const ScanInstance: Scan = this.__page_injector__.get(Scan);
-      bh.local.scanner = ScanInstance['scanner'];
-
-      bh = this.tempscanscript(bh);
-      //appendnew_next_sd_ZkmyuIakzgpuH7Kt
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ZkmyuIakzgpuH7Kt');
-    }
-  }
-
-  async tempscanscript(bh) {
-    try {
-      const page = this.page; // console.log(bh.local.scanner,"bh.local.scanner")
-
-      bh.local.scanner.onUniqueRead = (txt, result) => {
-        console.log(txt);
-        this.start(txt);
-      };
-
-      await bh.local.scanner.setUIElement(
-        (document.querySelector('.dce-video-container') as HTMLElement)
-          .parentElement as HTMLElement
-      );
-      await bh.local.scanner.open();
-
-      //appendnew_next_tempscanscript
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_Hw28PWA03NsPI3zR');
-    }
-  }
 
   sd_ATaSPl9akVKiBLlO(bh) {
     try {
@@ -314,36 +255,6 @@ export class ScanComponent {
     }
   }
 
-  sd_lYWGr6AypaQgA5qs(bh) {
-    try {
-      const ScanInstance: Scan = this.__page_injector__.get(Scan);
-      bh.local.scanner = ScanInstance['scanner'];
-
-      bh = this.sd_CQUQtKgQqR5cpSVV(bh);
-      //appendnew_next_sd_lYWGr6AypaQgA5qs
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_lYWGr6AypaQgA5qs');
-    }
-  }
-
-  async sd_CQUQtKgQqR5cpSVV(bh) {
-    try {
-      const page = this.page;
-      // await bh.local.scanner.stopScanning();
-      // await bh.local.scanner.stop();
-      await bh.local.scanner.close();
-      // await bh.local.scanner.setUIElement(null);
-      // await bh.local.scanner.destroyContext();
-      // bh.local.scanner = null;
-
-      //appendnew_next_sd_CQUQtKgQqR5cpSVV
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_CQUQtKgQqR5cpSVV');
-    }
-  }
-
   sd_0WbKbjwrzgtO4tLY(bh) {
     try {
       const page = this.page;
@@ -373,6 +284,95 @@ export class ScanComponent {
     }
   }
 
+  sd_yGxv4THYziNBSaz7_1(bh) {
+    try {
+      bh = this.sd_OLogPnkIXIvbzjaW_1(bh);
+      //appendnew_next_sd_yGxv4THYziNBSaz7_1
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_7siFBpQPqGWFbYvw');
+    }
+  }
+
+  async sd_OLogPnkIXIvbzjaW_1(bh) {
+    try {
+      const ScanInstance: Scan = this.__page_injector__.get(Scan);
+
+      let outputVariables = await ScanInstance.scan();
+
+      bh = this.sd_ZkmyuIakzgpuH7Kt_1(bh);
+      //appendnew_next_sd_OLogPnkIXIvbzjaW_1
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_lXLibUdDo4sa8sBn');
+    }
+  }
+
+  sd_ZkmyuIakzgpuH7Kt_1(bh) {
+    try {
+      const ScanInstance: Scan = this.__page_injector__.get(Scan);
+      bh.local.scanner = ScanInstance['scanner'];
+
+      bh = this.tempscanscript_1(bh);
+      //appendnew_next_sd_ZkmyuIakzgpuH7Kt_1
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_4W1f6obpo6LGDtIs');
+    }
+  }
+
+  async tempscanscript_1(bh) {
+    try {
+      const page = this.page; // console.log(bh.local.scanner,"bh.local.scanner")
+
+      bh.local.scanner.onUniqueRead = (txt, result) => {
+        console.log(txt);
+        this.start(txt);
+      };
+
+      await bh.local.scanner.setUIElement(
+        (document.querySelector('.dce-video-container') as HTMLElement)
+          .parentElement as HTMLElement
+      );
+      await bh.local.scanner.open();
+
+      //appendnew_next_tempscanscript_1
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_09GxDfEx6WAb9Z71');
+    }
+  }
+
+  sd_lYWGr6AypaQgA5qs_1(bh) {
+    try {
+      const ScanInstance: Scan = this.__page_injector__.get(Scan);
+      bh.local.scanner = ScanInstance['scanner'];
+
+      bh = this.sd_CQUQtKgQqR5cpSVV_1(bh);
+      //appendnew_next_sd_lYWGr6AypaQgA5qs_1
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_pjODkd9cQv0clqkk');
+    }
+  }
+
+  async sd_CQUQtKgQqR5cpSVV_1(bh) {
+    try {
+      const page = this.page;
+      // await bh.local.scanner.stopScanning();
+      // await bh.local.scanner.stop();
+      await bh.local.scanner.close();
+      // await bh.local.scanner.setUIElement(null);
+      // await bh.local.scanner.destroyContext();
+      // bh.local.scanner = null;
+
+      //appendnew_next_sd_CQUQtKgQqR5cpSVV_1
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_3vDlXmlB2iDMDgF8');
+    }
+  }
+
   //appendnew_node
 
   ngOnDestroy() {
@@ -380,7 +380,7 @@ export class ScanComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_8BKyQMXau1hrRhfl(bh);
+      this.sd_8BKyQMXau1hrRhfl_1(bh);
     }
     this.__page_injector__.get(SDPageCommonService).deletePageFromMap(this);
   }

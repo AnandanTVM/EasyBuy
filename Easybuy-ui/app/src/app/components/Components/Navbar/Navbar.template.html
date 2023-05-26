@@ -1,7 +1,8 @@
 <header>
-  <header>
-    <nav style="  z-index: 100;
-    background-color: red;
+  <navBar_Componet>
+    <header>
+      <nav style="  z-index: 100;
+    background-color: white;
     position: fixed;
     height: auto;
     bottom: 0px;
@@ -9,13 +10,14 @@
     padding: 15px 15px 20px 15px;
     border-radius: 25px 25px 0 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-      <div fxLayout="row wrap" fxLayoutAlign="space-around center" [fxShow]="true">
-        <div *ngFor="let item of page.navBar">
-          <div routerLink="{{item.Link}}">
-            <img src="{{item.img}}/">
+        <div fxLayout="row wrap" fxLayoutAlign="space-around center" [fxShow]="true">
+          <div *ngFor="let item of page.navBar">
+            <div routerLink="{{item.Link}}">
+              <img src="{{item.img}}/">
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
+  </navBar_Componet>
 </header>

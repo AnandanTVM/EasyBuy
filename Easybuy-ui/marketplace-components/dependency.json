@@ -294,9 +294,9 @@
             ]
         },
         {
-            "name": "navbar",
+            "name": "easybuy",
             "version": "1.0.0",
-            "displayName": "navBar",
+            "displayName": "EasyBuy",
             "type": "Components",
             "publisher": "tkcli",
             "platformSupportVersion": {
@@ -309,10 +309,10 @@
             "devInProgress": true,
             "dependencies": [
                 {
-                    "name": "navbar",
+                    "name": "easybuy",
                     "version": "1.0.0",
                     "packageType": "studio-package",
-                    "displayName": "navBar"
+                    "displayName": "EasyBuy"
                 }
             ],
             "tkcli": {}
