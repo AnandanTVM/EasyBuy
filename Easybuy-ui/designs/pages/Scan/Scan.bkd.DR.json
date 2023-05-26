@@ -109,10 +109,48 @@
             }
         ]
     },
+    "a06823c0-0a57-055d-da65-57e8ffa9affb": {
+        "paletteKey": "NEUTRINOS_PACKAGE_easybuy_PALETTE_KEY_Scaner_Componet",
+        "commentid": null,
+        "designerReference": [
+            {
+                "_key": "style",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "class",
+                "_value": "",
+                "_type": "dav",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "componentLabel",
+                "_value": "Scaner_Componet",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_useAsLabel": true
+            },
+            {
+                "_key": "(click)",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "[disabled]",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            }
+        ]
+    },
     "7d275639-0612-366f-e243-20e95f5aa15d": {
         "paletteKey": "Html5",
         "isAdvancedComponent": true,
-        "commentid": null,
+        "isCommented": "true",
+        "commentid": "1685035345209",
         "designerReference": [
             {
                 "_key": "style",
@@ -301,7 +339,8 @@
             "paletteKey": "Html5",
             "parentEditorKey": "7d275639-0612-366f-e243-20e95f5aa15d",
             "isAdvancedComponent": true,
-            "commentid": null,
+            "isCommented": "true",
+            "commentid": "1685035345209",
             "designerReference": [
                 {
                     "_key": "style",
@@ -488,7 +527,8 @@
                 "paletteKey": "html-editor",
                 "parentEditorKey": "a8ca3f8b-112a-3d9e-57c3-f24e5e00375c",
                 "isAdvancedChildComponent": true,
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685035345209",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -515,7 +555,8 @@
             "paletteKey": "Html5",
             "parentEditorKey": "7d275639-0612-366f-e243-20e95f5aa15d",
             "isAdvancedComponent": true,
-            "commentid": null,
+            "isCommented": "true",
+            "commentid": "1685035345209",
             "designerReference": [
                 {
                     "_key": "style",
@@ -705,7 +746,8 @@
             "paletteKey": "Html5",
             "parentEditorKey": "7d275639-0612-366f-e243-20e95f5aa15d",
             "isAdvancedComponent": true,
-            "commentid": null,
+            "isCommented": "true",
+            "commentid": "1685035345209",
             "designerReference": [
                 {
                     "_key": "style",
@@ -1356,7 +1398,6 @@
         "3fd2f418-6bc8-bb07-3856-b92ac7312808": {
             "paletteKey": "NEUTRINOS_VIEW_carrtItem",
             "parentEditorKey": "32e56908-ffa3-514f-e90f-ec89a2892c84",
-            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {

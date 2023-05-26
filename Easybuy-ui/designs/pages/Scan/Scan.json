@@ -6,58 +6,9 @@
         "label": "Scan",
         "disabled": false,
         "info": "",
-        "functionSeq": 0,
+        "functionSeq": 1,
         "generateNext": true,
         "serviceName": "ScanComponent"
-    },
-    {
-        "id": "sd_zrAR33Ye7lx66Zgj",
-        "type": "OnInit",
-        "z": "sd_LIDAnDbHw9UbxkCR",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "",
-        "inputVariables": [],
-        "localVariables": [],
-        "outputVariables": [],
-        "pageVariables": [],
-        "functionName": "sd_zrAR33Ye7lx66Zgj",
-        "category": "Lifecycle Events",
-        "x": 45,
-        "y": 40,
-        "wires": [
-            [
-                "sd_yGxv4THYziNBSaz7"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "ScanComponent"
-    },
-    {
-        "id": "sd_yGxv4THYziNBSaz7",
-        "type": "PageVariables",
-        "z": "sd_LIDAnDbHw9UbxkCR",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "inputs": 1,
-        "outputs": 1,
-        "operation": "set",
-        "globalVariables": [],
-        "functionName": "sd_yGxv4THYziNBSaz7",
-        "category": "Function",
-        "x": 185,
-        "y": 60,
-        "wires": [
-            [
-                "sd_OLogPnkIXIvbzjaW"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "ScanComponent",
-        "generated": true
     },
     {
         "id": "sd_DGSaCEfOmCYbPzqH",
@@ -81,8 +32,8 @@
         "flow_type": "sync",
         "functionName": "start",
         "category": "General",
-        "x": 45,
-        "y": 160,
+        "x": 65,
+        "y": 260,
         "wires": [
             [
                 "sd_ATaSPl9akVKiBLlO"
@@ -102,8 +53,8 @@
         "script": "// console.log(bh.input.barcodeText,typeof(bh.input.barcodeText))\nconsole.log(bh.local.response.result)\nlet productObj={\n    productId:bh.input.barcodeText,\n    imageUrl:`data:image/jpeg;base64,${bh.local.response.result.image.data}`,\n    productName:bh.local.response.result.name,\n    description:bh.local.response.result.description,\n    weight:`${bh.local.response.result.weight}gm`,\n    rate:bh.local.response.result.price.toFixed(2),\n    count:1\n}\nif(page.products){\n    page.products.push(\n    productObj\n    )\n}else{\n\npage.products = [\n    productObj\n]\n\n\n}\n\n\n//     {\n//     productId:bh.input.barcodeText,\n//     imageUrl:\"/Web/Resource/cart1.png\",\n//     productName:\"Stone Necklace\",\n//     description:\"22ct Gold with Hall Mark k tis is snd dklfhjf ladjfksfja  dfkljksfj fjdksfjs fsjkldjsfs\",\n//     weight:\"56gm\",\n//     rate:\"125K\",\n//     count:1\n// }",
         "functionName": "sd_d06T5jr0TioQgu99",
         "category": "Function",
-        "x": 645,
-        "y": 160,
+        "x": 585,
+        "y": 260,
         "wires": [
             [
                 "sd_8rpdaykBfCa3IvTX"
@@ -135,8 +86,8 @@
         ],
         "functionName": "sd_8rpdaykBfCa3IvTX",
         "category": "Function",
-        "x": 785,
-        "y": 160,
+        "x": 705,
+        "y": 260,
         "wires": [
             []
         ],
@@ -252,225 +203,6 @@
         "generated": true
     },
     {
-        "id": "sd_OLogPnkIXIvbzjaW",
-        "type": "PageCallService",
-        "z": "sd_LIDAnDbHw9UbxkCR",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 1,
-        "isValidNode": true,
-        "noerr": 0,
-        "service": {
-            "id": "sd_la6KIUXsIGgMIJgr",
-            "type": "tab",
-            "createdDate": "2023-05-01T17:52:38.714Z",
-            "label": "Scan",
-            "disabled": false,
-            "info": "",
-            "functionSeq": 0,
-            "tabType": "client"
-        },
-        "flow": {
-            "flowId": "sd_FjImFQsv1VcX66QF",
-            "flowName": "scan"
-        },
-        "inputVariables": [],
-        "outputMapping": [],
-        "serviceImportPath": "app/sd-services/Scan",
-        "startName": "scan",
-        "inputParams": [],
-        "accept_bh": false,
-        "accept_csd": true,
-        "functionName": "sd_OLogPnkIXIvbzjaW",
-        "category": "General",
-        "x": 325,
-        "y": 60,
-        "wires": [
-            [
-                "sd_ZkmyuIakzgpuH7Kt"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "ScanComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_Hw28PWA03NsPI3zR",
-        "type": "Script",
-        "z": "sd_LIDAnDbHw9UbxkCR",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "tempscanscript",
-        "script": "// console.log(bh.local.scanner,\"bh.local.scanner\")\n\nbh.local.scanner.onUniqueRead = (txt, result) => {\n    console.log(txt)\n    this.start(txt)\n};\n\nawait bh.local.scanner.setUIElement((document.querySelector('.dce-video-container') as HTMLElement).parentElement as HTMLElement);\nawait bh.local.scanner.open();",
-        "functionName": "tempscanscript",
-        "category": "Function",
-        "x": 765,
-        "y": 60,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "ScanComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_ZkmyuIakzgpuH7Kt",
-        "type": "PageServiceVariables",
-        "z": "sd_LIDAnDbHw9UbxkCR",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "inputs": 1,
-        "outputs": 1,
-        "operation": "get",
-        "globalVariables": [
-            {
-                "textIp": "scanner",
-                "typedIpValue": {
-                    "type": "bh.local",
-                    "value": "scanner"
-                }
-            }
-        ],
-        "functionName": "sd_ZkmyuIakzgpuH7Kt",
-        "service": {
-            "type": "tab",
-            "id": "sd_la6KIUXsIGgMIJgr",
-            "disabled": false,
-            "info": "",
-            "label": "Scan",
-            "createdDate": "2023-05-01T17:52:38.714Z",
-            "functionSeq": 0,
-            "tabType": "client",
-            "_def": {
-                "defaults": {
-                    "label": {
-                        "value": ""
-                    },
-                    "disabled": {
-                        "value": false
-                    },
-                    "info": {
-                        "value": ""
-                    }
-                }
-            }
-        },
-        "serviceImportPath": "app/sd-services/Scan",
-        "category": "Function",
-        "x": 525,
-        "y": 60,
-        "wires": [
-            [
-                "sd_Hw28PWA03NsPI3zR"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "ScanComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_8BKyQMXau1hrRhfl",
-        "type": "OnDestroy",
-        "z": "sd_LIDAnDbHw9UbxkCR",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "",
-        "functionName": "sd_8BKyQMXau1hrRhfl",
-        "category": "Lifecycle Events",
-        "x": 525,
-        "y": 300,
-        "wires": [
-            [
-                "sd_lYWGr6AypaQgA5qs"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "ScanComponent"
-    },
-    {
-        "id": "sd_CQUQtKgQqR5cpSVV",
-        "type": "Script",
-        "z": "sd_LIDAnDbHw9UbxkCR",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "\n// await bh.local.scanner.stopScanning();\n// await bh.local.scanner.stop();\nawait bh.local.scanner.close();\n// await bh.local.scanner.setUIElement(null);\n// await bh.local.scanner.destroyContext();\n// bh.local.scanner = null;",
-        "functionName": "sd_CQUQtKgQqR5cpSVV",
-        "category": "Function",
-        "x": 725,
-        "y": 300,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "ScanComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_lYWGr6AypaQgA5qs",
-        "type": "PageServiceVariables",
-        "z": "sd_LIDAnDbHw9UbxkCR",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "inputs": 1,
-        "outputs": 1,
-        "operation": "get",
-        "globalVariables": [
-            {
-                "textIp": "scanner",
-                "typedIpValue": {
-                    "type": "bh.local",
-                    "value": "scanner"
-                }
-            }
-        ],
-        "functionName": "sd_lYWGr6AypaQgA5qs",
-        "service": {
-            "type": "tab",
-            "id": "sd_la6KIUXsIGgMIJgr",
-            "disabled": false,
-            "info": "",
-            "label": "Scan",
-            "createdDate": "2023-05-01T17:52:38.714Z",
-            "functionSeq": 0,
-            "tabType": "client",
-            "_def": {
-                "defaults": {
-                    "label": {
-                        "value": ""
-                    },
-                    "disabled": {
-                        "value": false
-                    },
-                    "info": {
-                        "value": ""
-                    }
-                }
-            }
-        },
-        "serviceImportPath": "app/sd-services/Scan",
-        "category": "Function",
-        "x": 625,
-        "y": 300,
-        "wires": [
-            [
-                "sd_CQUQtKgQqR5cpSVV"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "ScanComponent",
-        "generated": true
-    },
-    {
         "id": "sd_vtAINFg4BIf2oPxo",
         "type": "HttpRequest",
         "z": "sd_LIDAnDbHw9UbxkCR",
@@ -513,8 +245,8 @@
         "paramMappingObj": {},
         "functionName": "sd_vtAINFg4BIf2oPxo",
         "category": "HTTP",
-        "x": 405,
-        "y": 160,
+        "x": 425,
+        "y": 260,
         "wires": [
             [
                 "sd_d06T5jr0TioQgu99"
@@ -535,8 +267,8 @@
         "script": "bh.local.url=`${bh.local.backendUrl}/product/${bh.input.barcodeText}`\n\n",
         "functionName": "sd_ELsIyr5sjW9fzkz2",
         "category": "Function",
-        "x": 305,
-        "y": 160,
+        "x": 325,
+        "y": 260,
         "wires": [
             [
                 "sd_vtAINFg4BIf2oPxo"
@@ -566,8 +298,8 @@
         ],
         "functionName": "sd_ATaSPl9akVKiBLlO",
         "category": "General",
-        "x": 125,
-        "y": 160,
+        "x": 145,
+        "y": 260,
         "wires": [
             [
                 "sd_ELsIyr5sjW9fzkz2"
@@ -659,6 +391,280 @@
         "wires": [
             [
                 "sd_ZzlXKX18eAiY1z8F"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ScanComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Vl3K71TByfHHZ5Uu",
+        "type": "OnInit",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_zrAR33Ye7lx66Zgj_1",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 80,
+        "wires": [
+            [
+                "sd_7siFBpQPqGWFbYvw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ScanComponent"
+    },
+    {
+        "id": "sd_7siFBpQPqGWFbYvw",
+        "type": "PageVariables",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_yGxv4THYziNBSaz7_1",
+        "category": "Function",
+        "x": 205,
+        "y": 80,
+        "wires": [
+            [
+                "sd_lXLibUdDo4sa8sBn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ScanComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lXLibUdDo4sa8sBn",
+        "type": "PageCallService",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_la6KIUXsIGgMIJgr",
+            "type": "tab",
+            "createdDate": "2023-05-01T17:52:38.714Z",
+            "label": "Scan",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_FjImFQsv1VcX66QF",
+            "flowName": "scan"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/Scan",
+        "startName": "scan",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_OLogPnkIXIvbzjaW_1",
+        "category": "General",
+        "x": 345,
+        "y": 80,
+        "wires": [
+            [
+                "sd_4W1f6obpo6LGDtIs"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ScanComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_09GxDfEx6WAb9Z71",
+        "type": "Script",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "tempscanscript_1",
+        "script": "// console.log(bh.local.scanner,\"bh.local.scanner\")\n\nbh.local.scanner.onUniqueRead = (txt, result) => {\n    console.log(txt)\n    this.start(txt)\n};\n\nawait bh.local.scanner.setUIElement((document.querySelector('.dce-video-container') as HTMLElement).parentElement as HTMLElement);\nawait bh.local.scanner.open();",
+        "functionName": "tempscanscript_1",
+        "category": "Function",
+        "x": 785,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ScanComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_4W1f6obpo6LGDtIs",
+        "type": "PageServiceVariables",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "scanner",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "scanner"
+                }
+            }
+        ],
+        "functionName": "sd_ZkmyuIakzgpuH7Kt_1",
+        "service": {
+            "id": "sd_la6KIUXsIGgMIJgr",
+            "type": "tab",
+            "createdDate": "2023-05-01T17:52:38.714Z",
+            "label": "Scan",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client",
+            "generateNext": true,
+            "serviceName": "Scan",
+            "relativeParentPath": "",
+            "_def": {
+                "defaults": {
+                    "label": {
+                        "value": ""
+                    },
+                    "disabled": {
+                        "value": false
+                    },
+                    "info": {
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "serviceImportPath": "app/sd-services/Scan",
+        "category": "Function",
+        "x": 545,
+        "y": 80,
+        "wires": [
+            [
+                "sd_09GxDfEx6WAb9Z71"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ScanComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6dYGuT3fu7gPn46S",
+        "type": "OnDestroy",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_8BKyQMXau1hrRhfl_1",
+        "category": "Lifecycle Events",
+        "x": 385,
+        "y": 180,
+        "wires": [
+            [
+                "sd_pjODkd9cQv0clqkk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ScanComponent"
+    },
+    {
+        "id": "sd_3vDlXmlB2iDMDgF8",
+        "type": "Script",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n// await bh.local.scanner.stopScanning();\n// await bh.local.scanner.stop();\nawait bh.local.scanner.close();\n// await bh.local.scanner.setUIElement(null);\n// await bh.local.scanner.destroyContext();\n// bh.local.scanner = null;",
+        "functionName": "sd_CQUQtKgQqR5cpSVV_1",
+        "category": "Function",
+        "x": 585,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ScanComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_pjODkd9cQv0clqkk",
+        "type": "PageServiceVariables",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "scanner",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "scanner"
+                }
+            }
+        ],
+        "functionName": "sd_lYWGr6AypaQgA5qs_1",
+        "service": {
+            "id": "sd_la6KIUXsIGgMIJgr",
+            "type": "tab",
+            "createdDate": "2023-05-01T17:52:38.714Z",
+            "label": "Scan",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client",
+            "generateNext": true,
+            "serviceName": "Scan",
+            "relativeParentPath": "",
+            "_def": {
+                "defaults": {
+                    "label": {
+                        "value": ""
+                    },
+                    "disabled": {
+                        "value": false
+                    },
+                    "info": {
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "serviceImportPath": "app/sd-services/Scan",
+        "category": "Function",
+        "x": 485,
+        "y": 180,
+        "wires": [
+            [
+                "sd_3vDlXmlB2iDMDgF8"
             ]
         ],
         "__n_excludedFromValidation__": {},

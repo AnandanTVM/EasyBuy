@@ -340,5 +340,20 @@
         "parentDeps": {
             "navbar": "1.0.0"
         }
+    },
+    "easybuy": {
+        "name": "easybuy",
+        "version": "1.0.0",
+        "packageType": "studio-package",
+        "deps": {
+            "easybuy": {
+                "name": "easybuy",
+                "version": "1.0.0",
+                "packageType": "studio-package"
+            }
+        },
+        "parentDeps": {
+            "easybuy": "1.0.0"
+        }
     }
 }

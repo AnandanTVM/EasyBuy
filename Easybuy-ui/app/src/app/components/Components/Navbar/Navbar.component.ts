@@ -71,10 +71,6 @@ export class NavbarComponent {
           img: 'https://res.cloudinary.com/ddtcmyvhx/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1684931545/profile_4_edbhg1.jpg?_s=public-apps',
         },
         {
-          Link: '/ui/home',
-          img: 'https://res.cloudinary.com/ddtcmyvhx/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1684931545/profile_4_edbhg1.jpg?_s=public-apps',
-        },
-        {
           Link: '/ui/scan',
           img: 'https://res.cloudinary.com/ddtcmyvhx/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1684931437/profile_3_efmv9q.jpg?_s=public-apps',
         },
