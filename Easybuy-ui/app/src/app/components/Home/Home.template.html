@@ -10,24 +10,58 @@
     <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><span style="color:var(--main-color);">
                 Welcome,</span><span style="font-size:24px;font-weight:600;">
       {{page.userData?.name || &quot;N/A&quot;}}</span></div>
-    <div fxLayout="row wrap" fxLayoutGap="2" fxLayoutAlign="space-between center" [fxShow]="true">
-      <div fxLayout="row wrap" class="statistic shadow-box" fxFlex="{{statistic.fxFlex}}" fxLayoutAlign="space-around center" [fxShow]="true" *ngFor="let statistic of page.statistics"><img imgSrc="{{statistic.imageUrl}}">
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let detail of statistic.details"><span class="statistic-title">
-          {{detail.tittle}}</span><span class="statistic-value">
-          {{detail.value}}</span></div>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+    <div fxLayout="row wrap" style="padding: 15px;
+        margin:5px;
+        border-radius: 15px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" fxFlex="{{statistic.fxFlex}}" fxLayoutAlign="space-around center" [fxShow]="true" *ngFor="let statistic of page.statistics">
+      <img *ngIf="statistic.imageLink" src="{{statistic.imageLink}}">
+      <img *ngIf="statistic.imageUrl" imgSrc="{{statistic.imageUrl}}">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let detail of statistic.details">
+        <span style="color:black;font-weight: bold;">
+        {{detail.tittle}}</span>
+        <span style="color:#e7a960;">
+        {{detail.value}}
+        </span>
       </div>
     </div>
-  </div><mat-card class="card">
-    <img mat-card-image imgSrc="/Web/Resource/home1.jfif">
+  </div><mat-card style="
+        margin: 10px;
+        border-radius: 10px !important;
+        position: relative;">
+    <img mat-card-image src="https://res.cloudinary.com/dc0agfvze/image/upload/v1684994324/home1_rr6k7p.jpg">
 
-    <mat-card-content class="card-content">
-      <h1 class="app-title">
+    <mat-card-content style="
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);">
+      <h1 style="color: white;
+          font-size: 64px;
+          font-family: Seaweed Script;
+          font-weight: 400;">
         Jewellery</h1>
     </mat-card-content>
 
-    <mat-card-actions style="margin:10px;"><input placeholder="Customer Number" type="number" [(ngModel)]="page.phoneNumber" style="margin:10px 0px  10px 0px !important;" class="styled-input">
-      <p id="phoneNumberError" style="margin-bottom:10px;" class="error-text">
-      </p><button mat-button style="margin:0px;" class="styled-button" (click)="gotoScan()">NEXT</button>
+    <mat-card-actions style="margin:10px;">
+      <input placeholder="Customer Number" type="number" [(ngModel)]="page.phoneNumber" style="display: block;
+        border: 1px solid black !important;
+        width: 94% !important;
+        padding: 14px !important;
+        padding-left: 30px !important;
+        border-radius: 10px !important;
+        margin-top: 20px !important;
+        font-weight: 700 !important;">
+      <p id="phoneNumberError" style="margin-bottom:10px;
+          color: #f44336 ;
+          font-size: small ;">
+      </p><button mat-button style="margin:0px;
+          background-color: #e7a960;
+          border-radius: 10px !important;
+          width: 100%;
+          color: white;
+          height: 50px;" (click)="gotoScan_1_2()">Next</button>
     </mat-card-actions>
   </mat-card>
 </div>

@@ -6,7 +6,7 @@
         "label": "Home",
         "disabled": false,
         "info": "",
-        "functionSeq": 0,
+        "functionSeq": 3,
         "generateNext": true,
         "serviceName": "HomeComponent"
     },
@@ -35,81 +35,26 @@
         "serviceName": "HomeComponent"
     },
     {
-        "id": "sd_xXkRTz1m9f0JjOXD",
-        "type": "PageVariables",
-        "z": "sd_URpkX7LTG2Vf46Pb",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "inputs": 1,
-        "outputs": 1,
-        "operation": "set",
-        "globalVariables": [
-            {
-                "textIp": "statistics",
-                "typedIpValue": {
-                    "type": "bh.local",
-                    "value": "statistics"
-                }
-            }
-        ],
-        "functionName": "sd_xXkRTz1m9f0JjOXD",
-        "category": "Function",
-        "x": 1025,
-        "y": 80,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "HomeComponent",
-        "generated": true
-    },
-    {
         "id": "sd_JkpIfNfcSWww6PtI",
         "type": "Script",
         "z": "sd_URpkX7LTG2Vf46Pb",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.response.earnings = bh.local.response?.earnings || 0\nbh.local.response.clients = bh.local.response?.clients || 0\n\nbh.local.statistics = [\n{\n    \"imageUrl\":\"/Web/Icons/Earning.svg\",\n    \"fxFlex\":\"46\",\n    \"details\":[{\n    \"tittle\":\"Earning\",\n    \"value\": \"₹\"+bh.local.response.earnings.toFixed(2)\n    }]\n},\n{\n    \"imageUrl\":\"/Web/Icons/Clients.svg\",\n    \"fxFlex\":\"46\",\n    \"details\":[{\n    \"tittle\":\"Clients\",\n    \"value\":bh.local.response.clients\n    }]\n},\n{\n    \"imageUrl\":\"/Web/Icons/PriceGraph.svg\",\n    \"fxFlex\":\"100\",\n    \"details\":[\n    {\n    \"tittle\":\"Gold\",\n    \"value\": \"₹\"+bh.local.response.gold.toFixed(2)\n    },\n    {\n    \"tittle\":\"Silver\",\n    \"value\": \"₹\"+bh.local.response.silver.toFixed(2)\n    },\n    {\n    \"tittle\":\"Platinum\",\n    \"value\":\"₹\"+bh.local.response.platinum.toFixed(2)\n    }\n\n    ]\n},\n]\n\n\nconsole.log(page.userData,\"userdata\")\nconsole.log(\"response\")\nconsole.log(bh.local.response)\nconsole.log(\"response\")\n",
+        "script": "bh.local.response.earnings = bh.local.response?.earnings || 0\nbh.local.response.clients = bh.local.response?.clients || 0\n\n",
         "functionName": "sd_JkpIfNfcSWww6PtI",
         "category": "Function",
         "x": 845,
         "y": 80,
         "wires": [
             [
-                "sd_xXkRTz1m9f0JjOXD"
+                "sd_6LKVzMR5V608o76V"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "HomeComponent",
         "generated": true
-    },
-    {
-        "id": "sd_XwRbDoPq89pHCBbR",
-        "type": "PageStart",
-        "z": "sd_URpkX7LTG2Vf46Pb",
-        "viewType": "pages",
-        "nodeType": "start",
-        "name": "gotoScan",
-        "outputs": 1,
-        "inputVariables": [],
-        "localVariables": [],
-        "flow_type": "sync",
-        "functionName": "gotoScan",
-        "category": "General",
-        "x": 85,
-        "y": 260,
-        "wires": [
-            [
-                "sd_aM1w0sD8kfrb2bNW"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "HomeComponent"
     },
     {
         "id": "sd_S4hucp4ZDxORguJE",
@@ -161,124 +106,6 @@
         "wires": [
             [
                 "sd_gVLh6gee5TPrxtk7"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "HomeComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_OkJIavllgUU1n0M1",
-        "type": "Navigation",
-        "z": "sd_URpkX7LTG2Vf46Pb",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "path": "/ui/scan",
-        "pathMap": "",
-        "pathparams": "",
-        "pathparamsMap": "",
-        "qparams": "",
-        "qparamsMap": "",
-        "qparamsArray": "",
-        "resultMapping": "",
-        "functionName": "sd_OkJIavllgUU1n0M1",
-        "category": "Navigation",
-        "x": 865,
-        "y": 260,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "HomeComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_aM1w0sD8kfrb2bNW",
-        "type": "Script",
-        "z": "sd_URpkX7LTG2Vf46Pb",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "console.log(page.phoneNumber)\nbh.local.isValid=false;\nlet userPhoneNumber=`${page.phoneNumber}`\nconsole.log(userPhoneNumber,typeof userPhoneNumber,userPhoneNumber.length)\nif(userPhoneNumber.length>=10&&userPhoneNumber.length<=13){\n   console.log('valid phone number')\n   bh.local.isValid=true;\n}\nelse{\n    \n     console.log('Invalid phone number')\n     bh.local.isValid=false;\n     document.getElementById(\"phoneNumberError\").innerText='Invalid phone number'\n\n}",
-        "functionName": "sd_aM1w0sD8kfrb2bNW",
-        "category": "Function",
-        "x": 220,
-        "y": 260,
-        "wires": [
-            [
-                "sd_hvDLK6DZJLFBUldB"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "HomeComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_hvDLK6DZJLFBUldB",
-        "type": "PageSwitch",
-        "z": "sd_URpkX7LTG2Vf46Pb",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "property": "isValid",
-        "propertyType": "bh.local",
-        "propertyGv": "bh.local.isValid",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "functionName": "sd_hvDLK6DZJLFBUldB",
-        "category": "Function",
-        "x": 400,
-        "y": 260,
-        "wires": [
-            [
-                "sd_WZb8ssVdQ1gPIyv9"
-            ],
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "HomeComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_WZb8ssVdQ1gPIyv9",
-        "type": "Storage",
-        "z": "sd_URpkX7LTG2Vf46Pb",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "operationType": "setItem",
-        "storageType": "localStorage",
-        "outputs": 1,
-        "key": {
-            "type": "str",
-            "value": "userPhoneNumber"
-        },
-        "value": {
-            "type": "this.page",
-            "value": "phoneNumber"
-        },
-        "resultMapping": {},
-        "functionName": "sd_WZb8ssVdQ1gPIyv9",
-        "category": "Storage",
-        "x": 600,
-        "y": 260,
-        "wires": [
-            [
-                "sd_OkJIavllgUU1n0M1"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -428,54 +255,6 @@
         "generated": true
     },
     {
-        "id": "sd_cWx3T0wkeaF90Xc9",
-        "type": "Catch",
-        "z": "sd_URpkX7LTG2Vf46Pb",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "",
-        "selectedNodes": [
-            "sd_Ha6huPWSnuDcK5kK"
-        ],
-        "selectCatchType": "selectednodes",
-        "masternodeList": "",
-        "ignoreList": "",
-        "functionName": "sd_cWx3T0wkeaF90Xc9",
-        "category": "General",
-        "x": 765,
-        "y": 180,
-        "wires": [
-            [
-                "sd_ykUzjkqZLV19dnXi"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "HomeComponent"
-    },
-    {
-        "id": "sd_ykUzjkqZLV19dnXi",
-        "type": "Script",
-        "z": "sd_URpkX7LTG2Vf46Pb",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "\nbh.local.statistics = [\n{\n    \"imageUrl\":\"/Web/Icons/Earning.svg\",\n    \"fxFlex\":\"46\",\n    \"details\":[{\n    \"tittle\":\"Earning\",\n    \"value\": \"N/A\"\n    }]\n},\n{\n    \"imageUrl\":\"/Web/Icons/Clients.svg\",\n    \"fxFlex\":\"46\",\n    \"details\":[{\n    \"tittle\":\"Clients\",\n    \"value\":\"N/A\"\n    }]\n},\n{\n    \"imageUrl\":\"/Web/Icons/PriceGraph.svg\",\n    \"fxFlex\":\"100\",\n    \"details\":[\n    {\n    \"tittle\":\"Gold\",\n    \"value\": \"N/A\"\n    },\n    {\n    \"tittle\":\"Silver\",\n    \"value\": \"N/A\"\n    },\n    {\n    \"tittle\":\"Platinum\",\n    \"value\":\"N/A\"\n    }\n\n    ]\n},\n]",
-        "functionName": "sd_ykUzjkqZLV19dnXi",
-        "category": "Function",
-        "x": 885,
-        "y": 180,
-        "wires": [
-            [
-                "sd_xXkRTz1m9f0JjOXD"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "HomeComponent",
-        "generated": true
-    },
-    {
         "id": "sd_R1prXmuXbNVjTV5R",
         "type": "Storage",
         "z": "sd_URpkX7LTG2Vf46Pb",
@@ -502,6 +281,194 @@
             [
                 "sd_3AsD6H2H09nUoEN4"
             ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_DgH7CK9b3qArMRh4",
+        "type": "PageStart",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "gotoScan_1_2",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "gotoScan_1_2",
+        "category": "General",
+        "x": 85,
+        "y": 1740,
+        "wires": [
+            [
+                "sd_cNLs6AgHPXujTYuY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "HomeComponent"
+    },
+    {
+        "id": "sd_cNLs6AgHPXujTYuY",
+        "type": "Script",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.phoneNumber)\nbh.local.isValid=false;\nlet userPhoneNumber=`${page.phoneNumber}`\nconsole.log(userPhoneNumber,typeof userPhoneNumber,userPhoneNumber.length)\nif(userPhoneNumber.length>=10&&userPhoneNumber.length<=13){\n   console.log('valid phone number')\n   bh.local.isValid=true;\n}\nelse{\n    \n     console.log('Invalid phone number')\n     bh.local.isValid=false;\n     document.getElementById(\"phoneNumberError\").innerText='Invalid phone number'\n\n}",
+        "functionName": "sd_aM1w0sD8kfrb2bNW_1_2",
+        "category": "Function",
+        "x": 220,
+        "y": 1740,
+        "wires": [
+            [
+                "sd_cYhD2SEpp71kVDMR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_cYhD2SEpp71kVDMR",
+        "type": "PageSwitch",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "isValid",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.isValid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_hvDLK6DZJLFBUldB_1_2",
+        "category": "Function",
+        "x": 400,
+        "y": 1740,
+        "wires": [
+            [
+                "sd_bnlky7gsO1LHIWtx"
+            ],
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_bnlky7gsO1LHIWtx",
+        "type": "Storage",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "userPhoneNumber"
+        },
+        "value": {
+            "type": "this.page",
+            "value": "phoneNumber"
+        },
+        "resultMapping": {},
+        "functionName": "sd_WZb8ssVdQ1gPIyv9_1_2",
+        "category": "Storage",
+        "x": 600,
+        "y": 1740,
+        "wires": [
+            [
+                "sd_hUOVfquXfuJWzaGx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hUOVfquXfuJWzaGx",
+        "type": "Navigation",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/ui/scan",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_OkJIavllgUU1n0M1_1_2",
+        "category": "Navigation",
+        "x": 865,
+        "y": 1740,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_MeDTGe8pljS7yLwY",
+        "type": "Catch",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": "all-nodes",
+        "selectCatchType": "allnodes",
+        "masternodeList": "",
+        "ignoreList": [
+            "sd_6LKVzMR5V608o76V"
+        ],
+        "functionName": "sd_VKYbxwlVA3mQAG86_5_3",
+        "category": "General",
+        "x": 745,
+        "y": 2940,
+        "wires": [
+            [
+                "sd_6LKVzMR5V608o76V"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "HomeComponent"
+    },
+    {
+        "id": "sd_6LKVzMR5V608o76V",
+        "type": "Script",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\npage.statistics = [\n        {\n          imageUrl: '/Web/Icons/Earning.svg',\n          fxFlex: '46',\n          details: [\n            {\n              tittle: 'Earning',\n              value: '₹' +  1000,\n            },\n          ],\n        },\n        {\n          imageUrl: '/Web/Icons/Clients.svg',\n          fxFlex: '46',\n          details: [\n            {\n              tittle: 'Clients',\n              value: 45722,\n            },\n          ],\n        },\n        {\n          imageUrl: '/Web/Icons/PriceGraph.svg',\n          fxFlex: '100',\n          details: [\n            {\n              tittle: 'Gold',\n              value: '₹' + 4232,\n            },\n            {\n              tittle: 'Silver',\n              value: '₹' +8686,\n            },\n            {\n              tittle: 'Platinum',\n              value: '₹' + 24336,\n            },\n          ],\n        },\n      ]\n",
+        "functionName": "sd_QcgOqOEPo1GmhDT3_5_3",
+        "category": "Function",
+        "x": 865,
+        "y": 2860,
+        "wires": [
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

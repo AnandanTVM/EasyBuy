@@ -62,7 +62,7 @@ export class HomeComponent {
     }
   }
 
-  gotoScan(...others) {
+  gotoScan_1_2(...others) {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
@@ -70,10 +70,10 @@ export class HomeComponent {
       bh.input = {};
       bh.local = {};
 
-      bh = this.sd_aM1w0sD8kfrb2bNW(bh);
-      //appendnew_next_gotoScan
+      bh = this.sd_aM1w0sD8kfrb2bNW_1_2(bh);
+      //appendnew_next_gotoScan_1_2
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_XwRbDoPq89pHCBbR');
+      return this.errorHandler(bh, e, 'sd_DgH7CK9b3qArMRh4');
     }
   }
 
@@ -172,14 +172,25 @@ export class HomeComponent {
       bh.local.response.earnings = bh.local.response?.earnings || 0;
       bh.local.response.clients = bh.local.response?.clients || 0;
 
-      bh.local.statistics = [
+      bh = this.sd_QcgOqOEPo1GmhDT3_5_3(bh);
+      //appendnew_next_sd_JkpIfNfcSWww6PtI
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_JkpIfNfcSWww6PtI');
+    }
+  }
+
+  sd_QcgOqOEPo1GmhDT3_5_3(bh) {
+    try {
+      const page = this.page;
+      page.statistics = [
         {
           imageUrl: '/Web/Icons/Earning.svg',
           fxFlex: '46',
           details: [
             {
               tittle: 'Earning',
-              value: '₹' + bh.local.response.earnings.toFixed(2),
+              value: '₹' + 1000,
             },
           ],
         },
@@ -189,7 +200,7 @@ export class HomeComponent {
           details: [
             {
               tittle: 'Clients',
-              value: bh.local.response.clients,
+              value: 45722,
             },
           ],
         },
@@ -199,45 +210,28 @@ export class HomeComponent {
           details: [
             {
               tittle: 'Gold',
-              value: '₹' + bh.local.response.gold.toFixed(2),
+              value: '₹' + 4232,
             },
             {
               tittle: 'Silver',
-              value: '₹' + bh.local.response.silver.toFixed(2),
+              value: '₹' + 8686,
             },
             {
               tittle: 'Platinum',
-              value: '₹' + bh.local.response.platinum.toFixed(2),
+              value: '₹' + 24336,
             },
           ],
         },
       ];
 
-      console.log(page.userData, 'userdata');
-      console.log('response');
-      console.log(bh.local.response);
-      console.log('response');
-
-      bh = this.sd_xXkRTz1m9f0JjOXD(bh);
-      //appendnew_next_sd_JkpIfNfcSWww6PtI
+      //appendnew_next_sd_QcgOqOEPo1GmhDT3_5_3
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_JkpIfNfcSWww6PtI');
+      return this.errorHandler(bh, e, 'sd_6LKVzMR5V608o76V');
     }
   }
 
-  sd_xXkRTz1m9f0JjOXD(bh) {
-    try {
-      this.page.statistics = bh.local.statistics;
-
-      //appendnew_next_sd_xXkRTz1m9f0JjOXD
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_xXkRTz1m9f0JjOXD');
-    }
-  }
-
-  sd_aM1w0sD8kfrb2bNW(bh) {
+  sd_aM1w0sD8kfrb2bNW_1_2(bh) {
     try {
       const page = this.page;
       console.log(page.phoneNumber);
@@ -258,15 +252,15 @@ export class HomeComponent {
           'Invalid phone number';
       }
 
-      bh = this.sd_hvDLK6DZJLFBUldB(bh);
-      //appendnew_next_sd_aM1w0sD8kfrb2bNW
+      bh = this.sd_hvDLK6DZJLFBUldB_1_2(bh);
+      //appendnew_next_sd_aM1w0sD8kfrb2bNW_1_2
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_aM1w0sD8kfrb2bNW');
+      return this.errorHandler(bh, e, 'sd_cNLs6AgHPXujTYuY');
     }
   }
 
-  sd_hvDLK6DZJLFBUldB(bh) {
+  sd_hvDLK6DZJLFBUldB_1_2(bh) {
     try {
       if (
         this.sdService.operators['true'](
@@ -276,7 +270,7 @@ export class HomeComponent {
           undefined
         )
       ) {
-        bh = this.sd_WZb8ssVdQ1gPIyv9(bh);
+        bh = this.sd_WZb8ssVdQ1gPIyv9_1_2(bh);
       } else if (
         this.sdService.operators['false'](
           bh.local.isValid,
@@ -289,26 +283,26 @@ export class HomeComponent {
 
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_hvDLK6DZJLFBUldB');
+      return this.errorHandler(bh, e, 'sd_cYhD2SEpp71kVDMR');
     }
   }
 
-  sd_WZb8ssVdQ1gPIyv9(bh) {
+  sd_WZb8ssVdQ1gPIyv9_1_2(bh) {
     try {
       localStorage.setItem(
         'userPhoneNumber',
         JSON.stringify(this.page.phoneNumber)
       );
 
-      bh = this.sd_OkJIavllgUU1n0M1(bh);
-      //appendnew_next_sd_WZb8ssVdQ1gPIyv9
+      bh = this.sd_OkJIavllgUU1n0M1_1_2(bh);
+      //appendnew_next_sd_WZb8ssVdQ1gPIyv9_1_2
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_WZb8ssVdQ1gPIyv9');
+      return this.errorHandler(bh, e, 'sd_bnlky7gsO1LHIWtx');
     }
   }
 
-  async sd_OkJIavllgUU1n0M1(bh) {
+  async sd_OkJIavllgUU1n0M1_1_2(bh) {
     try {
       const { paramObj: qprm, path: path } =
         this.sdService.getPathAndQParamsObj('/ui/scan');
@@ -318,62 +312,10 @@ export class HomeComponent {
           queryParams: Object.assign(qprm, ''),
         });
 
-      //appendnew_next_sd_OkJIavllgUU1n0M1
+      //appendnew_next_sd_OkJIavllgUU1n0M1_1_2
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_OkJIavllgUU1n0M1');
-    }
-  }
-
-  sd_ykUzjkqZLV19dnXi(bh) {
-    try {
-      const page = this.page;
-      bh.local.statistics = [
-        {
-          imageUrl: '/Web/Icons/Earning.svg',
-          fxFlex: '46',
-          details: [
-            {
-              tittle: 'Earning',
-              value: 'N/A',
-            },
-          ],
-        },
-        {
-          imageUrl: '/Web/Icons/Clients.svg',
-          fxFlex: '46',
-          details: [
-            {
-              tittle: 'Clients',
-              value: 'N/A',
-            },
-          ],
-        },
-        {
-          imageUrl: '/Web/Icons/PriceGraph.svg',
-          fxFlex: '100',
-          details: [
-            {
-              tittle: 'Gold',
-              value: 'N/A',
-            },
-            {
-              tittle: 'Silver',
-              value: 'N/A',
-            },
-            {
-              tittle: 'Platinum',
-              value: 'N/A',
-            },
-          ],
-        },
-      ];
-
-      bh = this.sd_xXkRTz1m9f0JjOXD(bh);
-      //appendnew_next_sd_ykUzjkqZLV19dnXi
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ykUzjkqZLV19dnXi');
+      return await this.errorHandler(bh, e, 'sd_hUOVfquXfuJWzaGx');
     }
   }
 
@@ -392,7 +334,7 @@ export class HomeComponent {
     bh.errorSource = src;
     if (
       false ||
-      this.sd_cWx3T0wkeaF90Xc9(bh)
+      this.sd_VKYbxwlVA3mQAG86_5_3(bh)
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -400,14 +342,14 @@ export class HomeComponent {
       throw e;
     }
   }
-  sd_cWx3T0wkeaF90Xc9(bh) {
-    const nodes = ['sd_Ha6huPWSnuDcK5kK'];
-    if (nodes.includes(bh.errorSource)) {
-      bh = this.sd_ykUzjkqZLV19dnXi(bh);
-      //appendnew_next_sd_cWx3T0wkeaF90Xc9
-      return true;
+  sd_VKYbxwlVA3mQAG86_5_3(bh) {
+    const catchConnectedNodes = ['sd_6LKVzMR5V608o76V'];
+    if (catchConnectedNodes.includes(bh.errorSource)) {
+      return false;
     }
-    return false;
+    bh = this.sd_QcgOqOEPo1GmhDT3_5_3(bh);
+    //appendnew_next_sd_VKYbxwlVA3mQAG86_5_3
+    return true;
   }
   //appendnew_flow_HomeComponent_Catch
 }
