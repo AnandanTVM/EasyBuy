@@ -224,10 +224,7 @@
                 },
                 {
                     "_key": "navColor",
-
-
-                    "_value": "#f2b597",
-
+                    "_value": "white",
                     "_type": "a",
                     "_attrDef": "p"
                 }
