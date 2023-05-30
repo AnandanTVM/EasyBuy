@@ -726,7 +726,10 @@ export class Order_service {
       parentSpanInst
     );
     try {
-      bh.local.result = bh.local.orderCreated;
+      bh.local.result = {
+        statusCode: 200,
+        result: bh.local.orderCreated,
+      };
       this.tracerService.sendData(spanInst, bh);
       //appendnew_next_sd_glvzyS3Aim4tZguT
       return bh;
