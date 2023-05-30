@@ -109,10 +109,8 @@
             }
         ]
     },
-
-    "b18e0d13-5d81-02a7-9a41-2db1b52069d1": {
-
-        "paletteKey": "NEUTRINOS_PACKAGE_easybuy_PALETTE_KEY_Scaner_Componet",
+    "a877e19d-60d0-e0c2-ce39-ee20c67b08f3": {
+        "paletteKey": "NEUTRINOS_PACKAGE_easybuy_buildingblocks_PALETTE_KEY_Scaner_Componet",
         "commentid": null,
         "designerReference": [
             {
