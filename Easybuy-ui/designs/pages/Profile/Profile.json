@@ -297,7 +297,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.url = `${bh.local.backendUrl}/employee/logout`",
+        "script": "console.log(\"i am logout\")\nbh.local.url = `${bh.local.backendUrl}/employee/logout`",
         "functionName": "sd_lQ4xqcE9PiRAGJew",
         "category": "Function",
         "x": 325,
@@ -380,11 +380,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.settingList = [{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/details_naaxha.svg\",\n    \"settings\": \"Personal details\",\n    \"function\": \"\"\n},\n{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923083/easybuy/contact_poy6w4.svg\",\n    \"settings\": \"Contact\",\n    \"function\": \"\"\n},\n{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/info_km7obo.svg\",\n    \"settings\": \"Help & FAQs\",\n    \"function\": \"\"\n},\n{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923082/easybuy/settings_rto2ce.svg\",\n    \"settings\": \"Settings\",\n    \"function\": \"\"\n},\n{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/logout_llxlca.svg\",\n    \"settings\": \"Sign Out\",\n    \"function\": \"logout()\"\n}\n]",
+        "script": "\n\nbh.local.settingList = [{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/details_naaxha.svg\",\n    \"settings\": \"Personal details\",\n    \"name\": \"sample\"\n},\n{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923083/easybuy/contact_poy6w4.svg\",\n    \"settings\": \"Contact\",\n    \"name\": \"sample\"\n},\n{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/info_km7obo.svg\",\n    \"settings\": \"Help & FAQs\",\n    \"name\": \"sample\"\n},\n{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923082/easybuy/settings_rto2ce.svg\",\n    \"settings\": \"Settings\",\n    \"name\": \"sample\"\n},\n{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/logout_llxlca.svg\",\n    \"settings\": \"Sign Out\",\n    \"name\": 'logout'\n}\n]\n\npage.settingList = bh.local.settingList",
         "functionName": "sd_9fLMWJuXSbsei4NM_1",
         "category": "Function",
         "x": 245,
-        "y": 640,
+        "y": 520,
         "wires": [
             [
                 "sd_bT6RIblRWLkNZBBq"
@@ -417,7 +417,162 @@
         "functionName": "sd_yq0oZdp4PKfP8flW_1",
         "category": "Function",
         "x": 405,
-        "y": 640,
+        "y": 520,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_YvQ6yQ8ktsFUGQNI",
+        "type": "PageStart",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "callfunction",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "name",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "callfunction",
+        "category": "General",
+        "x": 205,
+        "y": 840,
+        "wires": [
+            [
+                "sd_Y8w9bch3jBSYxV6m"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProfileComponent"
+    },
+    {
+        "id": "sd_l52eNMt0AmMh3aos",
+        "type": "Catch",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": "all-nodes",
+        "selectCatchType": "allnodes",
+        "masternodeList": "",
+        "ignoreList": [
+            "sd_bc4a3bOlCcxaIAIx"
+        ],
+        "functionName": "sd_l52eNMt0AmMh3aos",
+        "category": "General",
+        "x": 400,
+        "y": 680,
+        "wires": [
+            [
+                "sd_bc4a3bOlCcxaIAIx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProfileComponent"
+    },
+    {
+        "id": "sd_bc4a3bOlCcxaIAIx",
+        "type": "Script",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.error)",
+        "functionName": "sd_bc4a3bOlCcxaIAIx",
+        "category": "Function",
+        "x": 560,
+        "y": 680,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Y8w9bch3jBSYxV6m",
+        "type": "PageSwitch",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "name",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.name",
+        "rules": [
+            {
+                "t": "se",
+                "v": "logout",
+                "vt": "str",
+                "gv": "\"logout\""
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "functionName": "sd_Y8w9bch3jBSYxV6m",
+        "category": "Function",
+        "x": 365,
+        "y": 840,
+        "wires": [
+            [
+                "sd_q2vgm9JGzpdfLzpt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_q2vgm9JGzpdfLzpt",
+        "type": "PageCallService",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_hLsSiBwL5l8nKVYk",
+            "type": "tab",
+            "createdDate": "2023-04-28T10:29:35.154Z",
+            "label": "Profile",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 1
+        },
+        "flow": {
+            "flowId": "sd_ywsg8F2p8YSdfrjJ",
+            "flowName": "logout"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "logout",
+        "inputParams": [],
+        "accept_csd": false,
+        "functionName": "sd_q2vgm9JGzpdfLzpt",
+        "category": "General",
+        "x": 460,
+        "y": 780,
         "wires": [
             []
         ],

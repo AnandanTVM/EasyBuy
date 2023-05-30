@@ -2,13 +2,13 @@
   <div>
     <div style="text-align: center; font-family: &apos;Source Sans Pro&apos;, sans-serif;">
       <span style="display: block; font-style: normal; font-weight: 500; font-size: 16px; margin-bottom: 1rem; padding-top: 1rem;">
-  Profile
+
   </span>
     </div>
     <section style="display: flex;
               justify-content: start;
               align-items: center;
-              background: rgba(230, 169, 96, 0.56);
+              background: ;
               padding: 0.5rem;">
       <div style="background-image: url(&apos;https://res.cloudinary.com/ddmc9b1yx/image/upload/v1685011079/profile_tws7m4.jpg&apos;);
                  background-size: cover;
@@ -24,20 +24,20 @@
                  display: block;
                  font-family: &apos;Source Sans Pro&apos;, sans-serif; font-style: normal; font-weight: 500; font-size: 16px; float: right;
                  margin-right: 5px;">
-        {{page.userData?.name||&quot;N/A&quot;}}</span>
+             </span>
         <span style="float: right;
                  margin-right: 5px; display: block;
                  font-style: normal;
                  font-weight: 400;
                  font-size: 14px;">
-              Bangalore</span>
+              </span>
       </div>
     </section>
   </div>
   <div style="width: 100%">
     <div *ngFor="let item of page.settingList" style="width:100%;
            padding: 10px; margin: 0px 0px ;">
-      <div (click)="item.function" fxLayout="row wrap" style="margin-top: 1rem;
+      <div (click)="callfunction(item.name)" fxLayout="row wrap" style="margin-top: 1rem;
               margin-right: 145px !important;" fxLayoutAlign="none stretch" [fxShow]="true"><img src="{{item.img}}" style="margin:0px 25px; height:22px!important;"><span style="float: right;
               margin-right: 5px;">
         {{item.settings}}</span>
