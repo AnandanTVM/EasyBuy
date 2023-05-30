@@ -403,8 +403,8 @@
                 ]
             }
         },
-        "418d4389-20ee-e419-6fa5-5cb2cfcad9d2": {
-            "paletteKey": "NEUTRINOS_PACKAGE_easybuy_PALETTE_KEY_cardLoder_Componet",
+        "3639d963-f746-252f-65ff-224352e2db8c": {
+            "paletteKey": "NEUTRINOS_PACKAGE_easybuy_buildingblocks_PALETTE_KEY_cardLoder_Componet",
             "parentEditorKey": "a888014a-069c-d909-b77e-ac754879f6f0",
             "commentid": null,
             "designerReference": [
@@ -416,9 +416,7 @@
                 },
                 {
                     "_key": "class",
-                    "_value": [
-                        "a"
-                    ],
+                    "_value": "",
                     "_type": "dav",
                     "_attrDef": "p"
                 },
@@ -440,12 +438,6 @@
                     "_value": "",
                     "_type": "kv",
                     "_attrDef": "p"
-                },
-                {
-                    "_key": "*ngIf",
-                    "_value": "!page.users",
-                    "_type": "kv",
-                    "_attrDef": "c"
                 }
             ]
         },
