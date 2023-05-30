@@ -140,11 +140,11 @@ export class CustomerListComponent {
   sd_xqwYQv97OZxgX007(bh) {
     try {
       const page = this.page;
-      console.log(bh.local.result, 'result');
+      console.log(bh.local.result.result, 'result');
 
       // data:image/jpeg;base64,${bh.local.response.result.image.data}`
 
-      page.users = bh.local?.result
+      page.users = bh.local?.result?.result
         ?.map((user) => {
           // console.log(user.payment?.payments[0]?.status,"status")
           user.productDetails.image = `data:image/jpeg;base64,${user?.productDetails?.image[0]?.buffer}`;

@@ -544,7 +544,9 @@
                         "_attrDef": "p",
                         "_complexity": "advanced",
                         "displayAs": "value",
-                        "attrType": "INPUT"
+                        "attrType": "INPUT",
+                        "inValid": false,
+                        "message": ""
                     },
                     {
                         "_key": "[product]",
@@ -553,7 +555,9 @@
                         "_attrDef": "p",
                         "_complexity": "advanced",
                         "displayAs": "product",
-                        "attrType": "INPUT"
+                        "attrType": "INPUT",
+                        "inValid": false,
+                        "message": ""
                     },
                     {
                         "_key": "(cancelProduct)",
@@ -562,7 +566,18 @@
                         "_attrDef": "p",
                         "_complexity": "advanced",
                         "displayAs": "cancelProduct",
-                        "attrType": "OUTPUT"
+                        "attrType": "OUTPUT",
+                        "inValid": false,
+                        "message": ""
+                    },
+                    {
+                        "_key": "[cart]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_complexity": "advanced",
+                        "displayAs": "cart",
+                        "attrType": "INPUT"
                     }
                 ]
             }

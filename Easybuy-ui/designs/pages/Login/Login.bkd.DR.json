@@ -1,6 +1,6 @@
 {
-    "bf1ede63-3e8a-fe6f-077b-c4488ca22925": {
-        "paletteKey": "NEUTRINOS_PACKAGE_easybuy_buildingblocks_PALETTE_KEY_Login",
+    "ddb3cd09-94a3-363e-cc63-aacae8e70755": {
+        "paletteKey": "NEUTRINOS_PACKAGE_easybuy_PALETTE_KEY_Login",
         "commentid": null,
         "designerReference": [
             {
@@ -78,13 +78,13 @@
             },
             {
                 "_key": "PlaceholderID",
-                "_value": "Enter",
+                "_value": "UserId",
                 "_type": "a",
                 "_attrDef": "p"
             },
             {
                 "_key": "PlaceholderPWD",
-                "_value": "Enter",
+                "_value": "Password",
                 "_type": "a",
                 "_attrDef": "p"
             },

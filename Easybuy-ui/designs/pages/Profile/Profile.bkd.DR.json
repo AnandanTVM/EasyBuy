@@ -1,6 +1,6 @@
 {
-    "e4501278-57c8-8b53-d2eb-4cd066ce808a": {
-        "paletteKey": "NEUTRINOS_PACKAGE_easybuy_buildingblocks_PALETTE_KEY_PROFILE",
+    "5c4f0068-e82c-957f-e53d-708ac56dbc6b": {
+        "paletteKey": "NEUTRINOS_PACKAGE_easybuy_PALETTE_KEY_PROFILE",
         "commentid": null,
         "designerReference": [
             {
@@ -48,7 +48,7 @@
             },
             {
                 "_key": "place",
-                "_value": "Bangalore",
+                "_value": "TVM",
                 "_type": "a",
                 "_attrDef": "p"
             },
