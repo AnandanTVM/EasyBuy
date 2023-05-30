@@ -6,7 +6,7 @@
         "label": "Profile",
         "disabled": false,
         "info": "",
-        "functionSeq": 0,
+        "functionSeq": 1,
         "generateNext": true,
         "serviceName": "ProfileComponent"
     },
@@ -72,7 +72,9 @@
         "x": 425,
         "y": 40,
         "wires": [
-            []
+            [
+                "sd_0A5E0EXFrXOGS0XI"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -223,6 +225,13 @@
         "nodeType": "flow",
         "name": "",
         "path": "/login",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_I36PRPeuFtNglPsm",
         "category": "Navigation",
         "x": 645,
@@ -358,6 +367,59 @@
             [
                 "sd_I36PRPeuFtNglPsm"
             ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0A5E0EXFrXOGS0XI",
+        "type": "Script",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.settingList = [{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/details_naaxha.svg\",\n    \"settings\": \"Personal details\",\n    \"function\": \"\"\n},\n{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923083/easybuy/contact_poy6w4.svg\",\n    \"settings\": \"Contact\",\n    \"function\": \"\"\n},\n{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/info_km7obo.svg\",\n    \"settings\": \"Help & FAQs\",\n    \"function\": \"\"\n},\n{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923082/easybuy/settings_rto2ce.svg\",\n    \"settings\": \"Settings\",\n    \"function\": \"\"\n},\n{\n    \"img\": \"https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/logout_llxlca.svg\",\n    \"settings\": \"Sign Out\",\n    \"function\": \"logout()\"\n}\n]",
+        "functionName": "sd_9fLMWJuXSbsei4NM_1",
+        "category": "Function",
+        "x": 245,
+        "y": 640,
+        "wires": [
+            [
+                "sd_bT6RIblRWLkNZBBq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_bT6RIblRWLkNZBBq",
+        "type": "PageVariables",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "settingList",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "settingList"
+                }
+            }
+        ],
+        "functionName": "sd_yq0oZdp4PKfP8flW_1",
+        "category": "Function",
+        "x": 405,
+        "y": 640,
+        "wires": [
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

@@ -355,5 +355,20 @@
         "parentDeps": {
             "easybuy": "1.0.0"
         }
+    },
+    "easybuy_buildingblocks": {
+        "name": "easybuy_buildingblocks",
+        "version": "1.0.0",
+        "packageType": "studio-package",
+        "deps": {
+            "easybuy_buildingblocks": {
+                "name": "easybuy_buildingblocks",
+                "version": "1.0.0",
+                "packageType": "studio-package"
+            }
+        },
+        "parentDeps": {
+            "easybuy_buildingblocks": "1.0.0"
+        }
     }
 }

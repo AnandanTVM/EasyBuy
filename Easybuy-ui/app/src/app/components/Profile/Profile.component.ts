@@ -114,10 +114,61 @@ export class ProfileComponent {
         'Sign out',
       ];
 
+      bh = this.sd_9fLMWJuXSbsei4NM_1(bh);
       //appendnew_next_profileItems
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_uQwjFC6hVJHOPmkv');
+    }
+  }
+
+  sd_9fLMWJuXSbsei4NM_1(bh) {
+    try {
+      const page = this.page;
+      bh.local.settingList = [
+        {
+          img: 'https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/details_naaxha.svg',
+          settings: 'Personal details',
+          function: '',
+        },
+        {
+          img: 'https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923083/easybuy/contact_poy6w4.svg',
+          settings: 'Contact',
+          function: '',
+        },
+        {
+          img: 'https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/info_km7obo.svg',
+          settings: 'Help & FAQs',
+          function: '',
+        },
+        {
+          img: 'https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923082/easybuy/settings_rto2ce.svg',
+          settings: 'Settings',
+          function: '',
+        },
+        {
+          img: 'https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/logout_llxlca.svg',
+          settings: 'Sign Out',
+          function: 'logout()',
+        },
+      ];
+
+      bh = this.sd_yq0oZdp4PKfP8flW_1(bh);
+      //appendnew_next_sd_9fLMWJuXSbsei4NM_1
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_0A5E0EXFrXOGS0XI');
+    }
+  }
+
+  sd_yq0oZdp4PKfP8flW_1(bh) {
+    try {
+      this.page.settingList = bh.local.settingList;
+
+      //appendnew_next_sd_yq0oZdp4PKfP8flW_1
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_bT6RIblRWLkNZBBq');
     }
   }
 
@@ -184,7 +235,9 @@ export class ProfileComponent {
         this.sdService.getPathAndQParamsObj('/login');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
 
       //appendnew_next_sd_I36PRPeuFtNglPsm
       return bh;

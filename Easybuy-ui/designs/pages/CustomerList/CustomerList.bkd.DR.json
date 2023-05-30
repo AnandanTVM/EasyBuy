@@ -438,12 +438,6 @@
                     "_value": "",
                     "_type": "kv",
                     "_attrDef": "p"
-                },
-                {
-                    "_key": "*ngIf",
-                    "_value": "!page.users",
-                    "_type": "kv",
-                    "_attrDef": "c"
                 }
             ]
         },
