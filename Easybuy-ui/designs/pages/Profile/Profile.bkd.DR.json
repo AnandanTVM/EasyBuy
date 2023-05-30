@@ -1,6 +1,6 @@
 {
-    "5c4f0068-e82c-957f-e53d-708ac56dbc6b": {
-        "paletteKey": "NEUTRINOS_PACKAGE_easybuy_PALETTE_KEY_PROFILE",
+    "86601fb5-7eef-38df-f697-dd5c235b9be2": {
+        "paletteKey": "NEUTRINOS_PACKAGE_easybuy_buildingblocks_PALETTE_KEY_PROFILE",
         "commentid": null,
         "designerReference": [
             {
@@ -42,25 +42,37 @@
             },
             {
                 "_key": "profileName",
-                "_value": "{{page.userData?.name||\"N/A\"}}",
+                "_value": "",
                 "_type": "a",
                 "_attrDef": "p"
             },
             {
                 "_key": "place",
-                "_value": "TVM",
+                "_value": "",
                 "_type": "a",
                 "_attrDef": "p"
             },
             {
                 "_key": "profileHeading",
-                "_value": "Profile",
+                "_value": "",
                 "_type": "a",
                 "_attrDef": "p"
             },
             {
                 "_key": "backgroundColour",
-                "_value": "rgba(230, 169, 96, 0.56)",
+                "_value": "",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "settingList",
+                "_value": "page.settingList",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "callfunction-name",
+                "_value": "callfunction",
                 "_type": "a",
                 "_attrDef": "p"
             }
@@ -467,6 +479,33 @@
                     {
                         "_key": "html",
                         "_value": "Profile",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    }
+                ]
+            },
+            "581af003-bca3-0833-136d-1f1a9c16e7d3": {
+                "paletteKey": "html-editor",
+                "parentEditorKey": "5743527e-03b3-54c2-3f43-a8c7d0f932a6",
+                "isAdvancedChildComponent": true,
+                "isCommented": "true",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "html",
+                        "_value": "",
                         "_type": "a",
                         "_attrDef": "p"
                     }

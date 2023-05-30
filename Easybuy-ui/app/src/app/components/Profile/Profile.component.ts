@@ -77,6 +77,21 @@ export class ProfileComponent {
     }
   }
 
+  callfunction(name = '', ...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { name: name };
+      bh.local = {};
+
+      bh = this.sd_Y8w9bch3jBSYxV6m(bh);
+      //appendnew_next_callfunction
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_YvQ6yQ8ktsFUGQNI');
+    }
+  }
+
   //appendnew_flow_ProfileComponent_start
 
   sd_6rNqYDFFjlNuAhG3(bh) {
@@ -125,33 +140,36 @@ export class ProfileComponent {
   sd_9fLMWJuXSbsei4NM_1(bh) {
     try {
       const page = this.page;
+
       bh.local.settingList = [
         {
           img: 'https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/details_naaxha.svg',
           settings: 'Personal details',
-          function: '',
+          name: 'sample',
         },
         {
           img: 'https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923083/easybuy/contact_poy6w4.svg',
           settings: 'Contact',
-          function: '',
+          name: 'sample',
         },
         {
           img: 'https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/info_km7obo.svg',
           settings: 'Help & FAQs',
-          function: '',
+          name: 'sample',
         },
         {
           img: 'https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923082/easybuy/settings_rto2ce.svg',
           settings: 'Settings',
-          function: '',
+          name: 'sample',
         },
         {
           img: 'https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/logout_llxlca.svg',
           settings: 'Sign Out',
-          function: `logout()`,
+          name: 'logout',
         },
       ];
+
+      page.settingList = bh.local.settingList;
 
       bh = this.sd_yq0oZdp4PKfP8flW_1(bh);
       //appendnew_next_sd_9fLMWJuXSbsei4NM_1
@@ -187,6 +205,7 @@ export class ProfileComponent {
   sd_lQ4xqcE9PiRAGJew(bh) {
     try {
       const page = this.page;
+      console.log('i am logout');
       bh.local.url = `${bh.local.backendUrl}/employee/logout`;
 
       bh = this.sd_VDbXXUV3Pnf3xamq(bh);
@@ -258,6 +277,48 @@ export class ProfileComponent {
     }
   }
 
+  sd_Y8w9bch3jBSYxV6m(bh) {
+    try {
+      if (
+        this.sdService.operators['se'](
+          bh.input.name,
+          'logout',
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_q2vgm9JGzpdfLzpt(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Y8w9bch3jBSYxV6m');
+    }
+  }
+
+  sd_q2vgm9JGzpdfLzpt(bh) {
+    try {
+      let outputVariables = this.logout();
+
+      //appendnew_next_sd_q2vgm9JGzpdfLzpt
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_q2vgm9JGzpdfLzpt');
+    }
+  }
+
+  sd_bc4a3bOlCcxaIAIx(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.error);
+
+      //appendnew_next_sd_bc4a3bOlCcxaIAIx
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_bc4a3bOlCcxaIAIx');
+    }
+  }
+
   //appendnew_node
 
   ngOnDestroy() {
@@ -273,7 +334,8 @@ export class ProfileComponent {
     bh.errorSource = src;
     if (
       false ||
-      this.sd_ykpeHW8VfJfmCM3r(bh)
+      this.sd_ykpeHW8VfJfmCM3r(bh) ||
+      this.sd_l52eNMt0AmMh3aos(bh)
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -289,6 +351,15 @@ export class ProfileComponent {
       return true;
     }
     return false;
+  }
+  sd_l52eNMt0AmMh3aos(bh) {
+    const catchConnectedNodes = ['sd_bc4a3bOlCcxaIAIx'];
+    if (catchConnectedNodes.includes(bh.errorSource)) {
+      return false;
+    }
+    bh = this.sd_bc4a3bOlCcxaIAIx(bh);
+    //appendnew_next_sd_l52eNMt0AmMh3aos
+    return true;
   }
   //appendnew_flow_ProfileComponent_Catch
 }
