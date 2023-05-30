@@ -356,19 +356,19 @@
             "easybuy": "1.0.0"
         }
     },
-    "easybuy_builingblocks": {
-        "name": "easybuy_builingblocks",
+    "easybuy_buildingblocks": {
+        "name": "easybuy_buildingblocks",
         "version": "1.0.0",
         "packageType": "studio-package",
         "deps": {
-            "easybuy_builingblocks": {
-                "name": "easybuy_builingblocks",
+            "easybuy_buildingblocks": {
+                "name": "easybuy_buildingblocks",
                 "version": "1.0.0",
                 "packageType": "studio-package"
             }
         },
         "parentDeps": {
-            "easybuy_builingblocks": "1.0.0"
+            "easybuy_buildingblocks": "1.0.0"
         }
     }
 }

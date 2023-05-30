@@ -1,8 +1,76 @@
 {
+    "e4501278-57c8-8b53-d2eb-4cd066ce808a": {
+        "paletteKey": "NEUTRINOS_PACKAGE_easybuy_buildingblocks_PALETTE_KEY_PROFILE",
+        "commentid": null,
+        "designerReference": [
+            {
+                "_key": "style",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "class",
+                "_value": "",
+                "_type": "dav",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "componentLabel",
+                "_value": "PROFILE",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_useAsLabel": true
+            },
+            {
+                "_key": "(click)",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "[disabled]",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "profilePic",
+                "_value": "https://res.cloudinary.com/ddmc9b1yx/image/upload/v1685011079/profile_tws7m4.jpg",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "profileName",
+                "_value": "{{page.userData?.name||\"N/A\"}}",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "place",
+                "_value": "Bangalore",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "profileHeading",
+                "_value": "Profile",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "backgroundColour",
+                "_value": "rgba(230, 169, 96, 0.56)",
+                "_type": "a",
+                "_attrDef": "p"
+            }
+        ]
+    },
     "277b40bd-b9e4-28ca-bfd1-c98430b9c66d": {
         "paletteKey": "Html5",
         "isAdvancedComponent": true,
-        "commentid": null,
+        "isCommented": "true",
+        "commentid": "1685358704126",
         "designerReference": [
             {
                 "_key": "style",
@@ -191,7 +259,8 @@
             "paletteKey": "Html5",
             "parentEditorKey": "277b40bd-b9e4-28ca-bfd1-c98430b9c66d",
             "isAdvancedComponent": true,
-            "commentid": null,
+            "isCommented": "true",
+            "commentid": "1685358704126",
             "designerReference": [
                 {
                     "_key": "style",
@@ -380,7 +449,8 @@
                 "paletteKey": "html-editor",
                 "parentEditorKey": "5743527e-03b3-54c2-3f43-a8c7d0f932a6",
                 "isAdvancedChildComponent": true,
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358704126",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -407,7 +477,8 @@
             "paletteKey": "Html5",
             "parentEditorKey": "277b40bd-b9e4-28ca-bfd1-c98430b9c66d",
             "isAdvancedComponent": true,
-            "commentid": null,
+            "isCommented": "true",
+            "commentid": "1685358704126",
             "designerReference": [
                 {
                     "_key": "style",
@@ -597,7 +668,8 @@
                 "paletteKey": "Html5",
                 "parentEditorKey": "c17d4e51-274a-1593-f5d9-db0e65970103",
                 "isAdvancedComponent": true,
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358704126",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -786,7 +858,8 @@
                     "paletteKey": "html-editor",
                     "parentEditorKey": "b1ded16c-76dc-0164-3c76-0d43102f639d",
                     "isAdvancedChildComponent": true,
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1685358704126",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -813,7 +886,8 @@
                 "paletteKey": "Html5",
                 "parentEditorKey": "c17d4e51-274a-1593-f5d9-db0e65970103",
                 "isAdvancedComponent": true,
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358704126",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -1002,7 +1076,8 @@
                     "paletteKey": "html-editor",
                     "parentEditorKey": "ca3c4bd6-0d28-55eb-161a-68798d4538a5",
                     "isAdvancedChildComponent": true,
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1685358704126",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -1028,7 +1103,8 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "ca3c4bd6-0d28-55eb-161a-68798d4538a5",
                     "isAdvancedComponent": true,
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1685358704126",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -1217,7 +1293,8 @@
                         "paletteKey": "html-editor",
                         "parentEditorKey": "f76f4047-b476-698a-28b7-8e3fa4a2c639",
                         "isAdvancedChildComponent": true,
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1685358704126",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1246,7 +1323,8 @@
     "eab57c27-bb5e-e0ea-0ace-6f38871abd49": {
         "paletteKey": "Html5",
         "isAdvancedComponent": true,
-        "commentid": null,
+        "isCommented": "true",
+        "commentid": "1685358709902",
         "designerReference": [
             {
                 "_key": "style",
@@ -1434,7 +1512,8 @@
         "6d76453f-323b-0350-105a-87998cf7e7fa": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "eab57c27-bb5e-e0ea-0ace-6f38871abd49",
-            "commentid": null,
+            "isCommented": "true",
+            "commentid": "1685358709902",
             "designerReference": [
                 {
                     "_key": "componentLabel",
@@ -1497,7 +1576,8 @@
             "79d0ecf1-0173-f97c-4109-e0bcbb008db0": {
                 "paletteKey": "NG-image",
                 "parentEditorKey": "6d76453f-323b-0350-105a-87998cf7e7fa",
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358709902",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -1566,7 +1646,8 @@
                 "paletteKey": "Html5",
                 "parentEditorKey": "6d76453f-323b-0350-105a-87998cf7e7fa",
                 "isAdvancedComponent": true,
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358709902",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -1753,7 +1834,8 @@
                     "paletteKey": "html-editor",
                     "parentEditorKey": "91c85cb2-9d2c-b36d-5594-45ece7684c70",
                     "isAdvancedChildComponent": true,
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1685358709902",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -1780,7 +1862,8 @@
         "aa00ac32-3b76-f2e9-177c-234a62e0560b": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "eab57c27-bb5e-e0ea-0ace-6f38871abd49",
-            "commentid": null,
+            "isCommented": "true",
+            "commentid": "1685358709902",
             "designerReference": [
                 {
                     "_key": "componentLabel",
@@ -1843,7 +1926,8 @@
             "fa68d633-3b23-b1e1-1378-4ec7ddeed274": {
                 "paletteKey": "NG-image",
                 "parentEditorKey": "aa00ac32-3b76-f2e9-177c-234a62e0560b",
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358709902",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -1912,7 +1996,8 @@
                 "paletteKey": "Html5",
                 "parentEditorKey": "aa00ac32-3b76-f2e9-177c-234a62e0560b",
                 "isAdvancedComponent": true,
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358709902",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -2099,7 +2184,8 @@
                     "paletteKey": "html-editor",
                     "parentEditorKey": "0a1795ab-fbda-a9c8-d1b6-751f91b299df",
                     "isAdvancedChildComponent": true,
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1685358709902",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -2126,7 +2212,8 @@
         "840694db-c9ad-d30f-79fb-5fc8f37a63f3": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "eab57c27-bb5e-e0ea-0ace-6f38871abd49",
-            "commentid": null,
+            "isCommented": "true",
+            "commentid": "1685358709902",
             "designerReference": [
                 {
                     "_key": "componentLabel",
@@ -2189,7 +2276,8 @@
             "0a35a438-3cb3-24b1-d16d-2befd3054aee": {
                 "paletteKey": "NG-image",
                 "parentEditorKey": "840694db-c9ad-d30f-79fb-5fc8f37a63f3",
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358709902",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -2258,7 +2346,8 @@
                 "paletteKey": "Html5",
                 "parentEditorKey": "840694db-c9ad-d30f-79fb-5fc8f37a63f3",
                 "isAdvancedComponent": true,
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358709902",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -2445,7 +2534,8 @@
                     "paletteKey": "html-editor",
                     "parentEditorKey": "75baf2e5-6c8b-4c07-ef72-f635f4430923",
                     "isAdvancedChildComponent": true,
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1685358709902",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -2472,7 +2562,8 @@
         "f63cc18e-54de-51b1-bf69-171debc84dbe": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "eab57c27-bb5e-e0ea-0ace-6f38871abd49",
-            "commentid": null,
+            "isCommented": "true",
+            "commentid": "1685358709902",
             "designerReference": [
                 {
                     "_key": "componentLabel",
@@ -2535,7 +2626,8 @@
             "fb20e50b-7aaf-418b-2ba4-4e91bc1fac55": {
                 "paletteKey": "NG-image",
                 "parentEditorKey": "f63cc18e-54de-51b1-bf69-171debc84dbe",
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358709902",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -2604,7 +2696,8 @@
                 "paletteKey": "Html5",
                 "parentEditorKey": "f63cc18e-54de-51b1-bf69-171debc84dbe",
                 "isAdvancedComponent": true,
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358709902",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -2791,7 +2884,8 @@
                     "paletteKey": "html-editor",
                     "parentEditorKey": "1679d22d-6fd1-974c-f9e1-93087e42b43e",
                     "isAdvancedChildComponent": true,
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1685358709902",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -2818,7 +2912,8 @@
         "a1f6a150-6d46-8753-33e1-9a44f3f6351d": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "eab57c27-bb5e-e0ea-0ace-6f38871abd49",
-            "commentid": null,
+            "isCommented": "true",
+            "commentid": "1685358709902",
             "designerReference": [
                 {
                     "_key": "componentLabel",
@@ -2894,7 +2989,8 @@
             "de88f683-06c4-1dc3-3414-29127dc4d9b0": {
                 "paletteKey": "NG-image",
                 "parentEditorKey": "a1f6a150-6d46-8753-33e1-9a44f3f6351d",
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358709902",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -2963,7 +3059,8 @@
                 "paletteKey": "Html5",
                 "parentEditorKey": "a1f6a150-6d46-8753-33e1-9a44f3f6351d",
                 "isAdvancedComponent": true,
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685358709902",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -3150,7 +3247,8 @@
                     "paletteKey": "html-editor",
                     "parentEditorKey": "eb6e6c60-0ebb-199a-48d8-b21a97260be8",
                     "isAdvancedChildComponent": true,
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1685358709902",
                     "designerReference": [
                         {
                             "_key": "style",

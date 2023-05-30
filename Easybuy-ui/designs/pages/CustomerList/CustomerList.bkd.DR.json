@@ -403,7 +403,7 @@
                 ]
             }
         },
-        "418d4389-20ee-e419-6fa5-5cb2cfcad9d2": {
+        "4929c953-c922-4c82-5f91-2810b0c6a279": {
             "paletteKey": "NEUTRINOS_PACKAGE_easybuy_PALETTE_KEY_cardLoder_Componet",
             "parentEditorKey": "a888014a-069c-d909-b77e-ac754879f6f0",
             "commentid": null,
@@ -416,9 +416,7 @@
                 },
                 {
                     "_key": "class",
-                    "_value": [
-                        "a"
-                    ],
+                    "_value": "",
                     "_type": "dav",
                     "_attrDef": "p"
                 },
@@ -440,12 +438,6 @@
                     "_value": "",
                     "_type": "kv",
                     "_attrDef": "p"
-                },
-                {
-                    "_key": "*ngIf",
-                    "_value": "!page.users",
-                    "_type": "kv",
-                    "_attrDef": "c"
                 }
             ]
         },
@@ -642,10 +634,88 @@
                     "_attrDef": "c"
                 }
             ],
+            "7bbc9566-76a2-51c4-cf7b-4835b32fa9d5": {
+                "paletteKey": "NEUTRINOS_PACKAGE_easybuy_PALETTE_KEY_transactioncard_Componet",
+                "parentEditorKey": "898f23b2-4066-ff91-1bec-51a1773846a5",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "componentLabel",
+                        "_value": "transactioncard_Componet",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "(click)",
+                        "_value": "gotoInvoice(user._id)",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "objValue": {
+                            "nodeID": "sd_6m24YOPttcGRENOb",
+                            "functionName": "gotoInvoice",
+                            "activeTree": "pages",
+                            "z": "sd_yHq7n4h5khv1JbdZ",
+                            "input": [
+                                "user._id"
+                            ]
+                        }
+                    },
+                    {
+                        "_key": "[disabled]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "ProductImage",
+                        "_value": "user.productDetails.image",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "customerNumber",
+                        "_value": "{{user.customerNumber}}",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "time",
+                        "_value": "{{user.time}}",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "totalAmount",
+                        "_value": "{{user.totalAmount}}",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "Paymentcolor",
+                        "_value": "{{user.color}}",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    }
+                ]
+            },
             "9c8babfb-0e8a-cefd-31aa-48bbe4e31690": {
                 "paletteKey": "FlexLayoutRow",
                 "parentEditorKey": "898f23b2-4066-ff91-1bec-51a1773846a5",
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1685354236659",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -723,7 +793,8 @@
                 "fc0341a3-fa00-f74c-d8f8-280b947acf0a": {
                     "paletteKey": "NG-image",
                     "parentEditorKey": "9c8babfb-0e8a-cefd-31aa-48bbe4e31690",
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1685354236659",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -792,7 +863,8 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "9c8babfb-0e8a-cefd-31aa-48bbe4e31690",
                     "isAdvancedComponent": true,
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1685354236659",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -979,7 +1051,8 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "db5c6bf2-b80f-cfa2-9c9c-80b2f3aa206b",
                         "isAdvancedComponent": true,
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1685354236659",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1166,7 +1239,8 @@
                             "paletteKey": "html-editor",
                             "parentEditorKey": "00fcba3d-007e-812d-5af0-922415274ed5",
                             "isAdvancedChildComponent": true,
-                            "commentid": null,
+                            "isCommented": "true",
+                            "commentid": "1685354236659",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1193,7 +1267,8 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "db5c6bf2-b80f-cfa2-9c9c-80b2f3aa206b",
                         "isAdvancedComponent": true,
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1685354236659",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1380,7 +1455,8 @@
                             "paletteKey": "html-editor",
                             "parentEditorKey": "ba132bcd-8097-2699-e38f-facf70d5fbe2",
                             "isAdvancedChildComponent": true,
-                            "commentid": null,
+                            "isCommented": "true",
+                            "commentid": "1685354236659",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1407,7 +1483,8 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "db5c6bf2-b80f-cfa2-9c9c-80b2f3aa206b",
                         "isAdvancedComponent": true,
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1685354236659",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1594,7 +1671,8 @@
                             "paletteKey": "html-editor",
                             "parentEditorKey": "b1dbdc30-fa8d-6eb6-8d43-f81379540d36",
                             "isAdvancedChildComponent": true,
-                            "commentid": null,
+                            "isCommented": "true",
+                            "commentid": "1685354236659",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1622,7 +1700,8 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "9c8babfb-0e8a-cefd-31aa-48bbe4e31690",
                     "isAdvancedComponent": true,
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1685354236659",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -1809,7 +1888,8 @@
                         "paletteKey": "html-editor",
                         "parentEditorKey": "7bacab87-c95d-a30c-8299-c591f1682701",
                         "isAdvancedChildComponent": true,
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1685354236659",
                         "designerReference": [
                             {
                                 "_key": "style",
