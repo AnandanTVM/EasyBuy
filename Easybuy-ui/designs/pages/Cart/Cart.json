@@ -672,7 +672,7 @@
         },
         "value": {
             "type": "bh.local",
-            "value": "result.response"
+            "value": "result.message"
         },
         "resultMapping": {},
         "functionName": "sd_GRjYUxtyjm0gaywq",

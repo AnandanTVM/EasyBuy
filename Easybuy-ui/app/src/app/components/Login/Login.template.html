@@ -39,7 +39,7 @@
         border-radius: 10px !important;
         margin-top: 20px !important;
         font-weight: 700 !important;" [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="page.credentials.EmployeeId" name="EmployeeId" type="text" placeholder="Enter" [required]="true" #EmployeeID="ngModel">
+          <input matInput [(ngModel)]="page.credentials.EmployeeId" name="EmployeeId" type="text" placeholder="UserId" [required]="true" #EmployeeID="ngModel">
           <mat-error align="start" *ngIf="EmployeeID.errors?.required &amp;&amp; EmployeeID.touched &amp;&amp; EmployeeID.dirty">Employee id is required</mat-error>
         </mat-form-field>
         <mat-form-field style="display: block !important; margin:5px 0px !important;width: auto !important;  display: block;
@@ -51,7 +51,7 @@
         border-radius: 10px !important;
         margin-top: 20px !important;
         font-weight: 700 !important;" [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="page.credentials.Password" name="Password" type="password" placeholder="Enter" [required]="true" minlength="8" #Password="ngModel">
+          <input matInput [(ngModel)]="page.credentials.Password" name="Password" type="password" placeholder="Password" [required]="true" minlength="8" #Password="ngModel">
           <mat-error align="end" *ngIf="Password.errors?.minlength &amp;&amp; Password.touched &amp;&amp; Password.dirty">password must be at least 8 character</mat-error><mat-error align="start" *ngIf="Password.errors?.required &amp;&amp; Password.touched &amp;&amp; Password.dirty">Password must be required</mat-error>
         </mat-form-field>
 
