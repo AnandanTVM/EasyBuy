@@ -14,6 +14,7 @@
   <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
     <div fxLayout="row wrap" style="padding: 15px;
         margin:5px;
+        background-color:whilte;
         border-radius: 15px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" fxFlex="{{statistic.fxFlex}}" fxLayoutAlign="space-around center" [fxShow]="true" *ngFor="let statistic of page.statistics">
       <img *ngIf="statistic.imageLink" src="{{statistic.imageLink}}">
@@ -47,7 +48,7 @@
     <mat-card-actions style="margin:10px;">
       <input placeholder="Customer Number" type="number" [(ngModel)]="page.phoneNumber" style="display: block;
         border: 1px solid black !important;
-        width: 94% !important;
+        width: 100% !important;
         padding: 14px !important;
         padding-left: 30px !important;
         border-radius: 10px !important;

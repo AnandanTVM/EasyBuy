@@ -301,7 +301,7 @@
         "functionName": "gotoScan_1_2",
         "category": "General",
         "x": 85,
-        "y": 1740,
+        "y": 260,
         "wires": [
             [
                 "sd_cNLs6AgHPXujTYuY"
@@ -322,7 +322,7 @@
         "functionName": "sd_aM1w0sD8kfrb2bNW_1_2",
         "category": "Function",
         "x": 220,
-        "y": 1740,
+        "y": 260,
         "wires": [
             [
                 "sd_cYhD2SEpp71kVDMR"
@@ -357,7 +357,7 @@
         "functionName": "sd_hvDLK6DZJLFBUldB_1_2",
         "category": "Function",
         "x": 400,
-        "y": 1740,
+        "y": 260,
         "wires": [
             [
                 "sd_bnlky7gsO1LHIWtx"
@@ -391,7 +391,7 @@
         "functionName": "sd_WZb8ssVdQ1gPIyv9_1_2",
         "category": "Storage",
         "x": 600,
-        "y": 1740,
+        "y": 260,
         "wires": [
             [
                 "sd_hUOVfquXfuJWzaGx"
@@ -420,7 +420,7 @@
         "functionName": "sd_OkJIavllgUU1n0M1_1_2",
         "category": "Navigation",
         "x": 865,
-        "y": 1740,
+        "y": 260,
         "wires": [
             []
         ],
@@ -444,8 +444,8 @@
         ],
         "functionName": "sd_VKYbxwlVA3mQAG86_5_3",
         "category": "General",
-        "x": 745,
-        "y": 2940,
+        "x": 905,
+        "y": 160,
         "wires": [
             [
                 "sd_6LKVzMR5V608o76V"
@@ -465,8 +465,8 @@
         "script": "\npage.statistics = [\n        {\n          imageUrl: '/Web/Icons/Earning.svg',\n          fxFlex: '46',\n          details: [\n            {\n              tittle: 'Earning',\n              value: '₹' +  1000,\n            },\n          ],\n        },\n        {\n          imageUrl: '/Web/Icons/Clients.svg',\n          fxFlex: '46',\n          details: [\n            {\n              tittle: 'Clients',\n              value: 45722,\n            },\n          ],\n        },\n        {\n          imageUrl: '/Web/Icons/PriceGraph.svg',\n          fxFlex: '100',\n          details: [\n            {\n              tittle: 'Gold',\n              value: '₹' + 4232,\n            },\n            {\n              tittle: 'Silver',\n              value: '₹' +8686,\n            },\n            {\n              tittle: 'Platinum',\n              value: '₹' + 24336,\n            },\n          ],\n        },\n      ]\n",
         "functionName": "sd_QcgOqOEPo1GmhDT3_5_3",
         "category": "Function",
-        "x": 865,
-        "y": 2860,
+        "x": 1025,
+        "y": 80,
         "wires": [
             []
         ],
