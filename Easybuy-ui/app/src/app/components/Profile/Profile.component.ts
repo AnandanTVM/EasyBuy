@@ -149,7 +149,7 @@ export class ProfileComponent {
         {
           img: 'https://res.cloudinary.com/ddmc9b1yx/image/upload/v1684923081/easybuy/logout_llxlca.svg',
           settings: 'Sign Out',
-          function: 'logout()',
+          function: `logout()`,
         },
       ];
 
