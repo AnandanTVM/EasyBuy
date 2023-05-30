@@ -320,7 +320,7 @@
         {
             "name": "easybuy_buildingblocks",
             "version": "1.0.0",
-            "displayName": "EasyBuy_BuildingBlocks",
+            "displayName": "EasyBuy",
             "type": "Components",
             "publisher": "tkcli",
             "platformSupportVersion": {
@@ -333,7 +333,7 @@
             "devInProgress": true,
             "dependencies": [
                 {
-                    "name": "easybuy_buildingblocks",
+                    "name": "easybuy",
                     "version": "1.0.0",
                     "packageType": "studio-package",
                     "displayName": "EasyBuy_BuildingBlocks"

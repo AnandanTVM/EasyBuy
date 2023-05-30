@@ -1670,7 +1670,7 @@
                 }
             }
         },
-        "1d4279e2-5d8e-1eff-5992-5092a551ce82": {
+        "2ad0069e-08fb-0233-3f7f-c8de572ab143": {
             "paletteKey": "NEUTRINOS_PACKAGE_easybuy_PALETTE_KEY_HomeMinCard",
             "parentEditorKey": "43f77f9e-a765-be9b-a26b-c6146ec2c22c",
             "commentid": null,
@@ -1713,8 +1713,8 @@
                     "_attrDef": "p"
                 },
                 {
-                    "_key": "background-color",
-                    "_value": "#ffff",
+                    "_key": "backgroundColor",
+                    "_value": "whilte",
                     "_type": "a",
                     "_attrDef": "p"
                 },
@@ -1744,7 +1744,7 @@
                 }
             ]
         },
-        "fe5178b2-017b-112e-9060-ca8994c9baa1": {
+        "a55be37b-253e-d1bf-4404-5195b2c18102": {
             "paletteKey": "NEUTRINOS_PACKAGE_easybuy_PALETTE_KEY_HomeCard",
             "parentEditorKey": "43f77f9e-a765-be9b-a26b-c6146ec2c22c",
             "commentid": null,
@@ -1812,7 +1812,7 @@
                 },
                 {
                     "_key": "input-width",
-                    "_value": "94%",
+                    "_value": "100%",
                     "_type": "a",
                     "_attrDef": "p"
                 },

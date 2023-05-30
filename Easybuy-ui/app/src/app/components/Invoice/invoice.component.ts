@@ -181,17 +181,16 @@ export class invoiceComponent {
       const page = this.page;
       console.log(bh.local.result, 'result arrived');
 
-      bh.local.result[0].products = bh.local.result[0]?.products?.map(
-        (product) => {
+      bh.local.result.message[0].products =
+        bh.local.result.message[0]?.products?.map((product) => {
           product.price = product.price.toFixed(2);
           product.totalPrice = product.totalPrice.toFixed(2);
           return product;
-        }
-      );
+        });
 
-      bh.local.result[0].totalAmount =
-        bh.local.result[0]?.totalAmount.toFixed(2);
-      page.data = bh.local.result[0];
+      bh.local.result.message[0].totalAmount =
+        bh.local.result.message[0]?.totalAmount.toFixed(2);
+      page.data = bh.local.result.message[0];
 
       console.log(page.data, 'pagedata');
 
